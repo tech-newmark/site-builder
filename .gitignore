@@ -9,6 +9,7 @@ lerna-debug.log*
 
 bitrix
 upload
+.access.php
 node_modules
 *.local
 
