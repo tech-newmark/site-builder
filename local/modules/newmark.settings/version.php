@@ -1,5 +1,5 @@
 <?php
-$MESS['NEWMARK_SETTINGS_INSTALL_NAME'] = 'Настройки NewMarkы';
+$MESS['NEWMARK_SETTINGS_INSTALL_NAME'] = 'Настройки NewMark';
 $MESS['NEWMARK_SETTINGS_INSTALL_DESCRIPTION'] = 'Модуль глобальных настроек шаблона сайта';
 $MESS['NEWMARK_SETTINGS_PARTNER_NAME'] = 'NewMark Studio';
 $MESS['NEWMARK_SETTINGS_VERSION'] = '1.0.0';

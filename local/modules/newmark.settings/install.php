@@ -27,7 +27,7 @@ class newmark_settings
 
   function UnInstallFiles()
   {
-    @unlink($_SERVER["DOCUMENT_ROOT"] . "/bitrix/admin/newmark_settings.php");
+    @unlink($_SERVER["DOCUMENT_ROOT"] . "/local/modules/newmark.settings/newmark_settings.php");
     return true;
   }
 }

@@ -10,7 +10,7 @@ function addNewmarkSettingsMenu(&$arGlobalMenu, &$arModuleMenu)
       "sort"        => 90,
       "text"        => "Настройки NewMark",
       "title"       => "Глобальные настройки шаблона сайта",
-      "url"         => "/bitrix/admin/newmark_settings.php",
+      "url"         => "/local/modules/newmark.settings/newmark_settings.php",
     ];
   }
 }
