@@ -61,18 +61,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && check_bitrix_sessid()) {
 
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_admin_after.php");
-$APPLICATION->SetTitle("Решение NewMark Simple v1.0.0");
+$APPLICATION->SetTitle("Решение NEWMARK Simple v1.0.0");
 ?>
-
-<style>
-  .adm-info-message {
-    background-color: #f9f9f9;
-    border: 1px solid #eaeaea;
-    padding: 10px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-</style>
 
 <form method="post" action="<?= $APPLICATION->GetCurPage() ?>">
   <?= bitrix_sessid_post() ?>
