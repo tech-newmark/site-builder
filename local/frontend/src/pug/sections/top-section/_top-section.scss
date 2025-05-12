@@ -1,0 +1,28 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/common.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+@use "@pug/components/_ui/sliders/top-banner/top-banner" as *;
+
+// @use "@styles/_mixins/block-overlay" as *;
+
+.top-section {
+	// height: 90svh;
+	// max-height: 720px;
+	// background-size: cover;
+	// background-position: center;
+	// outline: 1px solid red;
+
+	// &.--overlayed-dark {
+	// 	@include block-overlay();
+	// }
+
+	// &.--overlayed-light {
+	// 	@include block-overlay("light");
+	// }
+
+	// &__title {
+	// 	font-size: clamp(24px, 8vw, 56px);
+	// }
+}

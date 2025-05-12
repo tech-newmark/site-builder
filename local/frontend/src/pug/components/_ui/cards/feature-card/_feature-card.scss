@@ -1,0 +1,42 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.feature-card {
+	@extend %flex-column;
+	height: 100%;
+	padding: 32px;
+	color: var(--white);
+	border-radius: var(--current-border-radius);
+	container: feature-card / inline-size;
+
+	&--main {
+		background-size: cover;
+		background-position: center;
+	}
+
+	&--content-bottom {
+		.feature-card__wrapper {
+			margin-top: auto;
+		}
+	}
+
+	&--filled {
+		background-color: var(--primary);
+	}
+
+	&--simple {
+		align-items: center;
+		gap: 16px;
+		padding: 16px;
+		text-align: center;
+
+		svg {
+			fill: var(--primary);
+			margin-bottom: 10px;
+		}
+
+		color: var(--dark);
+	}
+}
