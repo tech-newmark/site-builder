@@ -7,10 +7,12 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-bitrix
+/bitrix/
 upload
 .access.php
-node_modules
+/local/frontend/node_modules/
+/local/frontend/.cache
+
 *.local
 
 # Editor directories and files
