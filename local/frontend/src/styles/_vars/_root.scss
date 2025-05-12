@@ -65,10 +65,11 @@
 
 // border-radius
 :root {
+	--border-radius-disabled: 0;
 	--border-radius-xs: 5px;
 	--border-radius-sm: 10px;
 	--border-radius-md: 15px;
 	--border-radius-lg: 30px;
 
-	--current-border-radius: var(--border-radius-lg);
+	--current-border-radius: var(--border-radius-disabled);
 }
