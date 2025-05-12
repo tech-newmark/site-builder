@@ -9,6 +9,7 @@ include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/global/template-
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <? $APPLICATION->ShowHead(); ?>
   <link href="<?= SITE_TEMPLATE_PATH ?>/assets/styles.css" type="text/css" rel="stylesheet" />
+  <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/assets/js/theme.js'); ?>
   <title><? $APPLICATION->ShowTitle() ?></title>
 </head>
 
@@ -16,4 +17,8 @@ include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/global/template-
   <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
   <main id="workarea">
 
+    <script>
+      window.themeSettings = <?= $jsThemeSettings ?>;
+    </script>
+    <!-- <div id="theme-settings" data-settings='<?= $jsThemeSettings ?>'></div> -->
     <h1 id="pagetitle"><? $APPLICATION->ShowTitle(false); ?></h1>

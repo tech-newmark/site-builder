@@ -9,19 +9,27 @@ if (!$USER->IsAdmin()) {
 
 // Переменные для хранения текущих значений
 $values = [
+  'OPTION_BORDER_RADIUS' => Option::get("main", "OPTION_BORDER_RADIUS", "Без скругления"),
+
   'FEATURES_SECTION_TYPE' => Option::get("main", "FEATURES_SECTION_TYPE", "1"),
   'FEATURES_SECTION_ENABLED' => Option::get("main", "FEATURES_SECTION_ENABLED", "N"),
 ];
 
 // Если форма была отправлена
 if ($_SERVER["REQUEST_METHOD"] == "POST" && check_bitrix_sessid()) {
+  $option_border_radius = $_POST["OPTION_BORDER_RADIUS"] ?? "Без скругления";
+
   $features_section_type = $_POST["FEATURES_SECTION_TYPE"] ?? "1";
   $features_section_enabled = $_POST["FEATURES_SECTION_ENABLED"] ?? "N";
+
+  Option::set("main", "OPTION_BORDER_RADIUS", $option_border_radius);
 
   Option::set("main", "FEATURES_SECTION_TYPE", $features_section_type);
   Option::set("main", "FEATURES_SECTION_ENABLED", $features_section_enabled);
 
   // После сохранения обновляем значения
+  $values["OPTION_BORDER_RADIUS"] = $option_border_radius;
+
   $values["FEATURES_SECTION_TYPE"] = $features_section_type;
   $values["FEATURES_SECTION_ENABLED"] = $features_section_enabled;
 }
@@ -35,6 +43,29 @@ $APPLICATION->SetTitle("Решение NEWMARK Simple v1.0.0");
 <form method="post" action="<?= $APPLICATION->GetCurPage() ?>">
   <?= bitrix_sessid_post() ?>
 
+  <h2>Общие настройки сайта</h2>
+
+  <table class="adm-detail-content-table edit-table">
+    <!-- <tr>
+      <td>Использовать тени </td>
+      <td>
+        <input type="checkbox" name="FEATURES_SECTION_ENABLED" value="Y" <?= ($values['FEATURES_SECTION_ENABLED'] === 'Y' ? "checked" : "") ?>>
+      </td>
+    </tr> -->
+    <tr>
+      <td>Скругления блоков</td>
+      <td>
+        <select name="OPTION_BORDER_RADIUS">
+          <option value="1" <?= ($values['OPTION_BORDER_RADIUS'] === '1' ? "selected" : "") ?>>Без скругления</option>
+          <option value="2" <?= ($values['OPTION_BORDER_RADIUS'] === '2' ? "selected" : "") ?>>5px</option>
+          <option value="3" <?= ($values['OPTION_BORDER_RADIUS'] === '3' ? "selected" : "") ?>>10px</option>
+          <option value="4" <?= ($values['OPTION_BORDER_RADIUS'] === '4' ? "selected" : "") ?>>15px</option>
+          <option value="5" <?= ($values['OPTION_BORDER_RADIUS'] === '5' ? "selected" : "") ?>>30px</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+
   <h2>Блок «Наши преимущества»</h2>
 
   <table class="adm-detail-content-table edit-table">
@@ -42,7 +73,6 @@ $APPLICATION->SetTitle("Решение NEWMARK Simple v1.0.0");
       <td>Показывать раздел</td>
       <td>
         <input type="checkbox" name="FEATURES_SECTION_ENABLED" value="Y" <?= ($values['FEATURES_SECTION_ENABLED'] === 'Y' ? "checked" : "") ?>>
-      </td>
       </td>
     </tr>
     <tr>
