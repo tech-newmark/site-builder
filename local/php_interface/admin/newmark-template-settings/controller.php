@@ -20,7 +20,7 @@ function addNewmarkSettingsMenuD7(&$arGlobalMenu, &$arModuleMenu)
   }
 
   // Полные пути
-  $sourcePath = Application::getDocumentRoot() . "/local/php_interface/admin/newmark-template-settings/template.php";
+  $sourcePath = Application::getDocumentRoot() . "/local/php_interface/admin/newmark-template-settings/view.php";
   $targetPath = Application::getDocumentRoot() . "/bitrix/admin/nmark_simple.php";
   $sourceFile = new IO\File($sourcePath);
   $UPDATE_OLD_TEMPLATE = true;
@@ -46,44 +46,7 @@ function addNewmarkSettingsMenuD7(&$arGlobalMenu, &$arModuleMenu)
     "icon" => "newmark-logo",
   ];
 
-  \Bitrix\Main\Page\Asset::getInstance()->addString('
-    <style>
-      .adm-sub-submenu-block:has(.newmark-logo) .adm-submenu-item-name-link {
-        height: fit-content !important;
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        padding: 16px 0 !important;
-        padding-left: 10px !important;
-        font-weight: 500;
-        text-decoration: none;
-        color: #553333;
-      }
-
-      .adm-sub-submenu-block:has(.newmark-logo) .adm-submenu-item-name-link * {
-        padding: 0;
-      }
-
-      .adm-sub-submenu-block:has(.newmark-logo) .adm-submenu-item-arrow {
-        display: none;
-      }
-
-      .adm-sub-submenu-block:has(.newmark-logo) .adm-submenu-item-name {
-        padding: 0;
-        margin: 0;
-        height: fit-content;
-      }
-
-      .adm-sub-submenu-block:has(.newmark-logo) .newmark-logo {
-        background-image: url("/local/php_interface/admin/newmark-template-settings/img/newmark-logo.svg");
-        background-size: cover;
-        width: 24px;
-        height: 24px;
-        background-position: center;
-        margin-left: 0;
-        margin-top: 0;
-        padding: 0;
-      }
-    </style>
-  ');
+  \Bitrix\Main\Page\Asset::getInstance()->addString(
+    '<link rel="stylesheet" href="/local/php_interface/admin/newmark-template-settings/assets/styles/controller.css" type="text/css" />',
+  );
 }

@@ -16,7 +16,13 @@ function isFormSubmitted(): bool
 function getSettings(): array
 {
   return [
-    'OPTION_BORDER_RADIUS' => Option::get("main", "OPTION_BORDER_RADIUS", "Без скругления"),
+
+    'content-width' => Option::get("main", "content-width", "1680px"),
+    'site-base-font-family' => Option::get("main", "site-base-font-family", "var(--montserrat)"),
+    'primary-color' => Option::get("main", "primary-color", "var(--primary-color)"),
+    'secondary-color' => Option::get("main", "secondary-color", "var(--secondary-color)"),
+    'base-border-radius' => Option::get("main", "base-border-radius", "Без скругления"),
+
     'FEATURES_SECTION_TYPE' => Option::get("main", "FEATURES_SECTION_TYPE", "1"),
     'FEATURES_SECTION_ENABLED' => Option::get("main", "FEATURES_SECTION_ENABLED", "N"),
   ];
@@ -28,7 +34,13 @@ function getSettings(): array
 function saveSettings(array $postData): void
 {
   $data = [
-    'OPTION_BORDER_RADIUS' => $postData["OPTION_BORDER_RADIUS"] ?? "Без скругления",
+
+    'content-width' => $postData["content-width"] ?? "1680px",
+    'site-base-font-family' => $postData["site-base-font-family"] ?? "var(--montserrat)",
+    'primary-color' => $postData["primary-color"] ?? "var(--primary-color)",
+    'secondary-color' => $postData["secondary-color"] ?? "var(--secondary-color)",
+    'base-border-radius' => $postData["base-border-radius"] ?? "Без скругления",
+
     'FEATURES_SECTION_TYPE' => $postData["FEATURES_SECTION_TYPE"] ?? "1",
     'FEATURES_SECTION_ENABLED' => $postData["FEATURES_SECTION_ENABLED"] ?? "N",
   ];

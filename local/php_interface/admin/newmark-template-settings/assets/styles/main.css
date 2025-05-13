@@ -1,0 +1,60 @@
+.nm-adm .container {
+	max-width: 800px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 240px auto;
+	gap: 24px;
+}
+
+.settings-form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.settings-form-field {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin: 0;
+	padding: 16px;
+	border: 1px solid #e4e4e4;
+	border-radius: 12px;
+	background-color: #e9e9db;
+}
+
+.settings-form-field-title {
+	margin: 0;
+	margin-bottom: 24px;
+}
+
+.settings-form-label {
+	font-size: 14px;
+}
+
+.settings-form-ctrl {
+	display: grid;
+	grid-template-columns: 165px min-content;
+	gap: 24px;
+	align-items: center;
+}
+
+.settings-form-ctrl input[type="checkbox"] {
+	margin: 0;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+
+/* .adm-workarea .settings-form > input[type="submit"] {
+	padding: 0;
+	background-color: red;
+	background-image: none !important;
+	border: none;
+	border-radius: 0;
+	max-width: fit-content;
+	padding: 12px 24px;
+	margin: 0;
+} */
