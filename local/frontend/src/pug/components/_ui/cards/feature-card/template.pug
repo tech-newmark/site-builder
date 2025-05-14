@@ -2,7 +2,6 @@ mixin feature-card(data)
   .feature-card(class= data.modifiers ? data.modifiers : null style= data.bg ? `background-image: url('./assets/img/${data.bg}.png')` : null)
     .feature-card__wrapper
       if data.icon
-        svg(width='32' height='32' role='img' aria-hidden='true' focusable='false')
-          use(xlink:href='./assets/sprite.svg#icon-feature')
+        img(src="./assets/img/icon-feature.svg" alt!= data.title width="32" height="32")
       span.base-subtitle!= data.title
       span.base-text!= data.text

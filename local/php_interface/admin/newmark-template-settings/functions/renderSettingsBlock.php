@@ -20,6 +20,7 @@ function renderSettingsBlock(string $title, array $DTO): void
       echo match ($type) {
         'select' => renderSelect($name, $options, $value),
         'checkbox' => renderCheckbox($name, $value),
+        'number' => renderTextInput($name, $value, $type = 'number'),
         'colorpicker' => renderColorpicker($name, $value),
         default => "Неизвестный тип поля: $type",
       };

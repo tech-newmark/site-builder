@@ -44,6 +44,7 @@ function renderSettingsSection(array $values): void
             'var(--montserrat)' => 'Montserrat',
             'var(--roboto)' => 'Roboto',
             'var(--inter)' => 'Inter',
+            'var(--manrope)' => 'Manrope',
           ),
         ],
       ],

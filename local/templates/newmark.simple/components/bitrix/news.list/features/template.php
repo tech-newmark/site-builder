@@ -1,7 +1,10 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
+debug($GLOBALS['FEATURES_SECTION_VIEW']);
 if ($arResult["ITEMS"] && $GLOBALS['FEATURES_SECTION_ENABLED'] === "Y"): ?>
-  <section class="base-section features --underlined">
+  <section
+    class="base-section features --underlined "
+    style="order: <?= $GLOBALS['FEATURES_SECTION_SORT'] ?>">
     <div class="container">
       <div class="base-section__header">
         <h2 class="base-section__header-title"><?= $arResult["NAME"] ?></h2>
@@ -16,9 +19,15 @@ if ($arResult["ITEMS"] && $GLOBALS['FEATURES_SECTION_ENABLED'] === "Y"): ?>
           <? foreach ($arResult["ITEMS"] as $arItem): ?>
             <div class="features__grid-item ">
               <div
-                class="feature-card feature-card--main feature-card--content-bottom"
+                class="feature-card --content-bottom <?= ($GLOBALS['FEATURES_SECTION_VIEW'] == '2' ? '--simple' : '') ?>"
                 style="<?= ($arItem["PREVIEW_PICTURE"]["SRC"] ? 'background-image:url(' . $arItem['PREVIEW_PICTURE']['SRC'] . ')' : '') ?>">
                 <div class="feature-card__wrapper">
+                  <?
+                  if ($arItem["PROPERTIES"]["ICON"]["VALUE"]):
+                    $iconPath = CFile::GetPath($arItem["PROPERTIES"]["ICON"]["VALUE"]);
+                  ?>
+                    <img src="<?= $iconPath ?>" alt="<?= $arItem["NAME"] ?>" width="32" height="32">
+                  <? endif; ?>
                   <span class="base-subtitle">
                     <?= $arItem["NAME"] ?>
                   </span>
