@@ -20,7 +20,7 @@
 	margin-top: auto;
 }
 .feature-card--filled {
-	background-color: var(--primary);
+	background-color: var(--primary-color);
 }
 .feature-card--simple {
 	-webkit-box-align: center;
@@ -32,7 +32,7 @@
 	color: var(--dark);
 }
 .feature-card--simple svg {
-	fill: var(--primary);
+	fill: var(--primary-color);
 	margin-bottom: 10px;
 }
 

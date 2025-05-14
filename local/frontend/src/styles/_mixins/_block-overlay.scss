@@ -26,11 +26,11 @@
 
 	@if $theme == "light" {
 		& * {
-			color: var(--dark);
+			color: var(--dark-color);
 		}
 	} @else {
 		& * {
-			color: var(--white);
+			color: var(--white-color);
 		}
 	}
 }

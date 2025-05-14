@@ -8,17 +8,17 @@
 
 // colors
 :root {
-	--white: #ffffff;
-	--black: #000000;
-	--primary: #d8a47a;
-	--success: #59a952;
-	--warning: #fffc30;
-	--danger: #da1c1f;
-	--dark: #222222;
-	--light: #e6e6e6;
-	--muted: #c8c8c8;
+	--white-color: #ffffff;
+	--black-color: #000000;
+	--primary-color: #d8a47a;
+	--success-color: #59a952;
+	--warning-color: #fffc30;
+	--danger-color: #da1c1f;
+	--dark-color: #222222;
+	--light-color: #e6e6e6;
+	--muted-color: #c8c8c8;
 
-	--gray-500: #555555;
+	--gray-500-color: #555555;
 }
 
 // containers
@@ -44,8 +44,8 @@
 	--site-base-font-weight: 400;
 	--site-base-font-size: 16px;
 	--site-base-line-height: 1.2;
-	--site-base-text-color: var(--black);
-	--site-bg-color: var(--white);
+	--site-base-text-color: var(--black-color);
+	--site-bg-color: var(--white-color);
 }
 
 // scrollbar
@@ -53,7 +53,7 @@
 	--scrollbar-color: var(--site-bg-color);
 	--scrollbar-width: 12px;
 	--scrollbar-border-radius: 0;
-	--scrollbar-thumb-color: var(--primary);
+	--scrollbar-thumb-color: var(--primary-color);
 	--scrollbar-thumb-border-radius: 0;
 }
 

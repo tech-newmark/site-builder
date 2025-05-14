@@ -40,7 +40,8 @@
 	--border-radius-sm: 10px;
 	--border-radius-md: 15px;
 	--border-radius-lg: 30px;
-	--current-border-radius: var(--border-radius-lg);
+	--base-border-radius: 0;
+	--current-border-radius: var(--base-border-radius);
 }
 
 @font-face {

@@ -1,7 +1,7 @@
 @forward "@pug/components/_ui/buttons/btn/_btn";
 
-$btn-secondary-color: var(--primary);
-$btn-secondary-bg-color: var(--white);
+$btn-secondary-color: var(--primary-color);
+$btn-secondary-bg-color: var(--white-color);
 
 .btn-secondary {
 	@extend %btn;
