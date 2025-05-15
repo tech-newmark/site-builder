@@ -26,7 +26,6 @@ function getSettings(): array
     'FEATURES_SECTION_TYPE' => Option::get("main", "FEATURES_SECTION_TYPE", "1"),
     'FEATURES_SECTION_ENABLED' => Option::get("main", "FEATURES_SECTION_ENABLED", "N"),
     'FEATURES_SECTION_SORT' => Option::get("main", "FEATURES_SECTION_SORT", "100"),
-    'FEATURES_SECTION_VIEW' => Option::get("main", "FEATURES_SECTION_VIEW", "С заливкой фоном или изображением"),
   ];
 }
 
@@ -46,7 +45,6 @@ function saveSettings(array $postData): void
     'FEATURES_SECTION_TYPE' => $postData["FEATURES_SECTION_TYPE"] ?? "1",
     'FEATURES_SECTION_ENABLED' => $postData["FEATURES_SECTION_ENABLED"] ?? "N",
     'FEATURES_SECTION_SORT' => $postData["FEATURES_SECTION_SORT"] ?? "100",
-    'FEATURES_SECTION_VIEW' => $postData["FEATURES_SECTION_VIEW"] ?? "С заливкой фоном или изображением",
   ];
 
   foreach ($data as $key => $value) {

@@ -32,16 +32,7 @@ function renderFeaturesPreviewSection(array $values): void
             7 => '7',
           ),
         ],
-        [
-          'label' => 'Вид отображения элемента',
-          'name' => 'FEATURES_SECTION_VIEW',
-          'type' => 'select',
-          'value' => $values['FEATURES_SECTION_VIEW'],
-          'options' => array(
-            1 => 'С заливкой фоном или изображением',
-            2 => 'Без заливки'
-          ),
-        ],
+
       ]
     ]
   ];

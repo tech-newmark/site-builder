@@ -17,9 +17,9 @@ if ($arResult["ITEMS"] && $GLOBALS['FEATURES_SECTION_ENABLED'] === "Y"): ?>
       <div class="features__grid-container">
         <div class="features__grid features__grid--type-<?= $GLOBALS['FEATURES_SECTION_TYPE'] ?>">
           <? foreach ($arResult["ITEMS"] as $arItem): ?>
-            <div class="features__grid-item ">
+            <div class="features__grid-item">
               <div
-                class="feature-card --content-bottom <?= ($GLOBALS['FEATURES_SECTION_VIEW'] == '2' ? '--simple' : '') ?>"
+                class="feature-card  <?= $arItem["RES_MOD_MODIFIERS"] ?>"
                 style="<?= ($arItem["PREVIEW_PICTURE"]["SRC"] ? 'background-image:url(' . $arItem['PREVIEW_PICTURE']['SRC'] . ')' : '') ?>">
                 <div class="feature-card__wrapper">
                   <?

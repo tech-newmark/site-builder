@@ -17,4 +17,3 @@ $jsThemeSettings = Json::encode($themeSettings);
 $GLOBALS["FEATURES_SECTION_TYPE"] = Option::get("main", "FEATURES_SECTION_TYPE", "1");
 $GLOBALS["FEATURES_SECTION_ENABLED"] = Option::get("main", "FEATURES_SECTION_ENABLED", "Y");
 $GLOBALS["FEATURES_SECTION_SORT"] = Option::get("main", "FEATURES_SECTION_SORT", "100");
-$GLOBALS["FEATURES_SECTION_VIEW"] = Option::get("main", "FEATURES_SECTION_VIEW", "С заливкой фоном или изображением");

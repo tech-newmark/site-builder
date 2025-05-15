@@ -17,8 +17,4 @@ include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/global/template-
   <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
   <main id="workarea">
 
-    <script>
-      window.themeSettings = <?= $jsThemeSettings ?>;
-    </script>
-    <!-- <div id="theme-settings" data-settings='<?= $jsThemeSettings ?>'></div> -->
     <h1 id="pagetitle"><? $APPLICATION->ShowTitle(false); ?></h1>

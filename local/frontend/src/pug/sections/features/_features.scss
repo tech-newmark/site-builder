@@ -15,7 +15,7 @@ $grid-gap: var(--gap-sm);
 	.features__grid-item {
 		min-height: 180px;
 
-		.feature-card__content-bottom {
+		.feature-card.--content-bottom {
 			margin-top: revert;
 			@include container-up("features-grid-container", $mobile-width) {
 				margin-top: auto;
