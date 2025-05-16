@@ -18,6 +18,7 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	overflow: hidden;
 }
 .feature-card .base-subtitle {
 	margin: 0;
@@ -34,6 +35,9 @@
 	max-height: 36px;
 	-o-object-fit: contain;
 	object-fit: contain;
+}
+.feature-card__wrapper .base-subtitle {
+	color: var(--feature-card-title-color);
 }
 .feature-card.--bordered-primary {
 	border-color: var(--primary-color);
@@ -73,12 +77,6 @@
 .feature-card.--content-color-dark {
 	color: var(--black-color);
 }
-.feature-card.--content-color-primary {
-	color: var(--primary-color);
-}
-.feature-card.--content-color-secondary {
-	color: var(--secondary-color);
-}
 .feature-card.--content-align-right {
 	text-align: right;
 }
@@ -100,6 +98,44 @@
 }
 .feature-card.--filled-bg-secondary {
 	background-color: var(--secondary-color);
+}
+.feature-card.--overlayed-dark {
+	position: relative;
+}
+.feature-card.--overlayed-dark::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 0;
+}
+.feature-card.--overlayed-dark > * {
+	z-index: 20;
+}
+.feature-card.--overlayed-dark * {
+	color: var(--white-color);
+}
+.feature-card.--overlayed-light {
+	position: relative;
+}
+.feature-card.--overlayed-light::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgba(245, 245, 245, 0.5);
+	z-index: 0;
+}
+.feature-card.--overlayed-light > * {
+	z-index: 20;
+}
+.feature-card.--overlayed-light * {
+	color: var(--dark-color);
 }
 
 .features__grid-container {

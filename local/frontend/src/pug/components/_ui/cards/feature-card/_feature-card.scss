@@ -2,6 +2,7 @@
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_mixins/media-queries" as *;
 @use "@styles/_vars/scoped" as *;
+@use "@styles/_mixins/block-overlay" as *;
 
 .feature-card {
 	@extend %flex-column;
@@ -13,6 +14,7 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	overflow: hidden;
 
 	.base-subtitle {
 		margin: 0;
@@ -28,6 +30,10 @@
 			height: auto;
 			max-height: 36px;
 			object-fit: contain;
+		}
+
+		.base-subtitle {
+			color: var(--feature-card-title-color);
 		}
 	}
 
@@ -85,14 +91,6 @@
 		&-dark {
 			color: var(--black-color);
 		}
-
-		&-primary {
-			color: var(--primary-color);
-		}
-
-		&-secondary {
-			color: var(--secondary-color);
-		}
 	}
 
 	&.--content-align {
@@ -121,5 +119,13 @@
 		&-secondary {
 			background-color: var(--secondary-color);
 		}
+	}
+
+	&.--overlayed-dark {
+		@include block-overlay();
+	}
+
+	&.--overlayed-light {
+		@include block-overlay("light");
 	}
 }

@@ -1,5 +1,15 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
+// Расположение контента шапки секции
+$alignMap = [
+  '2' => '--align-left',
+  '3' => '--align-right',
+];
+
+if (isset($alignMap[$GLOBALS['SECTION_HEADER_ALIGN']])) {
+  $arResult["RES_MOD_MODIFIERS"] = $alignMap[$GLOBALS['SECTION_HEADER_ALIGN']];
+}
+
 // Ограничение количества элементов для разных типов сеток
 $limitMap = [
   '1' => 5,
@@ -26,7 +36,8 @@ foreach ($arResult["ITEMS"] as $key => $arItem) {
     $arItem["PROPERTIES"]["CONTENT_TEXT_COLOR"]["VALUE_XML_ID"],
     $arItem["PROPERTIES"]["FILLED_BG"]["VALUE_XML_ID"],
     $arItem["PROPERTIES"]["BORDER"]["VALUE_XML_ID"],
-    $arItem["PROPERTIES"]["BORDER_WIDTH"]["VALUE_XML_ID"]
+    $arItem["PROPERTIES"]["BORDER_WIDTH"]["VALUE_XML_ID"],
+    $arItem["PROPERTIES"]["OVERLAY"]["VALUE_XML_ID"]
   ];
 
   $excludeValues = [

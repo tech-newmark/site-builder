@@ -67,7 +67,8 @@ $base-section-header-offset: clamp(20px, 3vw, 28px);
 		}
 
 		&.--align-right .base-section__header::after {
-			left: 100%;
+			left: revert;
+			right: 0;
 			transform: none;
 		}
 	}

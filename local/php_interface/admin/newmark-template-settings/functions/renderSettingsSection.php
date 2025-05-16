@@ -5,16 +5,7 @@ function renderSettingsSection(array $values): void
     [
       'TITLE' => 'Основные настройки:',
       'ITEMS' => [
-        [
-          'label' => 'Цвет фона сайта(не подключен):',
-          'name' => 'site-bg-color',
-          'type' => 'select',
-          'value' => $values['site-bg-color'],
-          'options' => array(
-            'var(--dark-color)' => 'Темный',
-            'var(--white-color)' => 'Светлый',
-          ),
-        ],
+
         [
           'label' => 'Макс. ширина контентной части сайта:',
           'name' => 'content-width',
@@ -74,11 +65,28 @@ function renderSettingsSection(array $values): void
           'type' => 'colorpicker',
           'value' => $values['secondary-color'],
         ],
+        [
+          'label' => 'Цвет фона сайта:',
+          'name' => 'site-bg-color',
+          'type' => 'colorpicker',
+          'value' => $values['site-bg-color'],
+        ],
       ]
     ],
     [
       'TITLE' => 'Настройка разделов сайта:',
       'ITEMS' => [
+        [
+          'label' => 'Позиционирование шапки секции:',
+          'name' => 'SECTION_HEADER_ALIGN',
+          'type' => 'select',
+          'value' => $values['SECTION_HEADER_ALIGN'],
+          'options' => array(
+            1 => 'По центру',
+            2 => 'По левому краю',
+            3 => 'По правому краю'
+          ),
+        ],
         [
           'label' => 'Цвет заголовка раздела:',
           'name' => 'section-title-color',

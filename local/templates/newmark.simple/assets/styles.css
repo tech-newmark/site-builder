@@ -583,7 +583,8 @@ img {
 	transform: none;
 }
 .base-section.--underlined.--align-right .base-section__header::after {
-	left: 100%;
+	left: revert;
+	right: 0;
 	-webkit-transform: none;
 	-ms-transform: none;
 	transform: none;

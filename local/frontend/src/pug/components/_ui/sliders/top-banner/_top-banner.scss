@@ -47,7 +47,7 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 		&-bullet {
 			width: 8px;
 			height: 8px;
-			background-color: var(--primary-color);
+			background-color: var(--primary);
 		}
 
 		&.--pagination-bullets-square,
@@ -187,13 +187,13 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 			justify-content: center;
 			backdrop-filter: blur(20px);
 			padding: clamp(24px, 5vw, 80px);
-			border: 2px solid var(--primary-color);
+			border: 2px solid var(--primary);
 		}
 	}
 
 	&.--rounded-content {
 		.top-banner__wrapper {
-			border-radius: var(--base-border-radius);
+			border-radius: var(--current-border-radius);
 		}
 	}
 

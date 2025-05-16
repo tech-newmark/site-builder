@@ -23,10 +23,12 @@ function getSettings(): array
     'secondary-color' => Option::get("main", "secondary-color", "var(--secondary-color)"),
     'base-border-radius' => Option::get("main", "base-border-radius", "Без скругления"),
     'section-title-color' => Option::get("main", "section-title-color", "var(--dark-color)"),
+    'site-bg-color' => Option::get("main", "site-bg-color", "var(--site-bg-color)"),
 
     'SECTION_TITLE_UNDERLINE_ENABLED' => Option::get("main", "SECTION_TITLE_UNDERLINE_ENABLED", "N"),
+    'SECTION_HEADER_ALIGN' => Option::get("main", "SECTION_HEADER_ALIGN", "По центру"),
 
-    'FEATURES_SECTION_TYPE' => Option::get("main", "FEATURES_SECTION_TYPE", "1"),
+    'FEATURES_SECTION_TYPE' => Option::get("main", "FEATURES_SECTION_TYPE", "Грид-сетка из пяти элементов"),
     'FEATURES_SECTION_ENABLED' => Option::get("main", "FEATURES_SECTION_ENABLED", "N"),
     'FEATURES_SECTION_SORT' => Option::get("main", "FEATURES_SECTION_SORT", "100"),
   ];
@@ -45,8 +47,11 @@ function saveSettings(array $postData): void
     'secondary-color' => $postData["secondary-color"] ?? "var(--secondary-color)",
     'base-border-radius' => $postData["base-border-radius"] ?? "Без скругления",
     'section-title-color' => $postData["section-title-color"] ?? "var(--dark-color)",
+    'site-bg-color' => $postData["site-bg-color"] ?? "var(--site-bg-color)",
 
     'SECTION_TITLE_UNDERLINE_ENABLED' => $postData["SECTION_TITLE_UNDERLINE_ENABLED"] ?? "N",
+    'SECTION_HEADER_ALIGN' => $postData["SECTION_HEADER_ALIGN"] ?? "По центру",
+
 
     'FEATURES_SECTION_TYPE' => $postData["FEATURES_SECTION_TYPE"] ?? "1",
     'FEATURES_SECTION_ENABLED' => $postData["FEATURES_SECTION_ENABLED"] ?? "N",
