@@ -1,9 +1,11 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-debug($GLOBALS['FEATURES_SECTION_VIEW']);
 if ($arResult["ITEMS"] && $GLOBALS['FEATURES_SECTION_ENABLED'] === "Y"): ?>
   <section
-    class="base-section features --underlined "
+    class="
+      base-section features 
+      <?= ($GLOBALS['SECTION_TITLE_UNDERLINE_ENABLED'] === "Y") ? '--underlined' : '' ?>
+    "
     style="order: <?= $GLOBALS['FEATURES_SECTION_SORT'] ?>">
     <div class="container">
       <div class="base-section__header">

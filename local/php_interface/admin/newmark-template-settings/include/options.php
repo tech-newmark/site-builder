@@ -22,6 +22,9 @@ function getSettings(): array
     'primary-color' => Option::get("main", "primary-color", "var(--primary-color)"),
     'secondary-color' => Option::get("main", "secondary-color", "var(--secondary-color)"),
     'base-border-radius' => Option::get("main", "base-border-radius", "Без скругления"),
+    'section-title-color' => Option::get("main", "section-title-color", "var(--dark-color)"),
+
+    'SECTION_TITLE_UNDERLINE_ENABLED' => Option::get("main", "SECTION_TITLE_UNDERLINE_ENABLED", "N"),
 
     'FEATURES_SECTION_TYPE' => Option::get("main", "FEATURES_SECTION_TYPE", "1"),
     'FEATURES_SECTION_ENABLED' => Option::get("main", "FEATURES_SECTION_ENABLED", "N"),
@@ -41,6 +44,9 @@ function saveSettings(array $postData): void
     'primary-color' => $postData["primary-color"] ?? "var(--primary-color)",
     'secondary-color' => $postData["secondary-color"] ?? "var(--secondary-color)",
     'base-border-radius' => $postData["base-border-radius"] ?? "Без скругления",
+    'section-title-color' => $postData["section-title-color"] ?? "var(--dark-color)",
+
+    'SECTION_TITLE_UNDERLINE_ENABLED' => $postData["SECTION_TITLE_UNDERLINE_ENABLED"] ?? "N",
 
     'FEATURES_SECTION_TYPE' => $postData["FEATURES_SECTION_TYPE"] ?? "1",
     'FEATURES_SECTION_ENABLED' => $postData["FEATURES_SECTION_ENABLED"] ?? "N",

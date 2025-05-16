@@ -6,7 +6,17 @@ function renderSettingsSection(array $values): void
       'TITLE' => 'Основные настройки:',
       'ITEMS' => [
         [
-          'label' => 'Макс. ширина контентной части сайта',
+          'label' => 'Цвет фона сайта(не подключен):',
+          'name' => 'site-bg-color',
+          'type' => 'select',
+          'value' => $values['site-bg-color'],
+          'options' => array(
+            'var(--dark-color)' => 'Темный',
+            'var(--white-color)' => 'Светлый',
+          ),
+        ],
+        [
+          'label' => 'Макс. ширина контентной части сайта:',
           'name' => 'content-width',
           'type' => 'select',
           'value' => $values['content-width'],
@@ -57,14 +67,35 @@ function renderSettingsSection(array $values): void
           'name' => 'primary-color',
           'type' => 'colorpicker',
           'value' => $values['primary-color'],
-
         ],
         [
           'label' => 'Дополнительный цвет сайта:',
           'name' => 'secondary-color',
           'type' => 'colorpicker',
           'value' => $values['secondary-color'],
-
+        ],
+      ]
+    ],
+    [
+      'TITLE' => 'Настройка разделов сайта:',
+      'ITEMS' => [
+        [
+          'label' => 'Цвет заголовка раздела:',
+          'name' => 'section-title-color',
+          'type' => 'select',
+          'value' => $values['section-title-color'],
+          'options' => array(
+            'var(--black-color)' => 'Черный',
+            'var(--white-color)' => 'Белый',
+            'var(--primary-color)' => 'Основной цвет сайта',
+            'var(--secondary-color)' => 'Дополнительный цвет сайта',
+          ),
+        ],
+        [
+          'label' => 'Показывать декоративную линию под заголовком:',
+          'name' => 'SECTION_TITLE_UNDERLINE_ENABLED',
+          'type' => 'checkbox',
+          'value' => $values['SECTION_TITLE_UNDERLINE_ENABLED'],
         ],
       ]
     ]

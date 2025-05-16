@@ -18,6 +18,10 @@ $base-section-header-offset: clamp(20px, 3vw, 28px);
 			margin-bottom: 0;
 		}
 
+		&-title {
+			color: var(--section-title-color);
+		}
+
 		&-text {
 			max-width: 1140px;
 			font-size: clamp(14px, 2vw, 16px);
@@ -29,6 +33,14 @@ $base-section-header-offset: clamp(20px, 3vw, 28px);
 			@extend %flex-column;
 			text-align: left;
 			align-items: flex-start;
+		}
+	}
+
+	&.--align-right {
+		.base-section__header {
+			@extend %flex-column;
+			text-align: right;
+			align-items: flex-end;
 		}
 	}
 
@@ -51,6 +63,11 @@ $base-section-header-offset: clamp(20px, 3vw, 28px);
 
 		&.--align-left .base-section__header::after {
 			left: 0;
+			transform: none;
+		}
+
+		&.--align-right .base-section__header::after {
+			left: 100%;
 			transform: none;
 		}
 	}

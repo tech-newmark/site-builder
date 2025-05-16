@@ -23,9 +23,9 @@ function renderFeaturesPreviewSection(array $values): void
           'type' => 'select',
           'value' => $values['FEATURES_SECTION_TYPE'],
           'options' => array(
-            1 => '1',
-            2 => '2',
-            3 => '3',
+            1 => 'Грид-сетка из пяти элементов',
+            2 => 'Грид-сетка из четырех элементов',
+            3 => 'Грид-сетка из трех элементов',
             4 => '4',
             5 => '5',
             6 => '6',
