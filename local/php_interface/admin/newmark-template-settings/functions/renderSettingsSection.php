@@ -4,8 +4,14 @@ function renderSettingsSection(array $values): void
   $fields = [
     [
       'TITLE' => 'Основные настройки:',
-      'ITEMS' => [
 
+      'ITEMS' => [
+        [
+          'label' => 'Логотип сайта:',
+          'name' => 'SITE_LOGO',
+          'type' => 'file',
+          'value' => $values['SITE_LOGO'],
+        ],
         [
           'label' => 'Макс. ширина контентной части сайта:',
           'name' => 'content-width',
@@ -104,6 +110,18 @@ function renderSettingsSection(array $values): void
           'name' => 'SECTION_TITLE_UNDERLINE_ENABLED',
           'type' => 'checkbox',
           'value' => $values['SECTION_TITLE_UNDERLINE_ENABLED'],
+        ],
+        [
+          'label' => 'Цвет декоративной линии под заголовком:',
+          'name' => 'title-underline-color',
+          'type' => 'select',
+          'value' => $values['title-underline-color'],
+          'options' => array(
+            'var(--black-color)' => 'Черный',
+            'var(--white-color)' => 'Белый',
+            'var(--primary-color)' => 'Основной цвет сайта',
+            'var(--secondary-color)' => 'Дополнительный цвет сайта',
+          ),
         ],
       ]
     ]

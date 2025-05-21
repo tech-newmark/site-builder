@@ -22,6 +22,7 @@ function renderSettingsBlock(string $title, array $DTO): void
         'checkbox' => renderCheckbox($name, $value),
         'number' => renderTextInput($name, $value, $type = 'number'),
         'colorpicker' => renderColorpicker($name, $value),
+        'file' => renderFileInput($name, $value),
         default => "Неизвестный тип поля: $type",
       };
       echo '</div>';

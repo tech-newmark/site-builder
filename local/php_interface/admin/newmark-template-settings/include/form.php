@@ -3,20 +3,24 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-tem
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderSelect.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderCheckbox.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderColorpicker.php");
-
+require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderFileInput.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderSettingsBlock.php");
 
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderSettingsSection.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderFeaturesPreviewSection.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderAboutPreviewSection.php");
+
 ?>
 
 <div class="nm-adm">
   <div class="container">
-    <form method="post" action="<?= $APPLICATION->GetCurPage() ?>" class="settings-form">
+    <form method="post" action="<?= $APPLICATION->GetCurPage() ?>" class="settings-form" enctype="multipart/form-data">
       <?= bitrix_sessid_post() ?>
 
       <? renderSettingsSection($values); ?>
       <? renderFeaturesPreviewSection($values); ?>
+      <? renderAboutPreviewSection($values); ?>
+
 
       <div class="settings-form-footer">
         <input type="submit" value="Сохранить">

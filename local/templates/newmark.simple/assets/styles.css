@@ -30,6 +30,7 @@
 	--site-base-text-color: var(--black-color);
 	--site-bg-color: var(--white-color);
 	--section-title-color: var(--black-color);
+	--title-underline-color: var(--primary-color);
 	--scrollbar-color: var(--site-bg-color);
 	--scrollbar-width: 12px;
 	--scrollbar-border-radius: 0;
@@ -574,7 +575,7 @@ img {
 	width: 160px;
 	max-width: 30vw;
 	height: 4px;
-	background-color: var(--primary-color);
+	background-color: var(--title-underline-color);
 }
 .base-section.--underlined.--align-left .base-section__header::after {
 	left: 0;

@@ -19,7 +19,6 @@
 	position: sticky;
 	bottom: 0;
 	padding-top: 24px;
-	/* border-top: 2px solid #ee7b7b; */
 	background-color: #e4edef;
 }
 
@@ -42,7 +41,7 @@
 .settings-form-section-field {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: 12px;
 	margin: 0;
 	border-left: 3px solid #ee7b7b;
 	padding-left: 12px;
@@ -71,5 +70,37 @@
 	margin: 0;
 	width: 15px;
 	height: 15px;
+	cursor: pointer;
+}
+
+.settings-form-ctrl:has(input[type="file"]) {
+	align-items: flex-start;
+}
+
+.file-input-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.current-file-preview,
+.current-file-delete-field {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+}
+
+.current-file-preview img {
+	width: 100%;
+	height: auto;
+	max-width: 300px;
+}
+
+.current-file-delete-field {
+	width: 100%;
+}
+
+label {
 	cursor: pointer;
 }
