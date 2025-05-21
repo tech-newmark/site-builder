@@ -45,7 +45,7 @@ function getSettings(): array
 function saveSettings(array $postData): void
 {
   // Получаем текущее значение SITE_LOGO из опций
-  $currentSiteLogo = \Bitrix\Main\Config\Option::get("main", "SITE_LOGO", "");
+  $currentSiteLogo = Option::get("main", "SITE_LOGO", "");
 
   // Подготовка данных с учетом текущего значения логотипа
   $data = [

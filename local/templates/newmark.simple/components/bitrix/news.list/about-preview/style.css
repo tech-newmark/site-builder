@@ -20,7 +20,7 @@
 	content: "";
 	width: 60px;
 	height: 4px;
-	background-color: var(--primary-color);
+	background-color: var(--title-underline-color);
 }
 
 .about__grid-container {
