@@ -67,7 +67,7 @@
 	height: auto;
 	-o-object-fit: contain;
 	object-fit: contain;
-	border-radius: var(--current-border-radius);
+	border-radius: var(--base-border-radius);
 }
 @container about-grid (min-width: 641px ) {
 	.about__grid:not(:has(.about__grid-item))

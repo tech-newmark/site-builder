@@ -1,14 +1,13 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-
-if ($arResult["ITEMS"] && $GLOBALS['FEATURES_SECTION_ENABLED'] === "Y"): ?>
+if ($arResult["ITEMS"] && $GLOBALS['ABOUT_PREVIEW_SECTION_ENABLED'] === "Y"): ?>
   <section
     class="
       base-section about 
       <?= ($GLOBALS['SECTION_TITLE_UNDERLINE_ENABLED'] === "Y") ? '--underlined' : '' ?>
       <?= $arResult["RES_MOD_MODIFIERS"] ?>
     "
-    style="order: <?= $GLOBALS['FEATURES_SECTION_SORT'] ?>">
+    style="order: <?= $GLOBALS['ABOUT_PREVIEW_SECTION_SORT'] ?>">
 
     <div class="container">
       <div class="base-section__header">
@@ -16,7 +15,7 @@ if ($arResult["ITEMS"] && $GLOBALS['FEATURES_SECTION_ENABLED'] === "Y"): ?>
       </div>
 
       <div class="about__grid-container">
-        <div class="about__grid --align-center --reversed">
+        <div class="about__grid <?= $arResult["RES_MOD_GRID_MODIFIERS"] ?>">
           <? if ($arResult["PICTURE"]):
             $picturePath = CFile::GetPath($arResult["PICTURE"]);
           ?>
@@ -32,7 +31,7 @@ if ($arResult["ITEMS"] && $GLOBALS['FEATURES_SECTION_ENABLED'] === "Y"): ?>
             <? endif; ?>
 
             <? if ($arResult["ITEMS"]): ?>
-              <div class="about__features-list --column">
+              <div class="about__features-list <?= $arResult["RES_MOD_LIST_MODIFIERS"] ?>">
                 <? foreach ($arResult["ITEMS"] as $arItem): ?>
                   <div class="simple-card">
                     <span class="base-subtitle"><?= $arItem["NAME"] ?></span>

@@ -18,7 +18,7 @@ if ($arResult["ITEMS"] && $GLOBALS['FEATURES_SECTION_ENABLED'] === "Y"): ?>
         <? endif; ?>
       </div>
       <div class="features__grid-container">
-        <div class="features__grid features__grid--type-<?= $GLOBALS['FEATURES_SECTION_TYPE'] ?>">
+        <div class="features__grid features__grid--type-<?= $GLOBALS['FEATURES_SECTION_VIEW'] ?>">
           <? foreach ($arResult["ITEMS"] as $arItem): ?>
             <div class="features__grid-item">
               <div

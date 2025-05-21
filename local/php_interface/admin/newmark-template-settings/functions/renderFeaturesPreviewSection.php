@@ -19,9 +19,9 @@ function renderFeaturesPreviewSection(array $values): void
         ],
         [
           'label' => 'Вид отображения блока',
-          'name' => 'FEATURES_SECTION_TYPE',
+          'name' => 'FEATURES_SECTION_VIEW',
           'type' => 'select',
-          'value' => $values['FEATURES_SECTION_TYPE'],
+          'value' => $values['FEATURES_SECTION_VIEW'],
           'options' => array(
             1 => 'Грид-сетка из пяти элементов',
             2 => 'Грид-сетка из четырех элементов',

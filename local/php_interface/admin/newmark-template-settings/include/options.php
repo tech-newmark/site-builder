@@ -30,12 +30,15 @@ function getSettings(): array
     'SECTION_TITLE_UNDERLINE_ENABLED' => Option::get("main", "SECTION_TITLE_UNDERLINE_ENABLED", "N"),
     'SECTION_HEADER_ALIGN' => Option::get("main", "SECTION_HEADER_ALIGN", "По центру"),
 
-    'FEATURES_SECTION_TYPE' => Option::get("main", "FEATURES_SECTION_TYPE", "Грид-сетка из пяти элементов"),
-    'FEATURES_SECTION_ENABLED' => Option::get("main", "FEATURES_SECTION_ENABLED", "Y"),
+    'FEATURES_SECTION_VIEW' => Option::get("main", "FEATURES_SECTION_VIEW", "Грид-сетка из пяти элементов"),
+    'FEATURES_SECTION_ENABLED' => Option::get("main", "FEATURES_SECTION_ENABLED", "N"),
     'FEATURES_SECTION_SORT' => Option::get("main", "FEATURES_SECTION_SORT", "100"),
 
-    'ABOUT_PREVIEW_SECTION_ENABLED' => Option::get("main", "ABOUT_PREVIEW_SECTION_ENABLED", "Y"),
+    'ABOUT_PREVIEW_SECTION_ENABLED' => Option::get("main", "ABOUT_PREVIEW_SECTION_ENABLED", "N"),
     'ABOUT_PREVIEW_SECTION_SORT' => Option::get("main", "ABOUT_PREVIEW_SECTION_SORT", "100"),
+    'ABOUT_PREVIEW_SECTION_VIEW' => Option::get("main", "ABOUT_PREVIEW_SECTION_VIEW", "Изображение слева | Контент справа"),
+    'ABOUT_PREVIEW_SECTION_LIST_VIEW' => Option::get("main", "ABOUT_PREVIEW_SECTION_LIST_VIEW", "Сетка в два ряда"),
+    'ABOUT_PREVIEW_SECTION_CONTENT_POSITION' => Option::get("main", "ABOUT_PREVIEW_SECTION_CONTENT_POSITION", "По верху блока"),
   ];
 }
 
@@ -60,12 +63,15 @@ function saveSettings(array $postData): void
 
     'SECTION_TITLE_UNDERLINE_ENABLED' => $postData["SECTION_TITLE_UNDERLINE_ENABLED"] ?? "N",
     'SECTION_HEADER_ALIGN' => $postData["SECTION_HEADER_ALIGN"] ?? "По центру",
-    'FEATURES_SECTION_TYPE' => $postData["FEATURES_SECTION_TYPE"] ?? "Грид-сетка из пяти элементов",
-    'FEATURES_SECTION_ENABLED' => $postData["FEATURES_SECTION_ENABLED"] ?? "Y",
+    'FEATURES_SECTION_VIEW' => $postData["FEATURES_SECTION_VIEW"] ?? "Грид-сетка из пяти элементов",
+    'FEATURES_SECTION_ENABLED' => $postData["FEATURES_SECTION_ENABLED"] ?? "N",
     'FEATURES_SECTION_SORT' => $postData["FEATURES_SECTION_SORT"] ?? "100",
 
-    'ABOUT_PREVIEW_SECTION_ENABLED' => $postData["ABOUT_PREVIEW_SECTION_ENABLED"] ?? "Y",
+    'ABOUT_PREVIEW_SECTION_ENABLED' => $postData["ABOUT_PREVIEW_SECTION_ENABLED"] ?? "N",
     'ABOUT_PREVIEW_SECTION_SORT' => $postData["ABOUT_PREVIEW_SECTION_SORT"] ?? "100",
+    'ABOUT_PREVIEW_SECTION_VIEW' => $postData["ABOUT_PREVIEW_SECTION_VIEW"] ?? "Изображение слева | Контент справа",
+    'ABOUT_PREVIEW_SECTION_LIST_VIEW' => $postData["ABOUT_PREVIEW_SECTION_LIST_VIEW"] ?? "Сетка в два ряда",
+    'ABOUT_PREVIEW_SECTION_CONTENT_POSITION' => $postData["ABOUT_PREVIEW_SECTION_CONTENT_POSITION"] ?? "По верху блока",
 
     // По умолчанию сохраняем текущий логотип
     'SITE_LOGO' => $currentSiteLogo,
