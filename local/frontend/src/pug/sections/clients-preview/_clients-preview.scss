@@ -8,4 +8,24 @@
 
 .clients-preview {
 	outline: 1px solid red;
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 8px;
+
+		&-item {
+			outline: 1px solid red;
+			@extend %flex-center;
+			padding: 24px;
+
+			img {
+				width: 100%;
+				height: auto;
+				max-height: 80px;
+				object-fit: contain;
+			}
+		}
+	}
 }
