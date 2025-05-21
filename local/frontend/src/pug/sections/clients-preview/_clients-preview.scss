@@ -1,0 +1,11 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+@use "@pug/components/_ui/sliders/infinity-row-slider/infinity-row-slider" as *;
+
+.clients-preview {
+	outline: 1px solid red;
+}

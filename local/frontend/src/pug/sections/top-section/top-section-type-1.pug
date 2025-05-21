@@ -1,6 +1,6 @@
 include ../../components/_ui/sliders/top-banner/template
 
-section.top-section.top-section--type-1
+section.top-section
   +top-banner-slider({
     options: {
       navigation: {
@@ -8,10 +8,10 @@ section.top-section.top-section--type-1
       },
       pagination: {
         enabled: true,
-        dynamic: true, 
-        modifiers: '--pagination-bullets-rectangle --pagination-bullets-size-md'
+        dynamic: false, 
+        modifiers: '--pagination-bullets-rectangle-wide --pagination-bullets-size-md'
       },
-      modifiers: '--height-50'
+      modifiers: '--height-50 --type-1'
     },
 
     items: [
@@ -41,7 +41,7 @@ section.top-section.top-section--type-1
           path: 'top-section-bg@1x.jpg',
         }
       },
-            {
+      {
         modifiers: '--overlayed-dark --blured-content --bg-bottom --fullwith --text-center',
         title: {
           tag: 'h1',
@@ -93,7 +93,7 @@ section.top-section.top-section--type-1
           path: 'top-section-bg@1x.jpg',
         }
       },
-            {
+      {
         modifiers: '--overlayed-dark --blured-content --bg-bottom --fullwith --text-center',
         title: {
           tag: 'h1',
@@ -119,7 +119,6 @@ section.top-section.top-section--type-1
           path: 'top-section-bg@1x.jpg',
         }
       },
-      
     ]
   })
 
