@@ -3,6 +3,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("NEWMARK Simple v1.0.0");
 ?>
 
+
+
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"features",
@@ -131,5 +133,5 @@ $APPLICATION->SetTitle("NEWMARK Simple v1.0.0");
 		"STRICT_SECTION_CHECK" => "N"
 	)
 ); ?>
-
+<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/includes/cookie/template.php");  ?>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
