@@ -20,20 +20,20 @@
 		transition-timing-function: linear;
 	}
 
-	&.--image-size-lg .swiper-slide {
+	&.--icon-size-lg .swiper-slide {
 		img {
-			width: clamp(200px, 16vw, 300px);
+			width: clamp(120px, 16vw, 300px);
 		}
 	}
 
-	&.--image-size-md .swiper-slide {
+	&.--icon-size-md .swiper-slide {
 		img {
-			width: clamp(160px, 14vw, 260px);
+			width: clamp(120px, 14vw, 260px);
 		}
 	}
 }
 
-.container:has(.--fullwidth) {
-	padding: 0;
+*:has(.infinity-row-slider.--fullwidth) .container {
 	max-width: 100%;
+	padding: 0;
 }
