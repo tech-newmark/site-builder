@@ -9,10 +9,10 @@ $APPLICATION->SetTitle("Решение NEWMARK Simple v1.0.0");
 
 use Bitrix\Main\Page\Asset;
 
-\Bitrix\Main\Page\Asset::getInstance()->addString(
+Asset::getInstance()->addString(
   '<link rel="stylesheet" href="/local/php_interface/admin/newmark-template-settings/assets/styles/main.css" type="text/css" />',
 );
-\Bitrix\Main\Page\Asset::getInstance()->addString(
+Asset::getInstance()->addString(
   '<script src="/local/php_interface/admin/newmark-template-settings/assets/scripts/main.js"></script>'
 );
 

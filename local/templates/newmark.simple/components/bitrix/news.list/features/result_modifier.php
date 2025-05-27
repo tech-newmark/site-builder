@@ -1,13 +1,8 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 // Расположение контента шапки секции
-$alignMap = [
-  '2' => '--align-left',
-  '3' => '--align-right',
-];
-
-if (isset($alignMap[$GLOBALS['SECTION_HEADER_ALIGN']])) {
-  $arResult["RES_MOD_MODIFIERS"] = $alignMap[$GLOBALS['SECTION_HEADER_ALIGN']];
+if (isset($GLOBALS['SECTION_HEADER_ALIGN'])) {
+  $arResult["RES_MOD_MODIFIERS"] = $GLOBALS['SECTION_HEADER_ALIGN'];
 }
 
 // Ограничение количества элементов для разных типов сеток
@@ -17,8 +12,8 @@ $limitMap = [
   '3' => 3,
 ];
 
-if (isset($limitMap[$GLOBALS['FEATURES_SECTION_TYPE']])) {
-  array_splice($arResult["ITEMS"], $limitMap[$GLOBALS['FEATURES_SECTION_TYPE']]);
+if (isset($limitMap[$GLOBALS['FEATURES_SECTION_VIEW']])) {
+  array_splice($arResult["ITEMS"], $limitMap[$GLOBALS['FEATURES_SECTION_VIEW']]);
 }
 
 // Добавление модификаторов для карточки преимуществ

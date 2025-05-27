@@ -19,11 +19,14 @@
   content:"";
   width:60px;
   height:4px;
-  background-color:var(--primary-color);
+  background-color:var(--title-underline-color);
 }
 
 .about__grid-container{
   container:about-grid-container/inline-size;
+}
+.about__grid-container:not(:last-child){
+  margin-bottom:120px;
 }
 .about__grid{
   gap:var(--gap-lg);

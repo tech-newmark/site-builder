@@ -26,9 +26,9 @@ function renderSettingsSection(array $values): void
         ],
         [
           'label' => 'Скругления блоков:',
-          'name' => 'base-border-radius',
+          'name' => 'current-border-radius',
           'type' => 'select',
-          'value' => $values['base-border-radius'],
+          'value' => $values['current-border-radius'],
           'options' => array(
             '0' => 'Без скругления',
             '5px' => '5px',
@@ -88,9 +88,9 @@ function renderSettingsSection(array $values): void
           'type' => 'select',
           'value' => $values['SECTION_HEADER_ALIGN'],
           'options' => array(
-            1 => 'По центру',
-            2 => 'По левому краю',
-            3 => 'По правому краю'
+            '--align-center' => 'По центру',
+            '--align-left' => 'По левому краю',
+            '--align-right' => 'По правому краю'
           ),
         ],
         [

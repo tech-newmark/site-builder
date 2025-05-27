@@ -1,5 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/global/template-settings.php");
+
+use Bitrix\Main\Page\Asset;
 // IncludeTemplateLangFile(__FILE__);
 ?>
 <!DOCTYPE html>
@@ -11,6 +13,7 @@ include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/global/template-
   <? $APPLICATION->ShowHead(); ?>
   <link href="<?= SITE_TEMPLATE_PATH ?>/assets/styles.css" type="text/css" rel="stylesheet" />
   <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/assets/js/theme.js'); ?>
+  <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/assets/js/main.js'); ?>
   <title><? $APPLICATION->ShowTitle() ?></title>
 </head>
 

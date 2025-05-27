@@ -2,7 +2,7 @@ function deleteCookie(name) {
 	document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
 
-// deleteCookie("BX_USER_COOKIE_CONSENT");
+deleteCookie("BX_USER_COOKIE_CONSENT");
 
 document.addEventListener("DOMContentLoaded", () => {
 	const banner = document.getElementById("cookie-consent-banner");

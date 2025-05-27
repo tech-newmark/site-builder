@@ -8,20 +8,23 @@
 
 .clients-preview {
 	&__grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: repeat(2, 1fr);
+		@extend %flex-wrap;
+		justify-content: center;
 		gap: 8px;
-
-		@include container-up("main", $tablet-width) {
-			grid-template-columns: repeat(3, 1fr);
-		}
 
 		&-item {
 			@extend %flex-center;
 			padding: clamp(16px, 3vw, 32px) 24px;
 			border-radius: var(--current-border-radius);
 			min-height: 100px;
+
+			flex-grow: 1;
+			width: 100%;
+
+			@include container-up("main", $mobile-width) {
+				min-width: calc(100% / 3 - 16px);
+				max-width: calc(100% / 3 - 16px);
+			}
 
 			img {
 				width: 100%;
