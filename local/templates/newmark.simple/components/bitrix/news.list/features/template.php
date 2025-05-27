@@ -4,7 +4,6 @@ if ($arResult["ITEMS"] && $GLOBALS['FEATURES_SECTION_ENABLED'] === "Y"): ?>
   <section
     class="
       base-section features 
-      <?= ($GLOBALS['SECTION_TITLE_UNDERLINE_ENABLED'] === "Y") ? '--underlined' : '' ?>
       <?= $arResult["RES_MOD_MODIFIERS"] ?>
     "
     style="order: <?= $GLOBALS['FEATURES_SECTION_SORT'] ?>">

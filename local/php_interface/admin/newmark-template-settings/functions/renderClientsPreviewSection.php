@@ -38,6 +38,16 @@ function renderClientsPreviewSection(array $values): void
           ),
         ],
         [
+          'label' => 'Расположение элементов плитки:',
+          'name' => 'CLIENTS_PREVIEW_GRID_ALIGN',
+          'type' => 'select',
+          'value' => $values['CLIENTS_PREVIEW_GRID_ALIGN'],
+          'options' => array(
+            '--align-center' => 'По центру',
+            '--align-left' => 'По левому краю',
+          ),
+        ],
+        [
           'label' => 'Использовать заливку цветом для элементов раздела:',
           'name' => 'CLIENTS_PREVIEW_GRID_ITEM_FILLED_BG',
           'type' => 'select',

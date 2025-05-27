@@ -1,10 +1,5 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-// Расположение контента шапки секции
-if (isset($GLOBALS['SECTION_HEADER_ALIGN'])) {
-  $arResult["RES_MOD_MODIFIERS"] = $GLOBALS['SECTION_HEADER_ALIGN'];
-}
-
 // Ограничение количества элементов для разных типов сеток
 $limitMap = [
   '1' => 5,

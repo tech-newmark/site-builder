@@ -23,9 +23,6 @@
   display:flex;
   -ms-flex-wrap:wrap;
       flex-wrap:wrap;
-  -webkit-box-pack:center;
-      -ms-flex-pack:center;
-          justify-content:center;
   gap:8px;
 }
 
@@ -67,11 +64,10 @@
 .infinity-row-slider.--icon-size-md .swiper-slide img{
   width:clamp(120px, 14vw, 260px);
 }
-
-section:has(.infinity-row-slider.--fullwidth) .container,
-div:has(.infinity-row-slider.--fullwidth) .container{
-  max-width:100%;
-  padding:0;
+.clients-preview__grid.--align-center{
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
 }
 @container main (min-width: 535px ){
   .clients-preview__grid-item{

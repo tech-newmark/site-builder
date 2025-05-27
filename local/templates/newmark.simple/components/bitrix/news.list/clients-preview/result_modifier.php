@@ -1,12 +1,7 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-// Расположение контента шапки секции
-if (isset($GLOBALS['SECTION_HEADER_ALIGN'])) {
-  $arResult["RES_MOD_MODIFIERS"] = $GLOBALS['SECTION_HEADER_ALIGN'];
-}
-
 if ($GLOBALS["CLIENTS_PREVIEW_SECTION_VIEW"] === '1') {
-  $MIN_COUNT = 12;
+  $MIN_COUNT = 24;
   $ITEMS = &$arResult["ITEMS"];
   if (count($ITEMS) < $MIN_COUNT) {
     while (count($ITEMS) < $MIN_COUNT) {
@@ -20,9 +15,10 @@ if ($GLOBALS["CLIENTS_PREVIEW_SECTION_VIEW"] === '1') {
   }
 }
 
-debug($arResult["RES_MOD_GRID_MODIFIERS"]);
-
 if ($GLOBALS["CLIENTS_PREVIEW_SECTION_VIEW"] === '2') {
+  if (isset($GLOBALS['CLIENTS_PREVIEW_GRID_ALIGN'])) {
+    $arResult["RES_MOD_GRID_MODIFIERS"] .= $GLOBALS['CLIENTS_PREVIEW_GRID_ALIGN'] . ' ';
+  }
   if (isset($GLOBALS['CLIENTS_PREVIEW_GRID_ITEM_FILLED_BG'])) {
     $arResult["RES_MOD_GRID_MODIFIERS"] .= $GLOBALS['CLIENTS_PREVIEW_GRID_ITEM_FILLED_BG'] . ' ';
   }

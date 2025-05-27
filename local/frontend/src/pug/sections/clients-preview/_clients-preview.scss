@@ -9,8 +9,12 @@
 .clients-preview {
 	&__grid {
 		@extend %flex-wrap;
-		justify-content: center;
+
 		gap: 8px;
+
+		&.--align-center {
+			justify-content: center;
+		}
 
 		&-item {
 			@extend %flex-center;

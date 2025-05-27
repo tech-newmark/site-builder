@@ -32,9 +32,3 @@
 		}
 	}
 }
-
-section:has(.infinity-row-slider.--fullwidth) .container,
-div:has(.infinity-row-slider.--fullwidth) .container {
-	max-width: 100%;
-	padding: 0;
-}

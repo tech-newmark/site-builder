@@ -88,9 +88,9 @@ function renderSettingsSection(array $values): void
           'type' => 'select',
           'value' => $values['SECTION_HEADER_ALIGN'],
           'options' => array(
-            '--align-center' => 'По центру',
-            '--align-left' => 'По левому краю',
-            '--align-right' => 'По правому краю'
+            '--section-headers-align-center' => 'По центру',
+            '--section-headers-align-left' => 'По левому краю',
+            '--section-headers-align-right' => 'По правому краю'
           ),
         ],
         [

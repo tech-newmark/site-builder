@@ -4,7 +4,6 @@ if ($arResult["ITEMS"] && $GLOBALS['ABOUT_PREVIEW_SECTION_ENABLED'] === "Y"): ?>
   <section
     class="
       base-section about 
-      <?= ($GLOBALS['SECTION_TITLE_UNDERLINE_ENABLED'] === "Y") ? '--underlined' : '' ?>
       <?= $arResult["RES_MOD_MODIFIERS"] ?>
     "
     style="order: <?= $GLOBALS['ABOUT_PREVIEW_SECTION_SORT'] ?>">

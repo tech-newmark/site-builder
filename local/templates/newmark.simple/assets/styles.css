@@ -44,7 +44,7 @@
 	--border-radius-sm: 10px;
 	--border-radius-md: 15px;
 	--border-radius-lg: 30px;
-	--current-border-radius: var(--border-radius-disabled);
+	--current-border-radius: var(--border-radius-lg);
 }
 
 @font-face {
@@ -416,8 +416,8 @@ img {
 	display: flex;
 }
 .base-section__header,
-.base-section.--align-left .base-section__header,
-.base-section.--align-right .base-section__header {
+body:has(.--section-headers-align-left) .base-section__header,
+body:has(.--section-headers-align-right) .base-section__header {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -550,22 +550,25 @@ img {
 	max-width: 1140px;
 	font-size: clamp(14px, 2vw, 16px);
 }
-.base-section.--align-left .base-section__header {
+
+body:has(.--section-headers-align-left) .base-section__header {
 	text-align: left;
 	-webkit-box-align: start;
 	-ms-flex-align: start;
 	align-items: flex-start;
 }
-.base-section.--align-right .base-section__header {
+
+body:has(.--section-headers-align-right) .base-section__header {
 	text-align: right;
 	-webkit-box-align: end;
 	-ms-flex-align: end;
 	align-items: flex-end;
 }
-.base-section.--underlined .base-section__header {
+
+body:has(.--section-headers-underlined) .base-section__header {
 	padding-bottom: clamp(20px, 3vw, 28px);
 }
-.base-section.--underlined .base-section__header::after {
+body:has(.--section-headers-underlined) .base-section__header::after {
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -578,13 +581,15 @@ img {
 	height: 4px;
 	background-color: var(--title-underline-color);
 }
-.base-section.--underlined.--align-left .base-section__header::after {
+body:has(.--section-headers-underlined.--section-headers-align-left)
+	.base-section__header::after {
 	left: 0;
 	-webkit-transform: none;
 	-ms-transform: none;
 	transform: none;
 }
-.base-section.--underlined.--align-right .base-section__header::after {
+body:has(.--section-headers-underlined.--section-headers-align-right)
+	.base-section__header::after {
 	left: revert;
 	right: 0;
 	-webkit-transform: none;

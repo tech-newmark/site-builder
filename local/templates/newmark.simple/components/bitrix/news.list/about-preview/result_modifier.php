@@ -1,11 +1,5 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-// Расположение контента шапки секции
-
-if (isset($GLOBALS['SECTION_HEADER_ALIGN'])) {
-  $arResult["RES_MOD_MODIFIERS"] = $GLOBALS['SECTION_HEADER_ALIGN'];
-}
-
 if (isset($GLOBALS['ABOUT_PREVIEW_SECTION_CONTENT_POSITION'])) {
   $arResult["RES_MOD_GRID_MODIFIERS"] .= $GLOBALS['ABOUT_PREVIEW_SECTION_CONTENT_POSITION'] . ' ';
 }

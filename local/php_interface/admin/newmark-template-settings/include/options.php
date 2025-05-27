@@ -32,7 +32,7 @@ class SiteSettingsManager
       'SITE_LOGO' => Option::get("main", "SITE_LOGO", ""),
 
       'SECTION_TITLE_UNDERLINE_ENABLED' => Option::get("main", "SECTION_TITLE_UNDERLINE_ENABLED", "N"),
-      'SECTION_HEADER_ALIGN' => Option::get("main", "SECTION_HEADER_ALIGN", "--align-center"),
+      'SECTION_HEADER_ALIGN' => Option::get("main", "SECTION_HEADER_ALIGN", "--section-headers-align-center"),
 
       'FEATURES_SECTION_ENABLED' => Option::get("main", "FEATURES_SECTION_ENABLED", "N"),
       'FEATURES_SECTION_VIEW' => Option::get("main", "FEATURES_SECTION_VIEW", "1"),
@@ -47,6 +47,7 @@ class SiteSettingsManager
       'CLIENTS_PREVIEW_SECTION_ENABLED' => Option::get("main", "CLIENTS_PREVIEW_SECTION_ENABLED", "N"),
       'CLIENTS_PREVIEW_SECTION_SORT' => Option::get("main", "CLIENTS_PREVIEW_SECTION_SORT", "100"),
       'CLIENTS_PREVIEW_SECTION_VIEW' => Option::get("main", "CLIENTS_PREVIEW_SECTION_VIEW", "1"),
+      'CLIENTS_PREVIEW_GRID_ALIGN' => Option::get("main", "CLIENTS_PREVIEW_GRID_ALIGN", "--align-center"),
       'CLIENTS_PREVIEW_GRID_ITEM_FILLED_BG' => Option::get("main", "CLIENTS_PREVIEW_GRID_ITEM_FILLED_BG", "--filled-bg-none"),
       'CLIENTS_PREVIEW_GRID_ITEM_BORDERED' => Option::get("main", "CLIENTS_PREVIEW_GRID_ITEM_BORDERED", "--bordered-none"),
       'CLIENTS_PREVIEW_ICON_SIZE' => Option::get("main", "CLIENTS_PREVIEW_ICON_SIZE", "--icon-size-xs"),
@@ -92,6 +93,7 @@ class SiteSettingsManager
       'CLIENTS_PREVIEW_SECTION_ENABLED' => $postData["CLIENTS_PREVIEW_SECTION_ENABLED"] ?? "N",
       'CLIENTS_PREVIEW_SECTION_SORT' => $postData["CLIENTS_PREVIEW_SECTION_SORT"] ?? "100",
       'CLIENTS_PREVIEW_SECTION_VIEW' => $postData["CLIENTS_PREVIEW_SECTION_VIEW"] ?? "1",
+      'CLIENTS_PREVIEW_GRID_ALIGN' => $postData["CLIENTS_PREVIEW_GRID_ALIGN"] ?? "--align-center",
       'CLIENTS_PREVIEW_GRID_ITEM_FILLED_BG' => $postData["CLIENTS_PREVIEW_GRID_ITEM_FILLED_BG"] ?? "--filled-bg-none",
       'CLIENTS_PREVIEW_GRID_ITEM_BORDERED' => $postData["CLIENTS_PREVIEW_GRID_ITEM_BORDERED"] ?? "--bordered-none",
       'CLIENTS_PREVIEW_ICON_SIZE' => $postData["CLIENTS_PREVIEW_ICON_SIZE"] ?? "--icon-size-xs",
