@@ -1,6 +1,4 @@
 @forward "@styles/_extends/flexbox.scss";
-// @forward '@styles/_extends/effects.scss';
-// @forward '@styles/_extends/resets.scss';
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_mixins/media-queries" as *;
 @use "@styles/_vars/scoped" as *;
@@ -9,7 +7,7 @@
 $top-banner-offset-vertical: clamp(32px, 4vw, 84px);
 $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 
-.top-banner-slider.--type-1 {
+.top-banner-slider {
 	@extend %flex-column;
 	height: 100%;
 	container: top-banner-slider / inline-size;
@@ -112,32 +110,36 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 	.swiper-slide {
 		height: auto;
 	}
-
-	&:has(.swiper-pagination) {
-		.top-banner {
-			padding-bottom: 60px;
-		}
-	}
 }
 
 .top-banner {
-	@extend %flex-column;
+	@extend %flex-align;
 	padding: $top-banner-offset-vertical $top-banner-offset-horizontal;
+	gap: clamp(24px, 4vw, 64px);
 	height: 100%;
 	background-size: cover;
 
+	// модификаторы для направления расположения контента баннера начало
+	&.--dir-rtl {
+		flex-direction: row-reverse;
+	}
+	// модификаторы для направления расположения контента баннера конец
+
 	// модификаторы для подложки начало
 	&.--overlayed-dark {
-		@include block-overlay();
+		@include block-overlay("dark");
 	}
 
 	&.--overlayed-light {
 		@include block-overlay("light");
 	}
+
+	&.--overlayed-blured {
+		@include block-overlay("blured");
+	}
 	// модификаторы для подложки конец
 
 	// модификаторы для фоновой картинки начало
-
 	&.--bg-top-left {
 		background-position: top left;
 	}
@@ -162,57 +164,121 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 	&.--bg-center-right {
 		background-position: right;
 	}
-	&.--bg-center {
+	&.--bg-center-center {
 		background-position: center;
 	}
 	// модификаторы для фоновой картинки конец
 
-	// модификаторы для контентной области начало
-	&:not(.--fullwidth) {
-		.top-banner__wrapper {
-			max-width: 1140px;
-		}
-	}
-	&.--text-center {
-		text-align: center;
-	}
-
-	&.--text-right {
-		text-align: right;
-	}
-
-	&.--blured-content {
-		.top-banner__wrapper {
-			@extend %flex-column;
-			justify-content: center;
-			backdrop-filter: blur(20px);
-			padding: clamp(24px, 5vw, 80px);
-			border: 2px solid var(--primary-color);
+	&:has(.top-banner__picture):not(:has(.--fullheight-picture)) {
+		.top-banner__picture,
+		.top-banner__content {
+			@include container-up("top-banner-slider", 1200px) {
+				flex-basis: 50%;
+			}
 		}
 	}
 
-	&.--rounded-content {
-		.top-banner__wrapper {
-			border-radius: var(--base-border-radius);
-		}
-	}
-
-	// модификаторы для контентной области конец
-	&__wrapper {
+	&__content {
+		display: flex;
+		flex-direction: column;
 		width: 100%;
 		height: fit-content;
 		margin: auto;
-		padding: 20px 0;
+		padding: clamp(24px, 5vw, 80px);
 		text-wrap: balance;
+		z-index: 3;
+
+		// модификаторы для контентной области начало
+		&:not(.--fullwidth) {
+			max-width: 1140px;
+			@include container-up("top-banner-slider", 1200px) {
+				width: 55%;
+			}
+		}
+
+		&.--text-left {
+			text-align: left;
+
+			.button-row {
+				margin-right: auto;
+				margin-bottom: 0;
+			}
+		}
+
+		&.--text-center {
+			text-align: center;
+
+			.button-row {
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 0;
+			}
+		}
+
+		&.--text-right {
+			text-align: right;
+
+			.button-row {
+				margin-left: auto;
+				margin-bottom: 0;
+			}
+		}
+
+		&.--blured-content {
+			backdrop-filter: blur(20px);
+		}
+
+		&.--bordered-content {
+			border: 2px solid var(--primary-color);
+		}
+
+		&.--rounded-content {
+			border-radius: var(--current-border-radius);
+		}
+
+		&.--content-position-left {
+			margin-left: 0;
+		}
+		// модификаторы для контентной области конец
 	}
 
-	&__img {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 100%;
-		height: auto;
-		object-fit: contain;
-		z-index: 1 !important;
+	&__picture {
+		display: flex;
+		overflow: hidden;
+
+		&:not(.--fullheight-picture) {
+			max-height: 640px;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		@include container-down("top-banner-slider", 1200px) {
+			display: none;
+		}
+
+		// модификаторы для области с контентным изображением начало
+		&.--rounded-picture {
+			overflow: hidden;
+			border-radius: var(--current-border-radius);
+		}
+
+		&.--fullheight-picture {
+			position: absolute;
+			width: 50%;
+			height: 100%;
+			top: 0;
+			right: 0;
+			z-index: 1;
+
+			img {
+				object-position: top;
+			}
+		}
+		// модификаторы для области с контентным изображением конец
 	}
 }

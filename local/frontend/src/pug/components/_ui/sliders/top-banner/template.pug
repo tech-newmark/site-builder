@@ -27,6 +27,8 @@
 //-   ]
 //- })
 
+include ../../buttons/btn/btn
+
 mixin top-banner-slider(data) 
   .swiper.top-banner-slider(
     class= data.options.modifiers ? data.options.modifiers : null 
@@ -38,13 +40,30 @@ mixin top-banner-slider(data)
             class= item.modifiers ? item.modifiers : null 
             style= item.background ? `background-image: url('../assets/img/${item.background.path}')` : null
           )
-            .top-banner__wrapper
+            .top-banner__content(class= item.content.modifiers ? item.content.modifiers : null)
               #{item.title.tag}.main-title(
                 class= item.title.modifiers ? item.title.modifiers : null
               )!= item.title.text
               p.top-banner__text(
                 class= item.description.modifiers ? item.description.modifiers : null
               )!= item.description.text
+
+              .button-row
+                +btn({
+                  tag: 'button',
+                  title: 'Купить'
+                })
+
+                +btn({
+                  tag: 'a',
+                  href: '#',
+                  cls: 'btn btn-secondary',
+                  title: 'Позвонить'
+                })
+
+            if item.picture
+              .top-banner__picture(class= item.picture.modifiers ? item.picture.modifiers : null)
+                img(src=`./assets/img/${item.picture.path}` alt!= item.title width="600" height="600")
 
     if data.options.navigation.enabled
       .swiper-button-next
