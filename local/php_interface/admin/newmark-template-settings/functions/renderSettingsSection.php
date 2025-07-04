@@ -25,7 +25,7 @@ function renderSettingsSection(array $values): void
           ),
         ],
         [
-          'label' => 'Скругления блоков:',
+          'label' => 'Базовое скругление элементов:',
           'name' => 'current-border-radius',
           'type' => 'select',
           'value' => $values['current-border-radius'],

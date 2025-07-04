@@ -20,6 +20,8 @@ $GLOBALS["SITE_LOGO"] = Option::get("main", "SITE_LOGO", "");
 $GLOBALS["SECTION_HEADER_ALIGN"] = Option::get("main", "SECTION_HEADER_ALIGN", "--section-headers-align-center");
 $GLOBALS["SECTION_TITLE_UNDERLINE_ENABLED"] = Option::get("main", "SECTION_TITLE_UNDERLINE_ENABLED", "N");
 
+$GLOBALS["TOP_BANNER_HEIGHT"] = Option::get("main", "TOP_BANNER_HEIGHT", "--fullheight");
+
 $GLOBALS["FEATURES_SECTION_ENABLED"] = Option::get("main", "FEATURES_SECTION_ENABLED", "Y");
 $GLOBALS["FEATURES_SECTION_SORT"] = Option::get("main", "FEATURES_SECTION_SORT", "100");
 $GLOBALS["FEATURES_SECTION_VIEW"] = Option::get("main", "FEATURES_SECTION_VIEW", "1");

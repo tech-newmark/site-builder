@@ -159,10 +159,10 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 		background-position: bottom right;
 	}
 	&.--bg-center-left {
-		background-position: left;
+		background-position: center left;
 	}
 	&.--bg-center-right {
-		background-position: right;
+		background-position: center right;
 	}
 	&.--bg-center-center {
 		background-position: center;
@@ -186,10 +186,11 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 		margin: auto;
 		padding: clamp(24px, 5vw, 80px);
 		text-wrap: balance;
+		overflow: hidden;
 		z-index: 3;
 
 		// модификаторы для контентной области начало
-		&:not(.--fullwidth) {
+		&:not(.--fullwidth-content) {
 			max-width: 1140px;
 			@include container-up("top-banner-slider", 1200px) {
 				width: 55%;
@@ -281,9 +282,4 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 		}
 		// модификаторы для области с контентным изображением конец
 	}
-}
-
-.button-row {
-	// width: 100%;
-	// outline: 1px solid red;
 }

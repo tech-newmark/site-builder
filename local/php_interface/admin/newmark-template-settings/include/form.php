@@ -10,6 +10,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-tem
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderFeaturesPreviewSection.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderAboutPreviewSection.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderClientsPreviewSection.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderTopBannerSection.php");
 ?>
 
 <div class="nm-adm">
@@ -18,6 +19,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-tem
       <?= bitrix_sessid_post() ?>
 
       <? renderSettingsSection($values); ?>
+      <? renderTopBannerSection($values); ?>
       <? renderFeaturesPreviewSection($values); ?>
       <? renderAboutPreviewSection($values); ?>
       <? renderClientsPreviewSection($values); ?>

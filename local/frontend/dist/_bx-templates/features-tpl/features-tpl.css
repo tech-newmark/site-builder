@@ -112,10 +112,8 @@
   z-index:0;
 }
 .feature-card.--overlayed-dark > *{
-  z-index:20;
-}
-.feature-card.--overlayed-dark *{
   color:var(--white-color);
+  z-index:20;
 }
 .feature-card.--overlayed-light{
   position:relative;
@@ -131,10 +129,8 @@
   z-index:0;
 }
 .feature-card.--overlayed-light > *{
-  z-index:20;
-}
-.feature-card.--overlayed-light *{
   color:var(--dark-color);
+  z-index:20;
 }
 
 .features__grid-container{

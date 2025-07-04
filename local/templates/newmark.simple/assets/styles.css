@@ -49,140 +49,140 @@
 
 @font-face {
 	font-family: Montserrat;
-	src: url("../assets/fonts/Montserrat-Light.woff2") format("woff2");
+	src: url("./fonts/Montserrat-Light.woff2") format("woff2");
 	font-weight: 300;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Montserrat;
-	src: url("../assets/fonts/Montserrat-Regular.woff2") format("woff2");
+	src: url("./fonts/Montserrat-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Montserrat;
-	src: url("../assets/fonts/Montserrat-Medium.woff2") format("woff2");
+	src: url("./fonts/Montserrat-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Montserrat;
-	src: url("../assets/fonts/Montserrat-SemiBold.woff2") format("woff2");
+	src: url("./fonts/Montserrat-SemiBold.woff2") format("woff2");
 	font-weight: 600;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Montserrat;
-	src: url("../assets/fonts/Montserrat-Bold.woff2") format("woff2");
+	src: url("./fonts/Montserrat-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Inter;
-	src: url("../assets/fonts/Inter-Light.woff2") format("woff2");
+	src: url("./fonts/Inter-Light.woff2") format("woff2");
 	font-weight: 300;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Inter;
-	src: url("../assets/fonts/Inter-Regular.woff2") format("woff2");
+	src: url("./fonts/Inter-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Inter;
-	src: url("../assets/fonts/Inter-Medium.woff2") format("woff2");
+	src: url("./fonts/Inter-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Inter;
-	src: url("../assets/fonts/Inter-SemiBold.woff2") format("woff2");
+	src: url("./fonts/Inter-SemiBold.woff2") format("woff2");
 	font-weight: 600;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Inter;
-	src: url("../assets/fonts/Inter-Bold.woff2") format("woff2");
+	src: url("./fonts/Inter-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Manrope;
-	src: url("../assets/fonts/Manrope-Light.woff2") format("woff2");
+	src: url("./fonts/Manrope-Light.woff2") format("woff2");
 	font-weight: 300;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Manrope;
-	src: url("../assets/fonts/Manrope-Regular.woff2") format("woff2");
+	src: url("./fonts/Manrope-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Manrope;
-	src: url("../assets/fonts/Manrope-Medium.woff2") format("woff2");
+	src: url("./fonts/Manrope-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Manrope;
-	src: url("../assets/fonts/Manrope-SemiBold.woff2") format("woff2");
+	src: url("./fonts/Manrope-SemiBold.woff2") format("woff2");
 	font-weight: 600;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Manrope;
-	src: url("../assets/fonts/Manrope-Bold.woff2") format("woff2");
+	src: url("./fonts/Manrope-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Roboto;
-	src: url("../assets/fonts/Roboto-Light.woff2") format("woff2");
+	src: url("./fonts/Roboto-Light.woff2") format("woff2");
 	font-weight: 300;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Roboto;
-	src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+	src: url("./fonts/Roboto-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Roboto;
-	src: url("../assets/fonts/Roboto-Medium.woff2") format("woff2");
+	src: url("./fonts/Roboto-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Roboto;
-	src: url("../assets/fonts/Roboto-SemiBold.woff2") format("woff2");
+	src: url("./fonts/Roboto-SemiBold.woff2") format("woff2");
 	font-weight: 600;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: Roboto;
-	src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+	src: url("./fonts/Roboto-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-display: swap;
 	font-style: normal;
@@ -236,7 +236,7 @@ h1 {
 }
 
 .main-title {
-	font-size: clamp(24px, 6vw, 56px);
+	font-size: clamp(24px, 4vw, 56px);
 }
 
 h2,
@@ -259,7 +259,7 @@ p {
 	margin-bottom: 0.5em;
 }
 p a {
-	color: var(--primary-color);
+	color: var(--primary);
 	text-decoration: underline;
 }
 
@@ -427,6 +427,7 @@ body:has(.--section-headers-align-right) .base-section__header {
 	flex-direction: column;
 }
 
+.button-row,
 .btn-thin,
 .btn-secondary,
 .btn-primary {
@@ -436,6 +437,11 @@ body:has(.--section-headers-align-right) .base-section__header {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+}
+
+.btn-thin,
+.btn-secondary,
+.btn-primary {
 	-webkit-transition: opacity 0.3s ease-in-out;
 	transition: opacity 0.3s ease-in-out;
 	opacity: 1;
@@ -443,16 +449,14 @@ body:has(.--section-headers-align-right) .base-section__header {
 	-ms-flex-pack: center;
 	justify-content: center;
 	gap: 6px;
-	width: 100%;
-	max-width: -webkit-fit-content;
-	max-width: -moz-fit-content;
-	max-width: fit-content;
+	min-width: 180px;
 	min-height: 48px;
-	font-size: 16px;
+	font-size: clamp(16px, 2.4vw, 20px);
 	line-height: 1;
-	font-weight: 600;
+	font-weight: 500;
 	padding: 12px 24px;
 	border: 2px solid transparent;
+	border-radius: var(--current-border-radius);
 	-webkit-transition: color var(--main-transition),
 		background-color var(--main-transition), border-color var(--main-transition),
 		opacity var(--main-transition);
@@ -512,8 +516,11 @@ body:has(.--section-headers-align-right) .base-section__header {
 }
 .btn-secondary {
 	color: var(--primary-color);
-	background-color: var(--white-color);
+	background-color: transparent;
 	border-color: var(--primary-color);
+}
+.btn-secondary span {
+	color: var(--primary-color);
 }
 .btn-thin {
 	padding: 5px 0;
@@ -527,6 +534,29 @@ body:has(.--section-headers-align-right) .base-section__header {
 	min-height: -webkit-fit-content;
 	min-height: -moz-fit-content;
 	min-height: fit-content;
+}
+
+.button-row {
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	gap: clamp(16px, 3vw, 24px);
+	margin-top: clamp(16px, 2.4vw, 36px);
+	margin-bottom: clamp(16px, 2.4vw, 36px);
+	width: 100%;
+	max-width: 680px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	container: button-row/inline-size;
+}
+.button-row > * {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
+@container button-row (min-width: 476px ) {
+	.button-row > * {
+		max-width: calc(50% - clamp(16px, 3vw, 24px));
+	}
 }
 .base-section {
 	padding: calc(clamp(32px, 4vw, 64px) / 2) 0;
@@ -581,6 +611,7 @@ body:has(.--section-headers-underlined) .base-section__header::after {
 	height: 4px;
 	background-color: var(--title-underline-color);
 }
+
 body:has(.--section-headers-underlined.--section-headers-align-left)
 	.base-section__header::after {
 	left: 0;
@@ -588,6 +619,7 @@ body:has(.--section-headers-underlined.--section-headers-align-left)
 	-ms-transform: none;
 	transform: none;
 }
+
 body:has(.--section-headers-underlined.--section-headers-align-right)
 	.base-section__header::after {
 	left: revert;
@@ -596,6 +628,7 @@ body:has(.--section-headers-underlined.--section-headers-align-right)
 	-ms-transform: none;
 	transform: none;
 }
+
 @media (hover: hover) {
 	.btn-thin:hover,
 	.btn-secondary:hover,

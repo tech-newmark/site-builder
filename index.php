@@ -133,8 +133,8 @@ $APPLICATION->SetTitle("NEWMARK Simple v1.0.0");
 ); ?>
 
 <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"clients-preview",
+	"bitrix:news.list", 
+	"clients-preview", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -179,7 +179,7 @@ $APPLICATION->SetTitle("NEWMARK Simple v1.0.0");
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
 			0 => "",
-			1 => "",
+			1 => "ICON",
 		),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",

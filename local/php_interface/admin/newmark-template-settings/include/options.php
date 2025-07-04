@@ -34,6 +34,8 @@ class SiteSettingsManager
       'SECTION_TITLE_UNDERLINE_ENABLED' => Option::get("main", "SECTION_TITLE_UNDERLINE_ENABLED", "N"),
       'SECTION_HEADER_ALIGN' => Option::get("main", "SECTION_HEADER_ALIGN", "--section-headers-align-center"),
 
+      'TOP_BANNER_HEIGHT' => Option::get("main", "TOP_BANNER_HEIGHT", "--fullheight"),
+
       'FEATURES_SECTION_ENABLED' => Option::get("main", "FEATURES_SECTION_ENABLED", "N"),
       'FEATURES_SECTION_VIEW' => Option::get("main", "FEATURES_SECTION_VIEW", "1"),
       'FEATURES_SECTION_SORT' => Option::get("main", "FEATURES_SECTION_SORT", "100"),
@@ -79,6 +81,8 @@ class SiteSettingsManager
 
       'SECTION_TITLE_UNDERLINE_ENABLED' => $postData["SECTION_TITLE_UNDERLINE_ENABLED"] ?? "N",
       'SECTION_HEADER_ALIGN' => $postData["SECTION_HEADER_ALIGN"] ?? "--align-center",
+
+      'TOP_BANNER_HEIGHT' => $postData["TOP_BANNER_HEIGHT"] ?? "--fullheight",
 
       'FEATURES_SECTION_VIEW' => $postData["FEATURES_SECTION_VIEW"] ?? "1",
       'FEATURES_SECTION_ENABLED' => $postData["FEATURES_SECTION_ENABLED"] ?? "N",
