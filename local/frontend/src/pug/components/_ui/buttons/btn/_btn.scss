@@ -4,15 +4,15 @@
 	@extend %flex-align;
 	justify-content: center;
 	gap: 6px;
-	width: fit-content;
-	min-width: 160px;
-	// max-width: fit-content;
+	// width: fit-content;
+	min-width: 180px;
 	min-height: 48px;
-	font-size: 16px;
+	font-size: clamp(16px, 2.4vw, 20px);
 	line-height: 1;
-	font-weight: 600;
+	font-weight: 500;
 	padding: 12px 24px;
 	border: 2px solid transparent;
+	border-radius: var(--current-border-radius);
 	transition: color var(--main-transition),
 		background-color var(--main-transition), border-color var(--main-transition),
 		opacity var(--main-transition);

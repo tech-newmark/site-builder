@@ -257,7 +257,7 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 			object-position: center;
 		}
 
-		@include container-down("top-banner-slider", 1200px) {
+		@include container-down("top-banner-slider", 1201px) {
 			display: none;
 		}
 
@@ -281,4 +281,9 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 		}
 		// модификаторы для области с контентным изображением конец
 	}
+}
+
+.button-row {
+	// width: 100%;
+	// outline: 1px solid red;
 }

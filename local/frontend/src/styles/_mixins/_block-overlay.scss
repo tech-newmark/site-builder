@@ -26,20 +26,20 @@
 	}
 
 	@if $theme == "light" {
-		& * {
+		& > * {
 			color: var(--dark-color);
 		}
 	} @else if $theme == "dark" {
-		& * {
+		& > * {
 			color: var(--white-color);
 		}
 	} @else if $theme == "blured" {
 		backdrop-filter: blur(20px);
-		& * {
+		& > * {
 			color: var(--white-color);
 		}
 	} @else {
-		& * {
+		& > * {
 			color: var(--white-color);
 		}
 	}

@@ -31,7 +31,7 @@ h1 {
 }
 
 .main-title {
-	font-size: clamp(24px, 6vw, 56px); // test
+	font-size: clamp(24px, 4vw, 56px); // test
 }
 
 h2,
@@ -54,7 +54,7 @@ p {
 	margin-bottom: 0.5em;
 
 	a {
-		color: var(--primary-color);
+		color: var(--primary);
 		text-decoration: underline;
 	}
 }
