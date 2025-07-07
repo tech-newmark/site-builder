@@ -2,13 +2,16 @@
 
 if ($arResult["ITEMS"]): ?>
   <section
-    class="top-section <?= $arResult["RES_MOD_MODIFIERS"] ?>">
-    <div class="swiper top-banner-slider --height-70">
+    class="top-section">
+    <div class="swiper top-banner-slider  <?= $arResult["RES_MOD_MODIFIERS"] ?>">
       <div class="swiper-wrapper">
-        <? foreach ($arResult["ITEMS"] as $key => $arItem): ?>
+        <? foreach ($arResult["ITEMS"] as $key => $arItem):
+          $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+          $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+        ?>
           <div class="swiper-slide">
-            <!-- <? debug($arItem["PROPERTIES"]["OVERLAY_TYPE"]) ?> -->
             <div
+              id="<?= $this->GetEditAreaId($arItem['ID']); ?>"
               class="top-banner 
                 <?= $arItem["PROPERTIES"]["OVERLAY_TYPE"]["VALUE_XML_ID"] && $arItem["PROPERTIES"]["OVERLAY_TYPE"]["VALUE_XML_ID"] !== "N" ? $arItem["PROPERTIES"]["OVERLAY_TYPE"]["VALUE_XML_ID"] : null ?>
                 <?= $arItem["PROPERTIES"]["BG_POSITION"]["VALUE_XML_ID"] ? $arItem["PROPERTIES"]["BG_POSITION"]["VALUE_XML_ID"] : '--bg-center-center' ?>
@@ -16,11 +19,7 @@ if ($arResult["ITEMS"]): ?>
               "
               style="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ? 'background-image:url(' . $arItem["PREVIEW_PICTURE"]["SRC"] . ')' : null ?>">
 
-              <div class="top-banner__content 
-                --blured-content 
-                --bordered-content 
-                --rounded-content 
-                --text-left">
+              <div class="top-banner__content <?= $arResult["RES_MOD_CONTENT_MODIFIERS"] ?>">
 
                 <? if ($key === 0): ?>
                   <h1 class="main-title"><?= $arItem["NAME"] ?></h1>
@@ -37,14 +36,14 @@ if ($arResult["ITEMS"]): ?>
                 <? if ($arItem["PROPERTIES"]["LINK_URL"]["VALUE"] || $arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"]): ?>
                   <div class="button-row">
                     <? if ($arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"]): ?>
-                      <button class="btn btn-primary" data-modal-id="<?= $arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"] ?>">
+                      <button class="btn btn-primary <?= $arResult["RES_MOD_BUTTONS_MODIFIERS"] ?>" data-modal-id="<?= $arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"] ?>">
                         <span>
                           <?= $arItem["PROPERTIES"]["BTN_TEXT"]["VALUE"] ? $arItem["PROPERTIES"]["BTN_TEXT"]["VALUE"] : 'Заказать' ?>
                         </span>
                       </button>
                     <? endif; ?>
                     <? if ($arItem["PROPERTIES"]["LINK_URL"]["VALUE"]): ?>
-                      <a class="btn btn-secondary rounded-md" href="<?= $arItem["PROPERTIES"]["LINK_URL"]["VALUE"] ?>">
+                      <a class="btn btn-secondary <?= $arResult["RES_MOD_BUTTONS_MODIFIERS"] ?>" href="<?= $arItem["PROPERTIES"]["LINK_URL"]["VALUE"] ?>">
                         <span>
                           <?= $arItem["PROPERTIES"]["LINK_TEXT"]["VALUE"] ? $arItem["PROPERTIES"]["LINK_TEXT"]["VALUE"] : 'Подробнее' ?>
                         </span>
@@ -55,8 +54,8 @@ if ($arResult["ITEMS"]): ?>
               </div>
 
               <? if ($arItem["DETAIL_PICTURE"]["SRC"]): ?>
-                <div class="top-banner__picture --rounded-picture ">
-                  <img src="<?= $arItem["DETAIL_PICTURE"]["SRC"] ?>" alt='<?= $arItem["DETAIL_PICTURE"]["DESCRIPTION"] ? $arItem["DETAIL_PICTURE"]["DESCRIPTION"] : $arItem["DETAIL_PICTURE"]["TITLE"] ?>?> ?>' width="600" height="600">
+                <div class="top-banner__picture <?= $arResult['RES_MOD_CONTENT_PICTURE_MODIFIERS'] ?> ">
+                  <img src="<?= $arItem["DETAIL_PICTURE"]["SRC"] ?>" alt='<?= $arItem["DETAIL_PICTURE"]["DESCRIPTION"] ? $arItem["DETAIL_PICTURE"]["DESCRIPTION"] : $arItem["DETAIL_PICTURE"]["TITLE"] ?>' width="600" height="600">
                 </div>
               <? endif; ?>
 

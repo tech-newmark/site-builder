@@ -485,24 +485,30 @@ body:has(.--section-headers-align-right) .base-section__header {
 	-webkit-transition: fill var(--main-transition);
 	transition: fill var(--main-transition);
 }
-.rounded-xs.btn-thin,
-.rounded-xs.btn-secondary,
-.rounded-xs.btn-primary {
+
+.--rounded-none.btn-thin,
+.--rounded-none.btn-secondary,
+.--rounded-none.btn-primary {
+	border-radius: 0;
+}
+.--rounded-xs.btn-thin,
+.--rounded-xs.btn-secondary,
+.--rounded-xs.btn-primary {
 	border-radius: var(--border-radius-xs);
 }
-.rounded-sm.btn-thin,
-.rounded-sm.btn-secondary,
-.rounded-sm.btn-primary {
+.--rounded-sm.btn-thin,
+.--rounded-sm.btn-secondary,
+.--rounded-sm.btn-primary {
 	border-radius: var(--border-radius-sm);
 }
-.rounded-md.btn-thin,
-.rounded-md.btn-secondary,
-.rounded-md.btn-primary {
+.--rounded-md.btn-thin,
+.--rounded-md.btn-secondary,
+.--rounded-md.btn-primary {
 	border-radius: var(--border-radius-md);
 }
-.rounded-lg.btn-thin,
-.rounded-lg.btn-secondary,
-.rounded-lg.btn-primary {
+.--rounded-lg.btn-thin,
+.--rounded-lg.btn-secondary,
+.--rounded-lg.btn-primary {
 	border-radius: var(--border-radius-lg);
 }
 .btn-primary {

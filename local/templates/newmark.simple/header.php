@@ -33,4 +33,4 @@ if (isset($GLOBALS['SECTION_TITLE_UNDERLINE_ENABLED']) && $GLOBALS['SECTION_TITL
   </header>
   <main id="workarea" class="<?= $GLOBAL_MODIFIERS ?>">
 
-    <h1 id="pagetitle"><? $APPLICATION->ShowTitle(false); ?></h1>
+    <!-- <h1 id="pagetitle"><? $APPLICATION->ShowTitle(false); ?></h1> -->
