@@ -26,19 +26,23 @@
 		transition: fill var(--main-transition);
 	}
 
-	&.rounded-xs {
+	&.--rounded-none {
+		border-radius: 0;
+	}
+
+	&.--rounded-xs {
 		border-radius: var(--border-radius-xs);
 	}
 
-	&.rounded-sm {
+	&.--rounded-sm {
 		border-radius: var(--border-radius-sm);
 	}
 
-	&.rounded-md {
+	&.--rounded-md {
 		border-radius: var(--border-radius-md);
 	}
 
-	&.rounded-lg {
+	&.--rounded-lg {
 		border-radius: var(--border-radius-lg);
 	}
 }
