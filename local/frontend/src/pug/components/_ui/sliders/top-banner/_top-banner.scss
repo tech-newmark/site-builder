@@ -197,7 +197,7 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 			}
 		}
 
-		&.--text-left {
+		&.--content-align-left {
 			text-align: left;
 
 			.button-row {
@@ -206,22 +206,24 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 			}
 		}
 
-		&.--text-center {
+		&.--content-align-center {
 			text-align: center;
 
 			.button-row {
 				margin-left: auto;
 				margin-right: auto;
 				margin-bottom: 0;
+				justify-content: center;
 			}
 		}
 
-		&.--text-right {
+		&.--content-align-right {
 			text-align: right;
 
 			.button-row {
 				margin-left: auto;
 				margin-bottom: 0;
+				justify-content: flex-end;
 			}
 		}
 
