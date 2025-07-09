@@ -22,7 +22,7 @@
 	height: 100%;
 	background-size: cover;
 }
-.top-banner-slider.--full-height .top-banner {
+.top-banner-slider.--fullheight .top-banner {
 	min-height: 90svh;
 }
 .top-banner-slider.--height-30 .top-banner {
@@ -226,7 +226,7 @@
 }
 @container top-banner-slider (min-width: 1201px ) {
 	.top-banner__content:not(.--fullwidth-content) {
-		width: 55%;
+		width: 75%;
 	}
 }
 .top-banner__content.--content-align-left {
@@ -275,6 +275,7 @@
 	display: -ms-flexbox;
 	display: flex;
 	overflow: hidden;
+	max-width: fit-content;
 }
 .top-banner__picture:not(.--fullheight-picture) {
 	max-height: 640px;
@@ -282,8 +283,8 @@
 .top-banner__picture img {
 	width: 100%;
 	height: auto;
-	-o-object-fit: cover;
-	object-fit: cover;
+	-o-object-fit: contain;
+	object-fit: contain;
 	-o-object-position: center;
 	object-position: center;
 }
@@ -305,6 +306,9 @@
 	z-index: 1;
 }
 .top-banner__picture.--fullheight-picture img {
+	width: auto;
 	-o-object-position: top;
 	object-position: top;
+	-o-object-fit: cover;
+	object-fit: cover;
 }

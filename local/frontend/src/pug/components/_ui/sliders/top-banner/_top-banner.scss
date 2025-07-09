@@ -13,7 +13,7 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 	container: top-banner-slider / inline-size;
 
 	// глобальные модификаторы для всех слайдов начало
-	&.--full-height {
+	&.--fullheight {
 		.top-banner {
 			min-height: 90svh;
 		}
@@ -193,7 +193,7 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 		&:not(.--fullwidth-content) {
 			max-width: 1140px;
 			@include container-up("top-banner-slider", 1200px) {
-				width: 55%;
+				width: 75%;
 			}
 		}
 
@@ -279,6 +279,8 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 			z-index: 1;
 
 			img {
+				width: auto;
+				object-fit: cover;
 				object-position: top;
 			}
 		}
