@@ -44,6 +44,9 @@ class SiteSettingsManager
       'TOP_BANNER_CONTENT_ALIGN' => Option::get("main", "TOP_BANNER_CONTENT_ALIGN", "--text-left"),
       'TOP_BANNER_PICTURE_FULLHEIGHT' => Option::get("main", "TOP_BANNER_PICTURE_FULLHEIGHT", "N"),
       'TOP_BANNER_PICTURE_ROUNDED_ENABLED' => Option::get("main", "TOP_BANNER_PICTURE_ROUNDED_ENABLED", "N"),
+      'TOP_BANNER_SLIDER_PAGINATION_ENABLED' => Option::get("main", "TOP_BANNER_SLIDER_PAGINATION_ENABLED", "N"),
+      'TOP_BANNER_SLIDER_PAGINATION_TYPE' => Option::get("main", "TOP_BANNER_SLIDER_PAGINATION_TYPE", "--pagination-bullets-circle"),
+      'TOP_BANNER_SLIDER_PAGINATION_SIZE' => Option::get("main", "TOP_BANNER_SLIDER_PAGINATION_SIZE", "--pagination-bullets-size-sm"),
 
       'FEATURES_SECTION_ENABLED' => Option::get("main", "FEATURES_SECTION_ENABLED", "N"),
       'FEATURES_SECTION_VIEW' => Option::get("main", "FEATURES_SECTION_VIEW", "1"),
@@ -101,6 +104,9 @@ class SiteSettingsManager
       'TOP_BANNER_CONTENT_ALIGN' => $postData["TOP_BANNER_CONTENT_ALIGN"] ?? "--text-left",
       'TOP_BANNER_PICTURE_FULLHEIGHT' => $postData["TOP_BANNER_PICTURE_FULLHEIGHT"] ?? "N",
       'TOP_BANNER_PICTURE_ROUNDED_ENABLED' => $postData["TOP_BANNER_PICTURE_ROUNDED_ENABLED"] ?? "N",
+      'TOP_BANNER_SLIDER_PAGINATION_ENABLED' => $postData["TOP_BANNER_SLIDER_PAGINATION_ENABLED"] ?? "N",
+      'TOP_BANNER_SLIDER_PAGINATION_TYPE' => $postData["TOP_BANNER_SLIDER_PAGINATION_TYPE"] ?? "--pagination-bullets-circle",
+      'TOP_BANNER_SLIDER_PAGINATION_SIZE' => $postData["TOP_BANNER_SLIDER_PAGINATION_SIZE"] ?? "--pagination-bullets-size-sm",
 
       'FEATURES_SECTION_VIEW' => $postData["FEATURES_SECTION_VIEW"] ?? "1",
       'FEATURES_SECTION_ENABLED' => $postData["FEATURES_SECTION_ENABLED"] ?? "N",

@@ -34,6 +34,40 @@ function renderTopBannerSection(array $values): void
       ]
     ],
     [
+      'TITLE' => 'Настройки слайдера:',
+      'ITEMS' => [
+        [
+          'label' => 'Пагинация:',
+          'name' => 'TOP_BANNER_SLIDER_PAGINATION_ENABLED',
+          'type' => 'checkbox',
+          'value' => $values['TOP_BANNER_SLIDER_PAGINATION_ENABLED'],
+        ],
+        [
+          'label' => 'Тип буллетов пагинации:',
+          'name' => 'TOP_BANNER_SLIDER_PAGINATION_TYPE',
+          'type' => 'select',
+          'value' => $values['TOP_BANNER_SLIDER_PAGINATION_TYPE'],
+          'options' => array(
+            '--pagination-bullets-circle' => 'Круглые',
+            '--pagination-bullets-square' => 'Квадратные',
+            '--pagination-bullets-rectangle' => 'Прямоугольные',
+            '--pagination-bullets-rectangle-wide' => 'Растянутые прямоугольные',
+          ),
+        ],
+        [
+          'label' => 'Размер буллетов пагинации:',
+          'name' => 'TOP_BANNER_SLIDER_PAGINATION_SIZE',
+          'type' => 'select',
+          'value' => $values['TOP_BANNER_SLIDER_PAGINATION_SIZE'],
+          'options' => array(
+            '--pagination-bullets-size-sm' => 'Маленьние',
+            '--pagination-bullets-size-md' => 'Средние',
+            '--pagination-bullets-size-lg' => 'Большие',
+          ),
+        ],
+      ]
+    ],
+    [
       'TITLE' => 'Настройки по умолчанию для контентного блока баннера:',
       'ITEMS' => [
         [
@@ -51,7 +85,7 @@ function renderTopBannerSection(array $values): void
         ],
 
         [
-          'label' => 'Матовый эффект:',
+          'label' => 'Эффект стекла:',
           'name' => 'TOP_BANNER_BLURED_CONTENT_ENABLED',
           'type' => 'checkbox',
           'value' => $values['TOP_BANNER_BLURED_CONTENT_ENABLED'],

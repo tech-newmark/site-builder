@@ -62,7 +62,13 @@ if ($arResult["ITEMS"]): ?>
             </div>
           </div>
         <? endforeach; ?>
+
       </div>
+      <!-- <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"> </div> -->
+      <? if ($GLOBALS['TOP_BANNER_SLIDER_PAGINATION_ENABLED'] === "Y"): ?>
+        <div class="swiper-pagination <?= $arResult["RES_MOD_SLIDER_PAGINATION_MODIFIERS"] ?> "></div>
+      <? endif; ?>
     </div>
   </section>
 <? endif; ?>
