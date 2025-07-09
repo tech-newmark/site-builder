@@ -12,7 +12,7 @@ function renderAboutPreviewSection(array $values): void
           'value' => $values['ABOUT_PREVIEW_SECTION_ENABLED'],
         ],
         [
-          'label' => 'Сортировкаs',
+          'label' => 'Сортировка',
           'name' => 'ABOUT_PREVIEW_SECTION_SORT',
           'type' => 'number',
           'value' => $values['ABOUT_PREVIEW_SECTION_SORT'],

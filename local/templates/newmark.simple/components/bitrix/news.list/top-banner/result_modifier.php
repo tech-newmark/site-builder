@@ -1,5 +1,6 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
+// common
 if (isset($GLOBALS['TOP_BANNER_HEIGHT'])) {
   $arResult["RES_MOD_MODIFIERS"] .= $GLOBALS['TOP_BANNER_HEIGHT'] . ' ';
 }
@@ -8,28 +9,74 @@ if (isset($GLOBALS['TOP_BANNER_BUTTONS_BORDER_RADIUS'])) {
   $arResult["RES_MOD_BUTTONS_MODIFIERS"] .= $GLOBALS['TOP_BANNER_BUTTONS_BORDER_RADIUS'] . ' ';
 }
 
-if (isset($GLOBALS['TOP_BANNER_CONTENT_FULLWIDTH']) && $GLOBALS['TOP_BANNER_CONTENT_FULLWIDTH'] === "Y") {
-  $arResult["RES_MOD_CONTENT_MODIFIERS"] .= '--fullwidth-content ';
-}
-if (isset($GLOBALS['TOP_BANNER_CONTENT_POSITION_LEFT_ENABLED']) && $GLOBALS['TOP_BANNER_CONTENT_POSITION_LEFT_ENABLED'] === "Y") {
-  $arResult["RES_MOD_CONTENT_MODIFIERS"] .= '--content-position-left ';
-}
-if (isset($GLOBALS['TOP_BANNER_BLURED_CONTENT_ENABLED']) && $GLOBALS['TOP_BANNER_BLURED_CONTENT_ENABLED'] === "Y") {
-  $arResult["RES_MOD_CONTENT_MODIFIERS"] .= '--blured-content ';
-}
-if (isset($GLOBALS['TOP_BANNER_BORDERED_CONTENT_ENABLED']) && $GLOBALS['TOP_BANNER_BORDERED_CONTENT_ENABLED'] === "Y") {
-  $arResult["RES_MOD_CONTENT_MODIFIERS"] .= '--bordered-content ';
-}
-if (isset($GLOBALS['TOP_BANNER_ROUNDED_CONTENT_ENABLED']) && $GLOBALS['TOP_BANNER_ROUNDED_CONTENT_ENABLED'] === "Y") {
-  $arResult["RES_MOD_CONTENT_MODIFIERS"] .= '--rounded-content ';
-}
-if (isset($GLOBALS['TOP_BANNER_CONTENT_ALIGN'])) {
-  $arResult["RES_MOD_CONTENT_MODIFIERS"] .= $GLOBALS['TOP_BANNER_CONTENT_ALIGN'] . ' ';
-}
+// Конфигурация модификаторов для карточек
+$modifiers = [
+  [
+    'prop' => 'TOP_BANNER_CONTENT_FULLWIDTH',
+    'global' => 'TOP_BANNER_CONTENT_FULLWIDTH',
+    'modifier' => '--fullwidth-content'
+  ],
+  [
+    'prop' => 'TOP_BANNER_CONTENT_POSITION_LEFT_ENABLED',
+    'global' => 'TOP_BANNER_CONTENT_POSITION_LEFT_ENABLED',
+    'modifier' => '--content-position-left'
+  ],
+  [
+    'prop' => 'TOP_BANNER_BLURED_CONTENT_ENABLED',
+    'global' => 'TOP_BANNER_BLURED_CONTENT_ENABLED',
+    'modifier' => '--blured-content'
+  ],
+  [
+    'prop' => 'TOP_BANNER_BORDERED_CONTENT_ENABLED',
+    'global' => 'TOP_BANNER_BORDERED_CONTENT_ENABLED',
+    'modifier' => '--bordered-content'
+  ],
+  [
+    'prop' => 'TOP_BANNER_ROUNDED_CONTENT_ENABLED',
+    'global' => 'TOP_BANNER_ROUNDED_CONTENT_ENABLED',
+    'modifier' => '--rounded-content'
+  ],
+  [
+    'prop' => 'TOP_BANNER_PICTURE_FULLHEIGHT',
+    'global' => 'TOP_BANNER_PICTURE_FULLHEIGHT',
+    'modifier' => '--fullheight-picture',
+    'target' => 'RES_MOD_CONTENT_PICTURE_MODIFIERS'
+  ],
+  [
+    'prop' => 'TOP_BANNER_PICTURE_ROUNDED_ENABLED',
+    'global' => 'TOP_BANNER_PICTURE_ROUNDED_ENABLED',
+    'modifier' => '--rounded-picture',
+    'target' => 'RES_MOD_CONTENT_PICTURE_MODIFIERS'
+  ]
+];
 
-if (isset($GLOBALS['TOP_BANNER_PICTURE_FULLHEIGHT']) && $GLOBALS['TOP_BANNER_PICTURE_FULLHEIGHT'] === "Y") {
-  $arResult["RES_MOD_CONTENT_PICTURE_MODIFIERS"] .= '--fullheight-picture ';
-}
-if (isset($GLOBALS['TOP_BANNER_PICTURE_ROUNDED_ENABLED']) && $GLOBALS['TOP_BANNER_PICTURE_ROUNDED_ENABLED'] === "Y") {
-  $arResult["RES_MOD_CONTENT_PICTURE_MODIFIERS"] .= '--rounded-picture ';
+foreach ($arResult["ITEMS"] as &$arItem) {
+  // Обработка модификаторов из списка
+  foreach ($modifiers as $config) {
+    $propValue = $arItem["PROPERTIES"][$config['prop']]['VALUE'];
+    $globalKey = $config['global'];
+    $modifier = $config['modifier'];
+    $target = $config['target'] ?? 'RES_MOD_CONTENT_MODIFIERS';
+
+    if (
+      $propValue === "Y" ||
+      (isset($GLOBALS[$globalKey]) && $GLOBALS[$globalKey] === "Y")
+    ) {
+      $arItem[$target] .= $modifier . ' ';
+    }
+  }
+
+  // Обработка модификатора ALIGN
+  $alignProp = $arItem["PROPERTIES"]["TOP_BANNER_CONTENT_ALIGN"]["VALUE_XML_ID"];
+  $alignGlobal = $GLOBALS['TOP_BANNER_CONTENT_ALIGN'] ?? null;
+
+  if (
+    isset($alignGlobal) &&
+    !empty($alignProp) &&
+    $alignProp !== $alignGlobal
+  ) {
+    $arItem["RES_MOD_CONTENT_MODIFIERS"] .= $alignProp . ' ';
+  } else if (isset($alignGlobal)) {
+    $arItem["RES_MOD_CONTENT_MODIFIERS"] .= $alignGlobal . ' ';
+  }
 }

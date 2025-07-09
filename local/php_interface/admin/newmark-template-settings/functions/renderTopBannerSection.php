@@ -77,9 +77,9 @@ function renderTopBannerSection(array $values): void
           'type' => 'select',
           'value' => $values['TOP_BANNER_CONTENT_ALIGN'],
           'options' => array(
-            '--text-left' => 'Cлева',
-            '--text-center' => 'По центру',
-            '--text-right' => 'Справа',
+            '--content-align-left' => 'Cлева',
+            '--content-align-center' => 'По центру',
+            '--content-align-right' => 'Справа',
           ),
         ],
       ]

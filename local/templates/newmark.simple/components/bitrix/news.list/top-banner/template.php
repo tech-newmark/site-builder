@@ -19,7 +19,7 @@ if ($arResult["ITEMS"]): ?>
               "
               style="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ? 'background-image:url(' . $arItem["PREVIEW_PICTURE"]["SRC"] . ')' : null ?>">
 
-              <div class="top-banner__content <?= $arResult["RES_MOD_CONTENT_MODIFIERS"] ?>">
+              <div class="top-banner__content <?= $arItem["RES_MOD_CONTENT_MODIFIERS"] ?>">
 
                 <? if ($key === 0): ?>
                   <h1 class="main-title"><?= $arItem["NAME"] ?></h1>
@@ -54,7 +54,7 @@ if ($arResult["ITEMS"]): ?>
               </div>
 
               <? if ($arItem["DETAIL_PICTURE"]["SRC"]): ?>
-                <div class="top-banner__picture <?= $arResult['RES_MOD_CONTENT_PICTURE_MODIFIERS'] ?> ">
+                <div class="top-banner__picture <?= $arItem['RES_MOD_CONTENT_PICTURE_MODIFIERS'] ?> ">
                   <img src="<?= $arItem["DETAIL_PICTURE"]["SRC"] ?>" alt='<?= $arItem["DETAIL_PICTURE"]["DESCRIPTION"] ? $arItem["DETAIL_PICTURE"]["DESCRIPTION"] : $arItem["DETAIL_PICTURE"]["TITLE"] ?>' width="600" height="600">
                 </div>
               <? endif; ?>
