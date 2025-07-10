@@ -546,8 +546,8 @@ body:has(.--section-headers-align-right) .base-section__header {
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	gap: clamp(16px, 3vw, 24px);
-	margin-top: clamp(16px, 2.4vw, 36px);
-	margin-bottom: clamp(16px, 2.4vw, 36px);
+	margin-top: 36px;
+	margin-bottom: 36px;
 	width: 100%;
 	max-width: 680px;
 	-webkit-box-sizing: border-box;

@@ -35,7 +35,74 @@ function renderTopBannerSection(array $values): void
     ],
     [
       'TITLE' => 'Настройки слайдера:',
+
       'ITEMS' => [
+        [
+          'label' => 'Навигация:',
+          'name' => 'TOP_BANNER_SLIDER_NAVIGATION_ENABLED',
+          'type' => 'checkbox',
+          'value' => $values['TOP_BANNER_SLIDER_NAVIGATION_ENABLED'],
+        ],
+        [
+          'label' => 'Размер кнопок навигации:',
+          'name' => 'TOP_BANNER_SLIDER_BUTTONS_SIZE',
+          'type' => 'select',
+          'value' => $values['TOP_BANNER_SLIDER_BUTTONS_SIZE'],
+          'options' => array(
+            '--size-sm' => 'Стандартные',
+            '--size-md' => 'Средние',
+            '--size-lg' => 'Большие',
+          ),
+        ],
+        [
+          'label' => 'Цвет иконки кнопок навигации:',
+          'name' => 'TOP_BANNER_SLIDER_BUTTONS_ICON_COLOR',
+          'type' => 'select',
+          'value' => $values['TOP_BANNER_SLIDER_BUTTONS_ICON_COLOR'],
+          'options' => array(
+            '--color-white' => 'Белый',
+            '--color-dark' => 'Темный',
+            '--color-primary' => 'Основной цвет сайта',
+            '--color-secondary' => 'Дополнительный цвет сайта',
+          ),
+        ],
+        [
+          'label' => 'Цвет заливки кнопок навигации:',
+          'name' => 'TOP_BANNER_SLIDER_BUTTONS_BACKGROUND_COLOR',
+          'type' => 'select',
+          'value' => $values['TOP_BANNER_SLIDER_BUTTONS_BACKGROUND_COLOR'],
+          'options' => array(
+            '--background-none' => 'Без заливки',
+            '--background-white' => 'Белый',
+            '--background-dark' => 'Темный',
+            '--background-primary' => 'Основной цвет сайта',
+            '--background-secondary' => 'Дополнительный цвет сайта',
+          ),
+        ],
+        [
+          'label' => 'Скругление кнопок навигации:',
+          'name' => 'TOP_BANNER_SLIDER_BUTTONS_ROUNDED_ENABLED',
+          'type' => 'checkbox',
+          'value' => $values['TOP_BANNER_SLIDER_BUTTONS_ROUNDED_ENABLED'],
+        ],
+        [
+          'label' => 'Обрамление кнопок навигации:',
+          'name' => 'TOP_BANNER_SLIDER_BUTTONS_BORDER_ENABLED',
+          'type' => 'checkbox',
+          'value' => $values['TOP_BANNER_SLIDER_BUTTONS_BORDER_ENABLED'],
+        ],
+        [
+          'label' => 'Цвет обрамления кнопок навигации:',
+          'name' => 'TOP_BANNER_SLIDER_BUTTONS_BORDER_COLOR',
+          'type' => 'select',
+          'value' => $values['TOP_BANNER_SLIDER_BUTTONS_BORDER_COLOR'],
+          'options' => array(
+            '--bordered-white' => 'Белый',
+            '--bordered-dark' => 'Темный',
+            '--bordered-primary' => 'Основной цвет сайта',
+            '--bordered-secondary' => 'Дополнительный цвет сайта',
+          ),
+        ],
         [
           'label' => 'Пагинация:',
           'name' => 'TOP_BANNER_SLIDER_PAGINATION_ENABLED',

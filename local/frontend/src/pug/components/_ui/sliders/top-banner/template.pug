@@ -51,23 +51,27 @@ mixin top-banner-slider(data)
               .button-row
                 +btn({
                   tag: 'button',
-                  title: 'Купить'
+                  title: 'Получить бесплатный дизайн-проект'
                 })
 
-                +btn({
-                  tag: 'a',
-                  href: '#',
-                  cls: 'btn-secondary rounded-md',
-                  title: 'Позвонить'
-                })
+                //- +btn({
+                //-   tag: 'a',
+                //-   href: '#',
+                //-   cls: 'btn-secondary rounded-md',
+                //-   title: 'Позвонить'
+                //- })
 
             if item.picture
               .top-banner__picture(class= item.picture.modifiers ? item.picture.modifiers : null)
                 img(src=`./assets/img/${item.picture.path}` alt!= item.title width="600" height="600")
 
     if data.options.navigation.enabled
-      .swiper-button-next
-      .swiper-button-prev 
+      .swiper-button-prev(aria-label="Назад").--bordered.--color-white.--filled-secondary
+        svg(width='32' height='32' role='img' aria-hidden='true' focusable='false')
+          use(xlink:href='./assets/sprite.svg#chevron')
+      .swiper-button-next(aria-label="Вперед")
+        svg(width='32' height='32' role='img' aria-hidden='true' focusable='false')
+          use(xlink:href='./assets/sprite.svg#chevron')
     if data.options.pagination.enabled
       .swiper-pagination(
         data-dynamic= data.options.pagination.dynamic ? 'true' : null

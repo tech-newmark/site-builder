@@ -38,6 +38,100 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 	}
 	// глобальные модификаторы для всех слайдов конец
 
+	// навигация
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		@extend %flex-center;
+		position: absolute;
+		top: 50%;
+
+		z-index: 30;
+
+		cursor: pointer;
+
+		&.--size-sm {
+			width: 40px;
+			height: 40px;
+		}
+		&.--size-md {
+			width: 50px;
+			height: 50px;
+		}
+		&.--size-lg {
+			width: 60px;
+			height: 60px;
+		}
+
+		&.--bordered {
+			border: 1px solid var(--primary-color);
+		}
+
+		&.--rounded {
+			border-radius: 50%;
+		}
+
+		&.--bordered-white {
+			border-color: var(--white-color);
+		}
+		&.--bordered-dark {
+			border-color: var(--dark-color);
+		}
+		&.--bordered-primary {
+			border-color: var(--primary-color);
+		}
+		&.--bordered-secondary {
+			border-color: var(--secondary-color);
+		}
+
+		&.--background-none {
+			background-color: transparent;
+		}
+		&.--background-white {
+			background-color: var(--white-color);
+		}
+		&.--background-dark {
+			background-color: var(--dark-color);
+		}
+		&.--background-primary {
+			background-color: var(--primary-color);
+		}
+		&.--background-secondary {
+			background-color: var(--secondary-color);
+		}
+
+		&.--color-white {
+			svg {
+				fill: var(--white-color);
+			}
+		}
+		&.--color-dark {
+			svg {
+				fill: var(--dark-color);
+			}
+		}
+		&.--color-primary {
+			svg {
+				fill: var(--primary-color);
+			}
+		}
+		&.--color-secondary {
+			svg {
+				fill: var(--secondary-color);
+			}
+		}
+	}
+
+	.swiper-button-prev {
+		left: clamp(16px, 4vw, 64px);
+		transform: translateY(-50%) translateX(-50%) rotate(180deg);
+	}
+
+	.swiper-button-next {
+		right: clamp(16px, 4vw, 64px);
+		transform: translateY(-50%) translateX(50%);
+	}
+
 	// пагинация слайдера
 	.swiper-pagination {
 		padding: 20px 0;

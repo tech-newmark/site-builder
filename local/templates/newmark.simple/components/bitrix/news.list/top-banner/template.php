@@ -36,14 +36,17 @@ if ($arResult["ITEMS"]): ?>
                 <? if ($arItem["PROPERTIES"]["LINK_URL"]["VALUE"] || $arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"]): ?>
                   <div class="button-row">
                     <? if ($arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"]): ?>
-                      <button class="btn btn-primary <?= $arResult["RES_MOD_BUTTONS_MODIFIERS"] ?>" data-modal-id="<?= $arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"] ?>">
+                      <button class="
+                        btn 
+                        <?= ($arItem["PROPERTIES"]["BTN_TYPE"]["VALUE_XML_ID"]  === 'btn-primary' || !isset($arItem["PROPERTIES"]["BTN_TYPE"]["VALUE_XML_ID"]) ? 'btn-primary' : $arItem["PROPERTIES"]["BTN_TYPE"]["VALUE_XML_ID"]) ?> 
+                        <?= $arResult["RES_MOD_BUTTONS_MODIFIERS"] ?>" data-modal-id="<?= $arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"] ?>">
                         <span>
                           <?= $arItem["PROPERTIES"]["BTN_TEXT"]["VALUE"] ? $arItem["PROPERTIES"]["BTN_TEXT"]["VALUE"] : 'Заказать' ?>
                         </span>
                       </button>
                     <? endif; ?>
                     <? if ($arItem["PROPERTIES"]["LINK_URL"]["VALUE"]): ?>
-                      <a class="btn btn-secondary <?= $arResult["RES_MOD_BUTTONS_MODIFIERS"] ?>" href="<?= $arItem["PROPERTIES"]["LINK_URL"]["VALUE"] ?>">
+                      <a class="btn <?= ($arItem["PROPERTIES"]["LINK_TYPE"]["VALUE_XML_ID"]  === 'btn-primary' || !isset($arItem["PROPERTIES"]["LINK_TYPE"]["VALUE_XML_ID"]) ? 'btn-primary' : $arItem["PROPERTIES"]["LINK_TYPE"]["VALUE_XML_ID"]) ?> <?= $arResult["RES_MOD_BUTTONS_MODIFIERS"] ?>" href="<?= $arItem["PROPERTIES"]["LINK_URL"]["VALUE"] ?>">
                         <span>
                           <?= $arItem["PROPERTIES"]["LINK_TEXT"]["VALUE"] ? $arItem["PROPERTIES"]["LINK_TEXT"]["VALUE"] : 'Подробнее' ?>
                         </span>
@@ -64,8 +67,18 @@ if ($arResult["ITEMS"]): ?>
         <? endforeach; ?>
 
       </div>
-      <!-- <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"> </div> -->
+      <? if ($GLOBALS['TOP_BANNER_SLIDER_NAVIGATION_ENABLED'] === "Y"): ?>
+        <div class="swiper-button-prev <?= $arResult["RES_MOD_SLIDER_BUTTONS_MODIFIERS"] ?>" aria-label="Назад">
+          <svg width="32" height="32" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#chevron"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next <?= $arResult["RES_MOD_SLIDER_BUTTONS_MODIFIERS"] ?>" aria-label="Вперед">
+          <svg width="32" height="32" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#chevron"></use>
+          </svg>
+        </div>
+      <? endif; ?>
       <? if ($GLOBALS['TOP_BANNER_SLIDER_PAGINATION_ENABLED'] === "Y"): ?>
         <div class="swiper-pagination <?= $arResult["RES_MOD_SLIDER_PAGINATION_MODIFIERS"] ?> "></div>
       <? endif; ?>
