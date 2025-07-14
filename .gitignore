@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 /bitrix/
-upload
+/upload/
 .access.php
 /local/frontend/node_modules/
 /local/frontend/.cache
