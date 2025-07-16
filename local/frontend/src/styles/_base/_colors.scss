@@ -1,59 +1,59 @@
 .color {
 	&-primary {
-		color: var(--primary-color);
+		color: var(--primary);
 	}
 
 	&-danger {
-		color: var(--danger-color);
+		color: var(--danger);
 	}
 
 	&-success {
-		color: var(--success-color);
+		color: var(--success);
 	}
 
 	&-dark {
-		color: var(--dark-color);
+		color: var(--dark);
 	}
 
 	&-muted {
-		color: var(--muted-color);
+		color: var(--muted);
 	}
 
 	&-black {
-		color: var(--black-color);
+		color: var(--black);
 	}
 
 	&-white {
-		color: var(--white-color);
+		color: var(--white);
 	}
 }
 
 .bg {
 	&-primary {
-		background-color: var(--primary-color);
+		background-color: var(--primary);
 	}
 
 	&-danger {
-		background-color: var(--danger-color);
+		background-color: var(--danger);
 	}
 
 	&-success {
-		background-color: var(--success-color);
+		background-color: var(--success);
 	}
 
 	&-dark {
-		background-color: var(--dark-color);
+		background-color: var(--dark);
 	}
 
 	&-muted {
-		background-color: var(--muted-color);
+		background-color: var(--muted);
 	}
 
 	&-black {
-		background-color: var(--black-color);
+		background-color: var(--black);
 	}
 
 	&-white {
-		background-color: var(--white-color);
+		background-color: var(--white);
 	}
 }

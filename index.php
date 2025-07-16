@@ -4,9 +4,9 @@ $APPLICATION->SetTitle("NEWMARK Simple v1.0.0");
 ?>
 
 <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"top-banner",
-	array(
+	"bitrix:news.list", 
+	"top-banner", 
+	[
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -52,11 +52,23 @@ $APPLICATION->SetTitle("NEWMARK Simple v1.0.0");
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => [
 			0 => "BTN_FORM_ID",
-			1 => "OVERLAY_TYPE",
-			2 => "LINK_URL",
-			3 => "BTN_TEXT",
-			4 => "LINK_TEXT",
-			5 => "",
+			1 => "BTN_TYPE",
+			2 => "LINK_TYPE",
+			3 => "TOP_BANNER_PICTURE_FULLHEIGHT",
+			4 => "TOP_BANNER_CONTENT_FULLWIDTH",
+			5 => "BANNER_CONTENT_DIRECTION",
+			6 => "TOP_BANNER_BORDERED_CONTENT_ENABLED",
+			7 => "OVERLAY_TYPE",
+			8 => "TOP_BANNER_CONTENT_ALIGN",
+			9 => "BG_POSITION",
+			10 => "TOP_BANNER_CONTENT_POSITION_LEFT_ENABLED",
+			11 => "TOP_BANNER_ROUNDED_CONTENT_ENABLED",
+			12 => "TOP_BANNER_PICTURE_ROUNDED_ENABLED",
+			13 => "LINK_URL",
+			14 => "BTN_TEXT",
+			15 => "LINK_TEXT",
+			16 => "TOP_BANNER_BLURED_CONTENT_ENABLED",
+			17 => "",
 		],
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -71,7 +83,7 @@ $APPLICATION->SetTitle("NEWMARK Simple v1.0.0");
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"COMPONENT_TEMPLATE" => "top-banner"
-	),
+	],
 	false
 ); ?>
 

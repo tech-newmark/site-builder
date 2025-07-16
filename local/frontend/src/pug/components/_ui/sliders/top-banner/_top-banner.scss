@@ -72,16 +72,16 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 		}
 
 		&.--bordered-white {
-			border-color: var(--white-color);
+			border: 1px solid var(--white-color);
 		}
 		&.--bordered-dark {
-			border-color: var(--dark-color);
+			border: 1px solid var(--dark-color);
 		}
 		&.--bordered-primary {
-			border-color: var(--primary-color);
+			border: 1px solid var(--primary-color);
 		}
 		&.--bordered-secondary {
-			border-color: var(--secondary-color);
+			border: 1px solid var(--secondary-color);
 		}
 
 		&.--background-none {
