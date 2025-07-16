@@ -37,8 +37,7 @@ if ($arResult["ITEMS"]): ?>
                 <? if ($arItem["PROPERTIES"]["LINK_URL"]["VALUE"] || $arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"]): ?>
                   <div class="button-row">
                     <? if ($arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"]): ?>
-                      <button class="
-                        btn 
+                      <button class="btn 
                         <?= ($arItem["PROPERTIES"]["BTN_TYPE"]["VALUE_XML_ID"]  === 'btn-primary' || !isset($arItem["PROPERTIES"]["BTN_TYPE"]["VALUE_XML_ID"]) ? 'btn-primary' : $arItem["PROPERTIES"]["BTN_TYPE"]["VALUE_XML_ID"]) ?> 
                         <?= $arResult["RES_MOD_BUTTONS_MODIFIERS"] ?>" data-modal-id="<?= $arItem["PROPERTIES"]["BTN_FORM_ID"]["VALUE"] ?>">
                         <span>
