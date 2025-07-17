@@ -65,7 +65,7 @@
 // offsets
 :root {
 	--gap-sm: clamp(16px, 2.2vw, 32px);
-	--gap-lg: calc(clamp(16px, 2.2vw, 32px) * 2);
+	--gap-lg: calc(var(--gap-sm) * 2);
 }
 
 // border-radius
