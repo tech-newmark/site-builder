@@ -1,0 +1,12 @@
+mixin accordeon(data)
+  - console.log(data)
+  .accordeon(class=data.modifiers ? data.modifiers : null)
+    each item in data.items
+      .accordeon-item
+        .accordeon-header
+          p!=item.title
+          .accordeon-opener
+        .accordeon-body
+          .content-block
+            p!=item.text
+

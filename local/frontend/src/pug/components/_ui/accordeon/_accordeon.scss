@@ -1,0 +1,47 @@
+@use "@styles/_vars/scoped" as *;
+
+.accordeon {
+  padding: 32px;
+  max-width: 1440px;
+
+  &--width-50 {
+    width: 50%;
+  }
+
+   &--width-50 {
+    width: 50%;
+  }
+}
+
+.accordeon-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  margin-bottom: 16px;
+
+    &--outlined {
+      outline: 1px solid var(--primary-color);
+      border-radius: var(--border-radius-md);
+    }
+
+    &--underlined {
+      border-bottom:  1px solid var(--primary-color);
+    }
+}
+
+.accordeon-header {
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+
+}
+
+.accordeon-opener {
+  min-width: 20px;
+  min-height: 20px;
+  background-color: purple;
+}
+

@@ -2,27 +2,25 @@
 
 $grid-gap: var(--gap-lg);
 
-* {
-	outline: 1px solid red
-}
+.faq {
 
-.faq__container {
+  &--two-column .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  grid-gap: var(--gap-lg);
+  }
 
-	&--two-columns {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
-.faq__header {
+  &--underlined-header .base-section__header {
 	position: relative;
-	padding: 32px;
-}
+  }
 
-.faq__header::after {
+  &--underlined-header .base-section__header::after {
 	position: absolute;
+  bottom: 0;
 	content: "";
 	width: 160px;
 	height: 4px;
 	background-color: var(--primary-color);
+  }
 }

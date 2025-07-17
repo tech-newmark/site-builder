@@ -6,5 +6,8 @@ block variables
   - sectionText  = 'Этот блок поможет вам быстро найти ответы на свои вопросы'
 
 block content
- include ./faq__container
 
+  include ./content
+  include ../../components/_ui/accordeon/template
+
+  +accordeon(data)
