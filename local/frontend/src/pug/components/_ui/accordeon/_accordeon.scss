@@ -2,15 +2,19 @@
 
 .accordeon {
   padding: 32px;
-  max-width: 1440px;
 
-  &--width-50 {
+  &--width-small {
     width: 50%;
   }
 
-   &--width-50 {
-    width: 50%;
+   &--width-medium {
+    width: 75%;
   }
+
+  &--width-large {
+    width: 100%;
+  }
+
 }
 
 .accordeon-item {
@@ -18,15 +22,26 @@
   flex-direction: column;
   gap: 20px;
   padding: 24px;
-  margin-bottom: 16px;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
 
     &--outlined {
       outline: 1px solid var(--primary-color);
       border-radius: var(--border-radius-md);
     }
 
-    &--underlined {
+    &--unwrap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
       border-bottom:  1px solid var(--primary-color);
+
+      .accordeon-opener {
+        display: none;
+      }
+
     }
 }
 
@@ -36,12 +51,16 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 16px;
-
 }
 
 .accordeon-opener {
-  min-width: 20px;
-  min-height: 20px;
-  background-color: purple;
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    fill: var(--primary-color);
+  }
 }
 
