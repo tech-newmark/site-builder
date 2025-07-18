@@ -1,3 +1,4 @@
+@use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
 .accordeon {
@@ -5,21 +6,25 @@
   padding: 0;
   list-style-type: none;
 
+  container: accordeon-container / inline-size;
+
+  &.--width-m {
+    max-width: 70%;
+  }
+
   &.--unwrap {
 
     .accordeon-opener {
     display: none;
     }
 
-    @media (min-width: $tablet-lg-width) {
-    .accordeon-item {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+      @include container-up("faq-container", $tablet-lg-width) {
+      .accordeon-item {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      }
     }
-    }
-
-
   }
 }
 

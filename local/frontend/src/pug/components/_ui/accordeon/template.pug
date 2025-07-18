@@ -1,6 +1,6 @@
 mixin accordeon(data)
   - console.log(data)
-  ul.accordeon(class=data.modifiers ? data.modifiers : null)
+  ul.accordeon.--unwrap(class=data.modifiers ? data.modifiers : null)
     each item in data.items
       li.accordeon-item.--outlined
         .accordeon-header(tabindex='0')

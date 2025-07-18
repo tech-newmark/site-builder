@@ -6,10 +6,6 @@
 
   @include container-up("faq-container", $laptop-lg-width) {
 
-    .accordeon {
-      max-width: 1140px;
-    }
-
 		&.--align-row .container {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
@@ -26,12 +22,6 @@
     }
 		}
 	}
-
-  @include container-up("faq-container", $laptop-lg-width) {
-    .accordeon-item {
-    display: block
-    }
-   }
 }
 
 .faq .base-section__header {
