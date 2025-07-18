@@ -1,12 +1,12 @@
 mixin accordeon(data)
   - console.log(data)
-  .accordeon(class=data.modifiers ? data.modifiers : null)
+  ul.accordeon.--unwrap(class=data.modifiers ? data.modifiers : null)
     each item in data.items
-      .accordeon-item
-        .accordeon-header
+      li.accordeon-item
+        .accordeon-header(tabindex='0')
           p!=item.title
-          .accordeon-opener
-            svg(width='20' height='20' role='img' aria-hidden='true' focusable='false')
+          .accordeon-opener(role='button' aria-label='Посмотреть ответ')
+            svg(width='20' height='20' aria-hidden='true')
               use(xlink:href='./assets/sprite.svg#cross')
         .accordeon-body
           .content-block

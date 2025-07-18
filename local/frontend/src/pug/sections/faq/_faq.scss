@@ -1,26 +1,35 @@
+@use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
-$grid-gap: var(--gap-lg);
-
 .faq {
+  container: faq-container / inline-size;
 
-  &--two-column .container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: start;
-  grid-gap: var(--gap-lg);
-  }
+  @include container-up("faq-container", $laptop-lg-width) {
 
-  &--underlined-header .base-section__header {
-	position: relative;
-  }
+    .accordeon {
+      max-width: 1140px;
+    }
 
-  &--underlined-header .base-section__header::after {
-	position: absolute;
-  bottom: 0;
-	content: "";
-	width: 160px;
-	height: 4px;
-	background-color: var(--primary-color);
-  }
+		&.--align-row .container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+      gap: 64px;
+
+      .base-section__header {
+      position: sticky;
+      top: 0;
+      align-self: start;
+    }
+		}
+	}
+
+  @include container-up("faq-container", $laptop-lg-width) {
+    .accordeon-item {
+    display: block
+    }
+   }
 }
+
+
+
+

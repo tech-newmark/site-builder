@@ -1,64 +1,61 @@
 @use "@styles/_vars/scoped" as *;
 
 .accordeon {
-  padding: 32px;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
 
-  &--width-small {
-    width: 50%;
+  &.--unwrap {
+
+    .accordeon-opener {
+    display: none;
+    }
+
+    @media (min-width: $tablet-lg-width) {
+    .accordeon-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    }
+    }
+
+
   }
-
-   &--width-medium {
-    width: 70%;
-  }
-
-  &--width-large {
-    width: 100%;
-  }
-
 }
 
 .accordeon-item {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 24px;
+
+  padding: 20px 24px;
 
   &:not(:last-child) {
     margin-bottom: 16px;
   }
 
-    &--outlined {
-      outline: 1px solid var(--primary-color);
-      border-radius: var(--border-radius-md);
-    }
+  &.--outlined {
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-md);
+  }
 
-    &--unwrap {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      border-bottom:  1px solid var(--primary-color);
-
-      .accordeon-opener {
-        display: none;
-      }
-
-    }
+  &.--underlined {
+    border-bottom:  1px solid var(--primary-color);
+  }
 }
 
 .accordeon-header {
-  font-weight: 800;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  margin-bottom: 16px;
+  font-weight: 800;
   gap: 16px;
 }
 
 .accordeon-opener {
-  min-width: 32px;
-  min-height: 32px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  justify-items: center;
+  min-width: 20px;
+  min-height: 20px;
+  align-self: center;
   svg {
     fill: var(--primary-color);
   }
