@@ -2,6 +2,7 @@
 @use "@styles/_vars/scoped" as *;
 
 .accordeon {
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   list-style-type: none;
@@ -9,7 +10,7 @@
   container: accordeon-container / inline-size;
 
   &.--width-m {
-    max-width: 70%;
+    max-width: $laptop-lg-width; //?
   }
 
   &.--unwrap {
@@ -18,7 +19,7 @@
     display: none;
     }
 
-      @include container-up("faq-container", $tablet-lg-width) {
+      @include container-up("accordeon-container", $tablet-width) {
       .accordeon-item {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -29,7 +30,7 @@
 }
 
 .accordeon-item {
-
+  width: 100%;
   padding: 20px 24px;
 
   &:not(:last-child) {
