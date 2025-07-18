@@ -11,6 +11,7 @@ lerna-debug.log*
 /upload/
 .access.php
 /local/frontend/node_modules/
+/local/frontend/dist/
 /local/frontend/.cache
 
 *.local
