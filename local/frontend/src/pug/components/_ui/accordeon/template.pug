@@ -1,8 +1,8 @@
 mixin accordeon(data)
   - console.log(data)
-  ul.accordeon.--unwrap(class=data.modifiers ? data.modifiers : null)
+  ul.accordeon(class=data.modifiers ? data.modifiers : null)
     each item in data.items
-      li.accordeon-item
+      li.accordeon-item.--outlined
         .accordeon-header(tabindex='0')
           p!=item.title
           .accordeon-opener(role='button' aria-label='Посмотреть ответ')

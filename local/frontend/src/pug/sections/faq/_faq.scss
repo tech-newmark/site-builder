@@ -20,6 +20,10 @@
       top: 0;
       align-self: start;
     }
+
+    .base-section__header::after {
+      left:0;
+    }
 		}
 	}
 
@@ -30,6 +34,17 @@
    }
 }
 
+.faq .base-section__header {
+  position: relative;
+  padding-bottom: 32px;
+}
 
-
+.faq .base-section__header::after {
+  position: absolute;
+  content: "";
+  width: 160px;
+  height: 4px;
+  bottom: 0;
+  background-color: var(--primary-color);
+}
 
