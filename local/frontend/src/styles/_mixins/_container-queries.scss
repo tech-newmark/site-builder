@@ -3,14 +3,13 @@
 
 // down
 @mixin container-down($name, $width) {
-	@container #{$name} (max-width: #{calc($width - 1px)}) {
-		@content;
-	}
+ @container #{$name} (max-width: #{$width - 0.01px}) {
+  @content;
+ }
 }
 
-// up
 @mixin container-up($name, $width) {
-	@container #{$name} (min-width: #{calc($width + 1px)} ) {
-		@content;
-	}
+ @container #{$name} (min-width: #{$width} ) {
+  @content;
+ }
 }
