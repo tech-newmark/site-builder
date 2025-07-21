@@ -1,0 +1,69 @@
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.accordeon {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+
+  container: accordeon-container / inline-size;
+
+  &.--width-m {
+    max-width: $laptop-lg-width; //?
+  }
+
+  &.--unwrap {
+
+    .accordeon-opener {
+    display: none;
+    }
+
+      @include container-up("accordeon-container", $tablet-width) {
+      .accordeon-item {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      }
+    }
+  }
+}
+
+.accordeon-item {
+  width: 100%;
+  padding: 20px 24px;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &.--outlined {
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-md);
+  }
+
+  &.--underlined {
+    border-bottom:  1px solid var(--primary-color);
+  }
+}
+
+.accordeon-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-weight: 800;
+  gap: 16px;
+}
+
+.accordeon-opener {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  min-width: 20px;
+  min-height: 20px;
+  align-self: center;
+  svg {
+    fill: var(--primary-color);
+  }
+}
+
