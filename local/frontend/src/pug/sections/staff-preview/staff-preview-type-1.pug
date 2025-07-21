@@ -1,0 +1,12 @@
+.staff-preview__grid
+  each index in [1,2,1,2,1,2]
+    .staff-preview__grid-item
+      .staff-preview-card-container
+        .staff-preview-card.--content-align-center.--circle-view-picture.--align-center
+          .staff-preview-card__picture 
+            img(src=`./assets/img/staff-preview-mock${index}.png` alt="staff-preview-card" width="400" height="300")
+          .staff-preview-card__content
+            span.base-text.staff-preview-card__content-title Константин Константинов
+            small.staff-preview-card__content-description инженер
+
+            span.base-text.staff-preview-card__content-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
