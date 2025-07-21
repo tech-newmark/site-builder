@@ -8,12 +8,19 @@
 		&.--align-row .container {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			gap: 64px;
+			gap: var(--gap-lg);
 
 			.base-section__header {
 				position: sticky;
 				top: 0;
 				align-self: start;
+				align-items: flex-start;
+				text-align: left;
+
+				&::after {
+					left: 0;
+					transform: translateX(0);
+				}
 			}
 		}
 	}
