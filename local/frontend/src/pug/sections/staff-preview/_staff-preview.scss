@@ -1,6 +1,7 @@
 @forward "@styles/_extends/flexbox.scss";
 @forward "@styles/_extends/effects.scss";
 @forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/media-queries" as *;
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
@@ -17,6 +18,69 @@
 			@include container-up("staff-preview", $tablet-lg-width) {
 				grid-template-columns: repeat(2, 1fr);
 			}
+		}
+	}
+	&.--grid-type-2 {
+		.staff-preview__grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: var(--gap-lg);
+
+			@include container-up("staff-preview", $tablet-lg-width) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
+
+	&.--grid-type-3 {
+		&:has(.main-slider) .swiper-container {
+			position: relative;
+			// !!
+			//  только если есть пагинация
+			padding: 0 60px;
+			// только если не режим авто для слайдера
+			max-width: 440px;
+			margin: 0 auto;
+			@include media-up(680px) {
+				max-width: 780px;
+			}
+
+			@include media-up(1024px) {
+				max-width: 1120px;
+			}
+			// !!
+
+			// !!кнопки вынести отдельно глобально, чтобы совпадали с теми что в верзнем баннере
+			.swiper-button-prev,
+			.swiper-button-next {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			.swiper-button-prev {
+				left: 0px;
+				transform: translateY(-50%) rotate(180deg);
+			}
+
+			.swiper-button-next {
+				right: 0;
+			}
+			// !!
+		}
+
+		.main-slider {
+			.swiper-slide {
+				width: 100%;
+				max-width: 320px;
+			}
+		}
+
+		.staff-preview-card {
+			max-width: 320px;
+			align-items: center;
+			text-align: center;
+			padding: 24px;
 		}
 	}
 	// view modifiers end
