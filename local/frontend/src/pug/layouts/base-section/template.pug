@@ -8,9 +8,9 @@ section.base-section(class= sectionClass)
   .container(class= sectionContainerClass)
     if hideSectionHeader != true
       .base-section__header
-        h2.base-section__header-title!= sectionTitle
+        h2.base-title!= sectionTitle
         if sectionText
-          p.base-section__header-text!= sectionText
+          p.base-text!= sectionText
     block content
 
 - sectionClass = ''

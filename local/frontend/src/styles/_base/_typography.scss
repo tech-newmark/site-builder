@@ -23,15 +23,12 @@ h6,
 }
 
 .base-text {
-	font-size: clamp(14px, 2.2vw, 16px);
+	font-size: 16px;
 }
 
-h1 {
-	font-size: clamp(24px, 6vw, 56px); // test
-}
-
+h1,
 .main-title {
-	font-size: clamp(24px, 4vw, 56px); // test
+	font-size: clamp(24px, 4vw, 56px);
 }
 
 h2,
@@ -57,4 +54,11 @@ p {
 		color: var(--primary);
 		text-decoration: underline;
 	}
+}
+
+strong a,
+span a,
+p a {
+	color: var(--primary);
+	text-decoration: underline;
 }
