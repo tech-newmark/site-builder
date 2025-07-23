@@ -14,7 +14,6 @@ $accordeon-offset: clamp(20px, 2.4vw, 24px);
 	container: accordeon-container / inline-size;
 
 	// Модификаторы для аккордеона старт
-
 	// модификаторы ширины старт
 	&.--width-sm {
 		max-width: 640px;
@@ -29,7 +28,6 @@ $accordeon-offset: clamp(20px, 2.4vw, 24px);
 		max-width: 100%;
 	}
 	// модификаторы ширины конец
-
 	&.--bordered-items {
 		gap: 16px;
 		.accordeon__item {
@@ -41,7 +39,6 @@ $accordeon-offset: clamp(20px, 2.4vw, 24px);
 			border-radius: var(--current-border-radius);
 		}
 	}
-
 	// Модификаторы для аккордеона конец
 
 	&__item {
@@ -77,6 +74,7 @@ $accordeon-offset: clamp(20px, 2.4vw, 24px);
 		}
 	}
 
+	// состояния аккордеона
 	&.--expanded-default {
 		.accordeon__item-header {
 			@include container-down("accordeon-container", $tablet-width) {

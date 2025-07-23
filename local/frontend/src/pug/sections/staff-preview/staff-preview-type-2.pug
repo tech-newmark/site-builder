@@ -1,9 +1,9 @@
 .swiper-container
-  .swiper.main-slider
+  .swiper.main-slider.--js--auto-fill
     .swiper-wrapper
       each index in [1,2,1,2,1,2]
         .swiper-slide
-          .staff-preview-card.--content-align-center.--circle-view-picture.--align-center
+          .staff-preview-card.--bordered.--rounded.--content-align-center.--bordered.--circle-view-pictue.--algn-center
             .staff-preview-card__picture 
               img(src=`./assets/img/staff-preview-mock${index}.png` alt="staff-preview-card" width="400" height="300")
             .staff-preview-card__content
@@ -18,3 +18,5 @@
   button(type="button" aria-label="Вперед").swiper-button-next
     svg(width='32' height='32' role='img' aria-hidden='true' focusable='false')
       use(xlink:href='./assets/sprite.svg#chevron')
+
+  .swiper-pagination.--pagination-bullets-rectangle-wide
