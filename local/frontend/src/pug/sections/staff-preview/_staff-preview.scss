@@ -33,26 +33,21 @@
 	}
 
 	&.--grid-type-3 {
-		&:has(.main-slider) .swiper-container {
+		.swiper-container {
 			position: relative;
-			// !!
-			//  только если есть пагинация
-			padding: 0 60px;
-			// только если не режим авто для слайдера
-			max-width: 440px;
-			margin: 0 auto;
-			@include media-up(680px) {
-				max-width: 780px;
+
+			&:has(.swiper-pagination) {
+				padding-bottom: 30px;
 			}
 
-			@include media-up(1024px) {
-				max-width: 1120px;
+			.swiper-pagination {
+				bottom: 0;
+				padding: 0 60px;
 			}
-			// !!
 
-			// !!кнопки вынести отдельно глобально, чтобы совпадали с теми что в верзнем баннере
 			.swiper-button-prev,
 			.swiper-button-next {
+				display: none;
 				position: absolute;
 				top: 50%;
 				transform: translateY(-50%);
@@ -66,21 +61,55 @@
 			.swiper-button-next {
 				right: 0;
 			}
-			// !!
+
+			@include media-up($mobile-width) {
+				&:has(.swiper-button-prev),
+				&:has(.swiper-button-next) {
+					padding-left: 60px;
+					padding-right: 60px;
+
+					.swiper-button-next,
+					.swiper-button-prev {
+						display: flex;
+					}
+				}
+			}
+		}
+		&:has(.main-slider:not(.--js--auto-fill)) .swiper-container {
+			max-width: 320px;
+			margin: 0 auto;
+
+			@include media-up($mobile-width) {
+				max-width: 440px;
+			}
+
+			@include media-up(680px) {
+				max-width: 780px;
+			}
+
+			@include media-up(1024px) {
+				max-width: 1120px;
+			}
 		}
 
 		.main-slider {
+			.swiper-wrapper {
+				padding-bottom: 5px;
+			}
 			.swiper-slide {
 				width: 100%;
 				max-width: 320px;
+				height: auto;
 			}
 		}
 
 		.staff-preview-card {
 			max-width: 320px;
+			height: 100%;
 			align-items: center;
 			text-align: center;
 			padding: 24px;
+			margin: 2px;
 		}
 	}
 	// view modifiers end
@@ -106,7 +135,7 @@
 
 	&__picture {
 		width: 100%;
-		max-width: 240px;
+		max-width: 272px;
 		overflow: hidden;
 
 		img {
@@ -116,7 +145,7 @@
 			aspect-ratio: 1/1;
 
 			@include container-down("staff-preview-card", $mobile-width) {
-				max-width: 240px;
+				max-width: 272px;
 			}
 		}
 	}
@@ -157,6 +186,13 @@
 
 	&.--align-center {
 		align-items: center;
+	}
+
+	&.--bordered {
+		border: 1px solid var(--primary-color);
+	}
+	&.--rounded {
+		border-radius: var(--current-border-radius);
 	}
 
 	&.--content-align-center {

@@ -14,17 +14,20 @@ if (sliders.length) {
 
 		new Swiper(slider, {
 			modules: [Navigation, Pagination],
-			slidesPerView: 1,
+			slidesPerView: slider.classList.contains("--js--auto-fill") ? "auto" : 1,
 			spaceBetween: 20,
-			// centeredSlides: true,
 			centeredSlidesBounds: true,
 
 			breakpoints: {
 				680: {
-					slidesPerView: 2,
+					slidesPerView: slider.classList.contains("--js--auto-fill")
+						? "auto"
+						: 2,
 				},
 				1024: {
-					slidesPerView: 3,
+					slidesPerView: slider.classList.contains("--js--auto-fill")
+						? "auto"
+						: 3,
 				},
 			},
 
