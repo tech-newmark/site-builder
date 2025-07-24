@@ -5,7 +5,7 @@
 	container: faq-container / inline-size;
 
 	@include container-up("faq-container", $laptop-lg-width) {
-		&.--align-row .container {
+		&.--horizontal-view > .container {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			gap: var(--gap-lg);
