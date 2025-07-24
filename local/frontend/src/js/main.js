@@ -5,4 +5,4 @@ import "@pug/components/_ui/sliders/infinity-row-slider/script.js";
 import "@pug/components/_ui/accordeon/accordeon.js";
 import "./modules/table-wrapper";
 import "@pug/components/_ui/sliders/main-slider/script.js";
-
+// import "@pug/components/_ui/yMaps/script.js";

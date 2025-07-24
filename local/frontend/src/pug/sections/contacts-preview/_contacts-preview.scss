@@ -38,15 +38,16 @@
 			&--content {
 				display: grid;
 				grid-template-columns: 1fr;
-				gap: 32px;
+				gap: 24px;
+				max-width: fit-content;
 
 				.contact-preview-item {
-					align-items: flex-start;
-					text-align: left;
+					max-width: 320px;
 				}
 
 				@include container-up("contacts-preview-grid", 640px) {
 					grid-template-columns: repeat(3, 1fr);
+					margin: 0 auto;
 
 					.contact-preview-item {
 						align-items: center;
@@ -56,8 +57,32 @@
 			}
 
 			&--map {
-				height: 100px;
-				background-color: red;
+				height: 100%;
+				background-color: var(--lighter-color);
+			}
+		}
+	}
+
+	&.--items-align-center {
+		.contacts-preview__grid-item--content {
+			margin: 0 auto;
+		}
+		.contact-preview-item {
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&:not(.--horizontal-view) {
+		&:not(.--fullwidth-content) .contacts-preview__grid-item--content {
+			max-width: fit-content;
+		}
+
+		&.--fullwidth-content .contacts-preview__grid-item--content {
+			width: 100%;
+
+			.contact-preview-item {
+				max-width: 100%;
 			}
 		}
 	}
@@ -65,8 +90,6 @@
 
 .contact-preview-item {
 	@extend %flex-column;
-	align-items: center;
-	text-align: center;
 	gap: 4px;
 	height: fit-content;
 
