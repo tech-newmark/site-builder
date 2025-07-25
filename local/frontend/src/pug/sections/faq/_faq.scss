@@ -2,24 +2,26 @@
 @use "@styles/_vars/scoped" as *;
 
 .faq {
-  container: faq-container / inline-size;
+	container: faq-container / inline-size;
 
-  @include container-up("faq-container", $laptop-lg-width) {
+	@include container-up("faq-container", $laptop-lg-width) {
+		&.--horizontal-view > .container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--gap-lg);
 
-		&.--align-row .container {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-    gap: 64px;
+			.base-section__header {
+				position: sticky;
+				top: 0;
+				align-self: start;
+				align-items: flex-start;
+				text-align: left;
 
-      .base-section__header {
-      position: sticky;
-      top: 0;
-      align-self: start;
-      }
+				&::after {
+					left: 0;
+					transform: translateX(0);
+				}
+			}
 		}
 	}
 }
-
-
-
-

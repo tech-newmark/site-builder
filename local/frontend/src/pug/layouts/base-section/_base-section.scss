@@ -18,13 +18,12 @@ $base-section-header-offset: clamp(20px, 3vw, 28px);
 			margin-bottom: 0;
 		}
 
-		&-title {
+		.base-title {
 			color: var(--section-title-color);
 		}
 
-		&-text {
+		.base-text {
 			max-width: 1140px;
-			font-size: clamp(14px, 2vw, 16px);
 		}
 	}
 }

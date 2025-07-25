@@ -1,14 +1,18 @@
 mixin accordeon(data)
-  - console.log(data)
   ul.accordeon(class=data.modifiers ? data.modifiers : null)
     each item in data.items
-      li.accordeon-item.--underlined
-        .accordeon-header(tabindex='0')
-          p!=item.title
-          .accordeon-opener(role='button' aria-label='Посмотреть ответ')
-            svg(width='20' height='20' aria-hidden='true')
-              use(xlink:href='./assets/sprite.svg#cross')
-        .accordeon-body
+      li.accordeon__item
+        .accordeon__item-header(tabindex='0' aria-label="Развернуть" role="button")
+          span.base-text!=item.title
+          svg(width='24' height='24' aria-hidden='true')
+            use(xlink:href='./assets/sprite.svg#cross')
+        .accordeon__item-body
           .content-block
-            p!=item.text
+            p!=item.text 
+            p!=item.text 
+            ul
+              li list-item
+              li list-item
+              li list-item
+              li list-item
 
