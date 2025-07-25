@@ -4,8 +4,6 @@ import "swiper/css";
 
 const sliders = document.querySelectorAll(".infinity-row-slider");
 
-console.log(sliders);
-
 if (sliders.length) {
 	sliders.forEach((slider) => {
 		new Swiper(slider, {

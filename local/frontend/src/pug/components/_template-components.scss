@@ -7,9 +7,15 @@
 @use "./_ui/buttons/btn/btn-secondary";
 @use "./_ui/buttons/btn/btn-thin";
 
+// swiper
+@use "./_ui/swiper/navigation";
+@use "./_ui/swiper/pagination";
+
 // inputs
 
 // template-block-components
 @use "./static/content-block/content-block";
 @use "./static/button-row/button-row";
 /* purgecss end ignore */
+
+// accordeon
