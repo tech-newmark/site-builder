@@ -6,10 +6,14 @@ $base-section-header-offset: clamp(20px, 3vw, 28px);
 
 .seo-block {
   padding: $base-section-offset 0;
-  margin: $base-section-offset 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  .content-block {
+    position: relative;
+    z-index: 3;
+  }
 
   &.--height-30 {
     min-height: 30svh;
@@ -34,9 +38,7 @@ $base-section-header-offset: clamp(20px, 3vw, 28px);
   &.--overlayed-blured {
     @include block-overlay("blured");
   }
-}
 
-.seo-block {
   &.--align-center {
     .content-block {
       h1,
@@ -52,21 +54,21 @@ $base-section-header-offset: clamp(20px, 3vw, 28px);
     }
   }
 
-  &.--content-width-sm {
+  &.--content-width-md {
     .content-block {
       width: 50%;
       margin: 0 auto;
     }
   }
 
-  &.--content-width-md {
+  &.--content-width-lg {
     .content-block {
       width: 75%;
       margin: 0 auto;
     }
   }
 
-  &.--content-width-lg {
+  &.--content-fullwidth {
     .content-block {
       width: 100%;
     }
