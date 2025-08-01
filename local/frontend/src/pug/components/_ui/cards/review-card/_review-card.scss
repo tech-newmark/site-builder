@@ -1,0 +1,119 @@
+@use "@styles/_vars/scoped" as *;
+@use "@styles/_mixins/container-queries" as *;
+
+.review-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  container: review-card-container / inline-size;
+
+  &__rating {
+    height: 14px;
+    background-image: url("../../../../../assets/img/star.svg");
+    background-repeat: repeat-x;
+    font-size: 14px;
+    background-size: 1em auto;
+    background-position: 0 center;
+
+    svg {
+      display: block;
+      fill: var(--primary-color);
+      width: 86px;
+      height: 13px;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+
+    .review-card__text {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0;
+
+      &.expanded {
+        -webkit-line-clamp: unset;
+        display: block;
+      }
+    }
+
+    .review-card__button {
+      font-family: var(--montserrat);
+      font-size: clamp(14px, 2vw, 16px);
+      font-weight: 600;
+      border: none;
+      background-color: transparent;
+    }
+
+    @include container-up("review-card-container", $tablet-width) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__author-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    p {
+      display: flex;
+      flex-direction: column;
+
+      .review-card__author {
+        font-weight: 600;
+      }
+    }
+
+    @include container-up("review-card-container", $tablet-width) {
+      gap: 16px;
+
+      .review-card__image {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  &.--bordered {
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+  }
+
+  &.--rounded {
+    border-radius: var(--current-border-radius);
+  }
+
+  &.--bg-primary {
+    background-color: var(--primary-color);
+  }
+
+  &.--bg-secondary {
+    background-color: var(--secondary-color);
+  }
+
+  &.--content-align-center {
+    text-align: center;
+
+    .review-card__rating {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .review-card__author-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &.--no-rating {
+    .review-card__rating {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use "@pug/components/_ui/cards/review-card/review-card";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.reviews {
+  container: reviews-container / inline-size;
+
+  .swiper-container {
+    position: relative;
+    padding: 20px;
+    padding-bottom: 24px;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: absolute;
+
+      top: 50%;
+      width: 36px;
+      height: 36px;
+    }
+
+    .swiper-button-prev {
+      left: 0;
+      transform: translate(-50%, -50%);
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    .swiper-button-next {
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+
+    .swiper-pagination {
+      bottom: 0;
+    }
+
+    @include container-up("reviews-container", $tablet-width) {
+      padding-bottom: 40px;
+    }
+  }
+}

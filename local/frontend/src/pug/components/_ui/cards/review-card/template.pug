@@ -1,0 +1,15 @@
+mixin review-card(data)
+
+  - const rating = parseFloat(data.rating || 0)
+  - const widthEm = isNaN(rating) ? 0 : rating
+
+  article.review-card&attributes(attributes)
+    p.review-card__rating(style=`width: ${widthEm}em`)
+    .review-card__content
+      p.review-card__text!=data.text
+      button.review-card__button Читать далее...
+    div.review-card__author-info
+      img.review-card__image(src=`./assets/img/${data.img}`, width="36px" height="36px" alt="")
+      p
+        span.review-card__author!=data.author
+        span.review-card__job_title!=data.title
