@@ -1,4 +1,4 @@
-@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/flexbox";
 @use "@styles/_mixins/block-overlay" as *;
 
 $base-section-offset: clamp(32px, 4vw, 64px);

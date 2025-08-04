@@ -3,6 +3,7 @@
   "rules": {
     "selector-class-pattern": null,
     "scss/load-no-partial-leading-underscore": null,
-    "no-empty-source": null
+    "no-empty-source": null,
+    "value-keyword-case": null
   }
 }

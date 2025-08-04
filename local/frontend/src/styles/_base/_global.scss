@@ -4,19 +4,12 @@
   box-sizing: border-box;
 }
 
-// * {
-// 	-webkit-tap-highlight-color: transparent;
-// 	outline: none;
-// }
-
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
-
   min-width: 320px;
-
   min-height: 100vh;
   min-height: 100dvh;
   text-size-adjust: none;
@@ -25,7 +18,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-
 
 body {
   position: relative;
@@ -55,7 +47,6 @@ body {
   &::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-thumb-color);
     border-radius: var(--scrollbar-thumb-border-radius);
-
   }
 }
 
