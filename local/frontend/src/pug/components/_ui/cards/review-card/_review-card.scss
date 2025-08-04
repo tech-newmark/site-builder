@@ -2,31 +2,26 @@
 @use "@styles/_mixins/container-queries" as *;
 
 .review-card {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-
-  container: review-card-container / inline-size;
 
   &__rating {
-    height: 14px;
-    background-image: url("../../../../../assets/img/star.svg");
-    background-repeat: repeat-x;
-    font-size: 14px;
-    background-size: 1em auto;
-    background-position: 0 center;
+    margin-bottom: 16px;
 
     svg {
-      display: block;
-      fill: var(--primary-color);
-      width: 86px;
-      height: 13px;
+      width: 14px;
+      height: auto;
+
+      path {
+        stroke-width: 2px;
+        stroke: var(--primary-color);
+      }
     }
   }
 
   &__content {
     flex-grow: 1;
+    margin-bottom: 16px;
 
     .review-card__text {
       display: -webkit-box;
@@ -36,11 +31,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       margin: 0;
-
-      &.expanded {
-        -webkit-line-clamp: unset;
-        display: block;
-      }
+      margin-bottom: 8px;
     }
 
     .review-card__button {
@@ -49,10 +40,6 @@
       font-weight: 600;
       border: none;
       background-color: transparent;
-    }
-
-    @include container-up("review-card-container", $tablet-width) {
-      margin-bottom: 32px;
     }
   }
 
@@ -70,50 +57,41 @@
       }
     }
 
-    @include container-up("review-card-container", $tablet-width) {
-      gap: 16px;
+    &.--bordered {
+      padding: 20px;
+      border: 1px solid var(--primary-color);
+    }
 
-      .review-card__image {
-        width: 48px;
-        height: 48px;
+    &.--rounded {
+      border-radius: var(--current-border-radius);
+    }
+
+    &.--bg-primary {
+      background-color: var(--primary-color);
+    }
+
+    &.--bg-secondary {
+      background-color: var(--secondary-color);
+    }
+
+    &.--content-align-center {
+      text-align: center;
+
+      .review-card__rating {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .review-card__author-info {
+        flex-direction: column;
+        align-items: center;
       }
     }
-  }
 
-  &.--bordered {
-    padding: 20px;
-    border: 1px solid var(--primary-color);
-  }
-
-  &.--rounded {
-    border-radius: var(--current-border-radius);
-  }
-
-  &.--bg-primary {
-    background-color: var(--primary-color);
-  }
-
-  &.--bg-secondary {
-    background-color: var(--secondary-color);
-  }
-
-  &.--content-align-center {
-    text-align: center;
-
-    .review-card__rating {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .review-card__author-info {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
-  &.--no-rating {
-    .review-card__rating {
-      display: none;
+    &.--no-rating {
+      .review-card__rating {
+        display: none;
+      }
     }
   }
 }

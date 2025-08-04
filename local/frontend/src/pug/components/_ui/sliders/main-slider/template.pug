@@ -7,13 +7,13 @@ mixin main-slider (data)
   .swiper-container
     .swiper.main-slider(class= data.mainSliderModifiers ? data.mainSliderModifiers : null)
       .swiper-wrapper
-        each item in data.content
+        each item, index in data.content
           .swiper-slide
             if data.type === 'staff-preview-slider'
               +staff-preview-card(item)
 
             if data.type === 'review-card-slider'
-              +review-card(item)(class=  data.itemsModifiers ? data.itemsModifiers : null)
+              +review-card(item, index)(class=  data.itemsModifiers ? data.itemsModifiers : null)
             //- .staff-preview-card.--bordered.--rounded.--content-align-center.--bordered.--circle-view-pictue.--algn-center
             //-   .staff-preview-card__picture
             //-     img(src=`./assets/img/${item.img}` alt="staff-preview-card" width="400" height="300")

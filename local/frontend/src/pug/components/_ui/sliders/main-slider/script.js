@@ -22,21 +22,21 @@ if (sliders.length) {
           slidesPerView: slider.classList.contains("--max-slides-2")
             ? 1
             : slider.classList.contains("--max-slides-3")
-            ? 2
-            : 1,
+              ? 2
+              : 1,
           spaceBetween: slider.classList.contains("--max-slides-3") ? 32 : 20,
         },
         1024: {
           slidesPerView: slider.classList.contains("--max-slides-2")
             ? 2
             : slider.classList.contains("--max-slides-3")
-            ? 3
-            : 1,
+              ? 3
+              : 1,
           spaceBetween: slider.classList.contains("--max-slides-2")
             ? 64
             : slider.classList.contains("--max-slides-3")
-            ? 32
-            : 20,
+              ? 32
+              : 20,
         },
       };
     }
