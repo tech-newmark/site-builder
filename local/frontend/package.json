@@ -4,10 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run lint && vite",
-    "build": "npm run lint && vite build --emptyOutDir",
+    "dev": "vite",
+    "build": "vite build --emptyOutDir",
     "preview": "vite preview",
-    "lint": "npx stylelint '**/*.scss'",
     "img-convert": "node img-converter.js",
     "w3c": "html-validator dest --quiet"
   },
@@ -23,7 +22,6 @@
     "postcss-discard-comments": "^7.0.3",
     "postcss-sort-media-queries": "^5.2.0",
     "sharp": "^0.33.5",
-    "stylelint-config-standard-scss": "^15.0.1",
     "svgo": "^3.3.2",
     "vite": "^5.4.1",
     "vite-plugin-image-optimizer": "^1.1.8",
