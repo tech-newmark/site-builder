@@ -1,6 +1,6 @@
-@forward "@styles/_extends/flexbox.scss";
-@forward "@styles/_extends/effects.scss";
-@forward "@styles/_extends/resets.scss";
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
@@ -22,13 +22,14 @@
 	&__content,
 	&__sidebar {
 		@extend %flex-column;
+
 		gap: 10px;
 		padding: 20px;
 	}
 
 	&__sidebar {
 		position: sticky;
-		top: 0px;
+		top: 0;
 		height: fit-content;
 		background-color: var(--site-bg-color);
 
@@ -61,7 +62,9 @@
 
 		&-field {
 			@extend %flex-column;
+
 			gap: 12px;
+
 			&:not(:last-child) {
 				margin-bottom: 40px;
 			}
@@ -76,6 +79,7 @@
 
 				div {
 					@extend %flex-center;
+
 					height: 80px;
 					font-weight: 600;
 					color: var(--white-color);
@@ -88,6 +92,7 @@
 
 				span {
 					padding: 3px 6px;
+
 					&.color-white {
 						background-color: var(--black-color);
 						border-radius: var(--border-radius-xs);
@@ -97,6 +102,7 @@
 
 			&-grid {
 				@extend %flex-wrap;
+
 				gap: 20px;
 			}
 		}
@@ -110,9 +116,11 @@
 			margin-bottom: 30px;
 			border-bottom: 1px solid var(--primary-color);
 		}
+
 		&__title {
 			text-decoration: underline;
 		}
+
 		&--montserrat * {
 			font-family: var(--montserrat);
 		}

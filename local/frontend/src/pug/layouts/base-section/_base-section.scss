@@ -1,4 +1,5 @@
-@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/flexbox";
+
 $base-section-offset: clamp(32px, 4vw, 64px);
 $base-section-header-offset: clamp(20px, 3vw, 28px);
 
@@ -7,11 +8,12 @@ $base-section-header-offset: clamp(20px, 3vw, 28px);
 
 	&__header {
 		position: relative;
+
 		@extend %flex-column;
+
 		align-items: center;
 		text-align: center;
 		gap: $base-section-header-offset;
-
 		margin-bottom: $base-section-offset;
 
 		& * {
@@ -31,6 +33,7 @@ $base-section-header-offset: clamp(20px, 3vw, 28px);
 body:has(.--section-headers-align-left) {
 	.base-section__header {
 		@extend %flex-column;
+
 		text-align: left;
 		align-items: flex-start;
 	}
@@ -39,6 +42,7 @@ body:has(.--section-headers-align-left) {
 body:has(.--section-headers-align-right) {
 	.base-section__header {
 		@extend %flex-column;
+
 		text-align: right;
 		align-items: flex-end;
 	}

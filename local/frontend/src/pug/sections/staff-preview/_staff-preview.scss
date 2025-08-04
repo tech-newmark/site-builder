@@ -1,11 +1,12 @@
-@forward "@styles/_extends/flexbox.scss";
-@forward "@styles/_extends/effects.scss";
-@forward "@styles/_extends/resets.scss";
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
 @use "@styles/_mixins/media-queries" as *;
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
 @use "@pug/components/_ui/cards/staff-preview-card/staff-preview-card";
+
 
 .staff-preview {
   container: staff-preview / inline-size;
@@ -22,6 +23,7 @@
       }
     }
   }
+
   &.--grid-type-2 {
     .staff-preview__grid {
       display: grid;
@@ -56,7 +58,7 @@
       }
 
       .swiper-button-prev {
-        left: 0px;
+        left: 0;
         transform: translateY(-50%) rotate(180deg);
       }
 
@@ -77,6 +79,7 @@
         }
       }
     }
+
     &:has(.main-slider:not(.--js--auto-fill)) .swiper-container {
       max-width: 320px;
       margin: 0 auto;
@@ -98,6 +101,7 @@
       .swiper-wrapper {
         padding-bottom: 5px;
       }
+
       .swiper-slide {
         width: 100%;
         max-width: 320px;
@@ -114,5 +118,6 @@
       margin: 2px;
     }
   }
+
   // view modifiers end
 }

@@ -1,9 +1,11 @@
-@forward "@styles/_extends/flexbox.scss";
-@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
 %btn {
 	@extend %flex-align;
+
 	justify-content: center;
 	gap: 6px;
+
 	// width: fit-content;
 	min-width: 180px;
 	min-height: 48px;
@@ -16,6 +18,7 @@
 	transition: color var(--main-transition),
 		background-color var(--main-transition), border-color var(--main-transition),
 		opacity var(--main-transition);
+
 	@extend %base-hover-effect;
 
 	span {

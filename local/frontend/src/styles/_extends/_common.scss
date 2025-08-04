@@ -1,7 +1,8 @@
-@forward "@styles/_extends/resets.scss";
+@forward "@styles/_extends/resets";
 
 %column-list {
 	@extend %list-reset;
+
 	columns: 480px;
 	gap: 10px;
 

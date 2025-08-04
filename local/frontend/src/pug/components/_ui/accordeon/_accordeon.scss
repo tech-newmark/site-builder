@@ -1,152 +1,167 @@
-@forward "@styles/_extends/flexbox.scss";
-@forward "@styles/_extends/effects.scss";
-@forward "@styles/_extends/resets.scss";
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
 $accordeon-offset: clamp(20px, 2.4vw, 24px);
+
 .accordeon {
-	@extend %list-reset;
-	@extend %flex-column;
-	width: 100%;
-	max-width: 960px;
-	margin: 0 auto;
-	container: accordeon-container / inline-size;
+  @extend %list-reset;
+  @extend %flex-column;
 
-	// Модификаторы для аккордеона старт
-	// модификаторы ширины старт
-	&.--width-sm {
-		max-width: 640px;
-	}
-	&.--width-md {
-		max-width: 960px;
-	}
-	&.--width-lg {
-		max-width: 1140px;
-	}
-	&.--fullwidth {
-		max-width: 100%;
-	}
-	// модификаторы ширины конец
-	&.--bordered-items {
-		gap: 16px;
-		.accordeon__item {
-			border: 1px solid var(--primary-color);
-		}
-	}
-	&.--rounded-items {
-		.accordeon__item {
-			border-radius: var(--current-border-radius);
-		}
-	}
-	// Модификаторы для аккордеона конец
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  container: accordeon-container / inline-size;
 
-	&__item {
-		border-bottom: 1px solid var(--primary-color);
+  // Модификаторы для аккордеона старт
+  // модификаторы ширины старт
+  &.--width-sm {
+    max-width: 640px;
+  }
 
-		&-header {
-			@extend %flex-align;
-			justify-content: space-between;
-			gap: 32px;
-			padding: $accordeon-offset;
+  &.--width-md {
+    max-width: 960px;
+  }
 
-			span {
-				font-weight: 600;
-			}
+  &.--width-lg {
+    max-width: 1140px;
+  }
 
-			svg {
-				display: none;
-			}
-		}
+  &.--fullwidth {
+    max-width: 100%;
+  }
 
-		&-body {
-			padding: 0 $accordeon-offset;
+  &__item {
+    border-bottom: 1px solid var(--primary-color);
 
-			.content-block {
-				@extend %flex-column; // TEMP
-				gap: 16px; // TEMP
-				overflow: hidden;
+    &-header {
+      @extend %flex-align;
 
-				& > * {
-					margin: 0;
-				}
-			}
-		}
-	}
+      justify-content: space-between;
+      gap: 32px;
+      padding: $accordeon-offset;
 
-	// состояния аккордеона
-	&.--expanded-default {
-		.accordeon__item-header {
-			@include container-down("accordeon-container", $tablet-width) {
-				padding: $accordeon-offset 0;
-			}
-		}
-		.accordeon__item-body {
-			padding-bottom: $accordeon-offset;
+      span {
+        font-weight: 600;
+      }
 
-			@include container-down("accordeon-container", $tablet-width) {
-				padding: 0;
-				padding-bottom: $accordeon-offset;
-			}
-		}
+      svg {
+        display: none;
+      }
+    }
 
-		@include container-up("accordeon-container", $tablet-width) {
-			&.--expanded-default-horizantal-view {
-				.accordeon__item {
-					display: grid;
-					grid-template-columns: 2fr 3fr;
-					gap: 32px;
-					&-header {
-						align-items: flex-start;
-					}
-					&-body {
-						padding-top: $accordeon-offset;
-					}
-				}
-			}
-		}
-	}
+    &-body {
+      padding: 0 $accordeon-offset;
 
-	&:not(.--expanded-default) {
-		.accordeon__item {
-			&-header {
-				cursor: pointer;
-				@extend %base-hover-effect;
+      .content-block {
+        @extend %flex-column; // TEMP
 
-				svg {
-					display: block;
-					width: 20px;
-					height: 100%;
-					min-width: 20px;
-					aspect-ratio: 1/1;
-					fill: var(--primary-color);
-					transition: transform var(--slow-transition);
-				}
-			}
+        gap: 16px; // TEMP
+        overflow: hidden;
 
-			&-body {
-				display: grid;
-				grid-template-rows: 0fr;
-				opacity: 0;
-				transform: translateY(20px);
+        & > * {
+          margin: 0;
+        }
+      }
+    }
+  }
 
-				will-change: opacity, transform, grid-template-rows;
-				transition: opacity var(--main-transition),
-					transform var(--slow-transition),
-					grid-template-rows var(--main-transition);
-			}
+  // модификаторы ширины конец
+  &.--bordered-items {
+    gap: 16px;
 
-			&.expanded {
-				.accordeon__item-header svg {
-					transform: rotate(135deg);
-				}
-				.accordeon__item-body {
-					grid-template-rows: 1fr;
-					opacity: 1;
-					transform: translateY(0);
-					padding-bottom: $accordeon-offset;
-				}
-			}
-		}
-	}
+    .accordeon__item {
+      border: 1px solid var(--primary-color);
+    }
+  }
+
+  &.--rounded-items {
+    .accordeon__item {
+      border-radius: var(--current-border-radius);
+    }
+  }
+
+  // Модификаторы для аккордеона конец
+
+  // состояния аккордеона
+  &.--expanded-default {
+    .accordeon__item-header {
+      @include container-down("accordeon-container", $tablet-width) {
+        padding: $accordeon-offset 0;
+      }
+    }
+
+    .accordeon__item-body {
+      padding-bottom: $accordeon-offset;
+
+      @include container-down("accordeon-container", $tablet-width) {
+        padding: 0;
+        padding-bottom: $accordeon-offset;
+      }
+    }
+
+    @include container-up("accordeon-container", $tablet-width) {
+      &.--expanded-default-horizantal-view {
+        .accordeon__item {
+          display: grid;
+          grid-template-columns: 2fr 3fr;
+          gap: 32px;
+
+          &-header {
+            align-items: flex-start;
+          }
+
+          &-body {
+            padding-top: $accordeon-offset;
+          }
+        }
+      }
+    }
+  }
+
+  &:not(.--expanded-default) {
+    .accordeon__item {
+      &-header {
+        cursor: pointer;
+
+        @extend %base-hover-effect;
+
+        svg {
+          display: block;
+          width: 20px;
+          height: 100%;
+          min-width: 20px;
+          aspect-ratio: 1/1;
+          fill: var(--primary-color);
+          transition: transform var(--slow-transition);
+        }
+      }
+
+      &-body {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        transform: translateY(20px);
+        will-change: opacity, transform, grid-template-rows;
+        transition: opacity var(--main-transition),
+          transform var(--slow-transition),
+          grid-template-rows var(--main-transition);
+      }
+
+      &.expanded {
+        .accordeon__item-header svg {
+          transform: rotate(135deg);
+        }
+
+        .accordeon__item-body {
+          grid-template-rows: 1fr;
+          opacity: 1;
+          transform: translateY(0);
+          padding-bottom: $accordeon-offset;
+        }
+      }
+    }
+  }
 }
