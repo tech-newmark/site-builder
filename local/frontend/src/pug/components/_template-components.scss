@@ -16,9 +16,11 @@
 // template-block-components
 @use "./static/content-block/content-block";
 @use "./static/button-row/button-row";
+
 /* purgecss end ignore */
 
 // accordeon
 @use "./_ui/accordeon/accordeon";
-//table
+
+// table
 @use "./static/table-wrapper/table-wrapper";

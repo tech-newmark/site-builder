@@ -5,6 +5,7 @@ $btn-primary-bg-color: var(--primary-color);
 
 .btn-primary {
 	@extend %btn;
+
 	color: $btn-primary-color;
 	background-color: $btn-primary-bg-color;
 

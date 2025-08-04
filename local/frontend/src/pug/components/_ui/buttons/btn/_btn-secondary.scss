@@ -5,6 +5,7 @@ $btn-secondary-bg-color: transparent;
 
 .btn-secondary {
 	@extend %btn;
+
 	color: $btn-primary-color;
 	background-color: $btn-secondary-bg-color;
 	border-color: $btn-primary-color;

@@ -1,4 +1,4 @@
-@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/flexbox";
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_mixins/media-queries" as *;
 @use "@styles/_vars/scoped" as *;
@@ -6,6 +6,7 @@
 
 .feature-card {
 	@extend %flex-column;
+
 	height: 100%;
 	padding: 32px;
 	color: var(--dark-color);
@@ -22,6 +23,7 @@
 
 	&__wrapper {
 		@extend %flex-column;
+
 		gap: 24px;
 
 		img {
@@ -42,6 +44,7 @@
 			border-color: var(--primary-color);
 			border-style: solid;
 		}
+
 		&-secondary {
 			border-color: var(--secondary-color);
 			border-style: solid;
@@ -52,18 +55,23 @@
 		&-xs {
 			border-width: 1px;
 		}
+
 		&-sm {
 			border-width: 2px;
 		}
+
 		&-md {
 			border-width: 4px;
 		}
+
 		&-lg {
 			border-width: 6px;
 		}
+
 		&-xl {
 			border-width: 8px;
 		}
+
 		&-xxl {
 			border-width: 10px;
 		}
@@ -122,7 +130,7 @@
 	}
 
 	&.--overlayed-dark {
-		@include block-overlay();
+		@include block-overlay;
 	}
 
 	&.--overlayed-light {

@@ -1,9 +1,8 @@
-@forward "@styles/_extends/flexbox.scss";
-@forward "@styles/_extends/effects.scss";
-@forward "@styles/_extends/resets.scss";
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
-
 @use "@pug/components/_ui/sliders/infinity-row-slider/infinity-row-slider" as *;
 
 .clients-preview {
@@ -18,10 +17,10 @@
 
 		&-item {
 			@extend %flex-center;
+
 			padding: clamp(16px, 3vw, 32px) 24px;
 			border-radius: var(--current-border-radius);
 			min-height: 100px;
-
 			flex-grow: 1;
 			width: 100%;
 

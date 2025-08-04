@@ -1,20 +1,14 @@
-
-@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/effects";
 
 $title-default-offset: 0.75em;
 
 .main-title,
 .base-title,
 .base-subtitle {
-	display: block;
-	font-weight: 700;
-}
-
-.main-title,
-.base-title,
-.base-subtitle {
-	margin: 0;
-	margin-bottom: $title-default-offset;
+  display: block;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: $title-default-offset;
 }
 
 @mixin styles() {
@@ -27,11 +21,13 @@ $title-default-offset: 0.75em;
     margin: $title-default-offset 0;
   }
 
-  h1, .main-title {
-		font-size: clamp(28px, 4vw, 56px);
-	}
+  h1,
+  .main-title {
+    font-size: clamp(28px, 4vw, 56px);
+  }
 
-  h2, .base-title {
+  h2,
+  .base-title {
     font-size: clamp(24px, 3.6vw, 48px);
   }
 
@@ -43,7 +39,8 @@ $title-default-offset: 0.75em;
     font-size: clamp(20px, 3.2vw, 32px);
   }
 
-  h5, .base-subtitle {
+  h5,
+  .base-subtitle {
     font-size: clamp(18px, 3vw, 24px);
   }
 
@@ -56,11 +53,12 @@ $title-default-offset: 0.75em;
     margin-bottom: 0.5em;
   }
 
-    a {
+  a {
     color: var(--primary-color);
-	  text-decoration: underline;
+    text-decoration: underline;
+
     @extend %base-hover-effect;
   }
 }
 
-@include styles();
+@include styles;

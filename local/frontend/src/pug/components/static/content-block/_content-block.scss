@@ -1,18 +1,18 @@
 @use "@styles/_vars/scoped" as *;
-@use "@styles/_base/typography.scss";
+@use "@styles/_base/typography";
 
 .content-block {
-  @include typography.styles();
+  @include typography.styles;
 
   & > *:first-child {
     margin-top: 0;
   }
 
-	ul, ol {
+  ul,
+  ol {
     padding: 0;
     margin: 0;
     list-style-type: none;
-
 
     li {
       position: relative;
@@ -27,21 +27,21 @@
       font-size: 1em;
       line-height: 1;
       text-align: center;
-      }
+    }
   }
 
   ol {
     counter-reset: item;
 
-    li::before  {
+    li::before {
       content: counter(item) ".";
       counter-increment: item;
     }
   }
 
-  ul  {
-    li::before  {
-      content: '•';
+  ul {
+    li::before {
+      content: "•";
       display: inline-block;
       height: 1em;
       vertical-align: middle;
@@ -51,49 +51,30 @@
   table {
     border-collapse: collapse;
     margin: 0.75em 0;
+
     thead {
       tr {
         background-color: var(--secondary-color);
+
         th {
           border: 1px solid var(--primary-color);
           padding: 0.75em;
         }
       }
     }
+
     tbody {
       td {
         border: 1px solid var(--primary-color);
         padding: 0.75em;
       }
     }
+
     caption {
       padding: 0.75em;
       font-style: italic;
       text-align: left;
       caption-side: bottom;
-    }
-  }
-
-    blockquote {
-    position: relative;
-    margin: 0;
-    margin-bottom: 0.5em;
-    padding-left: 26px;
-    font-style: italic;
-    quotes: "«" "»" "„" "“";
-
-      &::before {
-      position: absolute;
-      content: "";
-      top: 0;
-      left: 0;
-      width: 2px;
-      height: 100%;
-      background-color: var(--primary-color);
-      }
-
-      cite {
-      display: block;
     }
   }
 
@@ -105,5 +86,28 @@
   cite {
     font-weight: 700;
     font-style: normal;
+  }
+
+  blockquote {
+    position: relative;
+    margin: 0;
+    margin-bottom: 0.5em;
+    padding-left: 26px;
+    font-style: italic;
+    quotes: "«" "»" "„" "“";
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background-color: var(--primary-color);
+    }
+
+    cite {
+      display: block;
+    }
   }
 }

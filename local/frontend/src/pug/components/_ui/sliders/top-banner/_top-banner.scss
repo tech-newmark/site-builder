@@ -1,4 +1,4 @@
-@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/flexbox";
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_mixins/media-queries" as *;
 @use "@styles/_vars/scoped" as *;
@@ -7,374 +7,261 @@
 $top-banner-offset-vertical: clamp(32px, 4vw, 84px);
 $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 
-.top-banner-slider {
-	@extend %flex-column;
-	height: 100%;
-	container: top-banner-slider / inline-size;
+.top-banner {
+  @extend %flex-align;
 
-	// глобальные модификаторы для всех слайдов начало
-	&.--fullheight {
-		.top-banner {
-			min-height: 90svh;
-		}
-	}
+  padding: $top-banner-offset-vertical $top-banner-offset-horizontal;
+  gap: clamp(24px, 4vw, 64px);
+  height: 100%;
+  background-size: cover;
 
-	&.--height-30 {
-		.top-banner {
-			min-height: 30svh;
-		}
-	}
+  // модификаторы для направления расположения контента баннера начало
+  &.--dir-rtl {
+    flex-direction: row-reverse;
+  }
 
-	&.--height-50 {
-		.top-banner {
-			min-height: 50svh;
-		}
-	}
+  // модификаторы для направления расположения контента баннера конец
 
-	&.--height-70 {
-		.top-banner {
-			min-height: 70svh;
-		}
-	}
-	// глобальные модификаторы для всех слайдов конец
+  // модификаторы для подложки начало
+  &.--overlayed-dark {
+    @include block-overlay("dark");
+  }
 
-	// навигация
+  &.--overlayed-light {
+    @include block-overlay("light");
+  }
 
-	.swiper-button-next,
-	.swiper-button-prev {
-		@extend %flex-center;
-		position: absolute;
-		top: 50%;
+  &.--overlayed-blured {
+    @include block-overlay("blured");
+  }
 
-		// z-index: 30;
-		// cursor: pointer;
-		// &.--size-sm {
-		// 	width: 40px;
-		// 	height: 40px;
-		// }
-		// &.--size-md {
-		// 	width: 50px;
-		// 	height: 50px;
-		// }
-		// &.--size-lg {
-		// 	width: 60px;
-		// 	height: 60px;
-		// }
+  // модификаторы для подложки конец
 
-		// &.--bordered {
-		// 	border: 1px solid var(--primary-color);
-		// }
+  // модификаторы для фоновой картинки начало
+  &.--bg-top-left {
+    background-position: top left;
+  }
 
-		// &.--rounded {
-		// 	border-radius: 50%;
-		// }
+  &.--bg-top-center {
+    background-position: top center;
+  }
 
-		// &.--bordered-white {
-		// 	border: 1px solid var(--white-color);
-		// }
-		// &.--bordered-dark {
-		// 	border: 1px solid var(--dark-color);
-		// }
-		// &.--bordered-primary {
-		// 	border: 1px solid var(--primary-color);
-		// }
-		// &.--bordered-secondary {
-		// 	border: 1px solid var(--secondary-color);
-		// }
+  &.--bg-top-right {
+    background-position: top right;
+  }
 
-		// &.--background-none {
-		// 	background-color: transparent;
-		// }
-		// &.--background-white {
-		// 	background-color: var(--white-color);
-		// }
-		// &.--background-dark {
-		// 	background-color: var(--dark-color);
-		// }
-		// &.--background-primary {
-		// 	background-color: var(--primary-color);
-		// }
-		// &.--background-secondary {
-		// 	background-color: var(--secondary-color);
-		// }
+  &.--bg-bottom-left {
+    background-position: bottom left;
+  }
 
-		// &.--color-white {
-		// 	svg {
-		// 		fill: var(--white-color);
-		// 	}
-		// }
-		// &.--color-dark {
-		// 	svg {
-		// 		fill: var(--dark-color);
-		// 	}
-		// }
-		// &.--color-primary {
-		// 	svg {
-		// 		fill: var(--primary-color);
-		// 	}
-		// }
-		// &.--color-secondary {
-		// 	svg {
-		// 		fill: var(--secondary-color);
-		// 	}
-		// }
-	}
+  &.--bg-bottom-center {
+    background-position: bottom center;
+  }
 
-	.swiper-button-prev {
-		left: clamp(16px, 4vw, 64px);
-		transform: translateY(-50%) translateX(-50%) rotate(180deg);
-	}
+  &.--bg-bottom-right {
+    background-position: bottom right;
+  }
 
-	.swiper-button-next {
-		right: clamp(16px, 4vw, 64px);
-		transform: translateY(-50%) translateX(50%);
-	}
+  &.--bg-center-left {
+    background-position: center left;
+  }
 
-	// пагинация слайдера
-	.swiper-pagination {
-		padding: 20px 0;
+  &.--bg-center-right {
+    background-position: center right;
+  }
 
-		// &-bullet {
-		// 	width: 8px;
-		// 	height: 8px;
-		// 	background-color: var(--primary-color);
-		// }
+  &.--bg-center-center {
+    background-position: center;
+  }
 
-		// &.--pagination-bullets-square,
-		// &.--pagination-bullets-rectangle,
-		// &.--pagination-bullets-rectangle-wide:not(
-		// 		.swiper-pagination-bullets-dynamic
-		// 	) {
-		// 	.swiper-pagination-bullet {
-		// 		border-radius: 0;
-		// 	}
-		// }
-	}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+    padding: clamp(24px, 5vw, 80px);
+    text-wrap: balance;
+    overflow: hidden;
+    z-index: 3;
 
-	.swiper-pagination:not(
-			.swiper-pagination-bullets-dynamic
-		).--pagination-bullets-rectangle-wide {
-		// display: flex;
-		// width: 100%;
-		padding: 5px $top-banner-offset-horizontal;
-		// .swiper-pagination-bullet {
-		// 	flex-grow: 1;
-		// }
-	}
+    // модификаторы для контентной области начало
+    &:not(.--fullwidth-content) {
+      max-width: 1140px;
 
-	// .swiper-pagination.--pagination-bullets-rectangle {
-	// 	.swiper-pagination-bullet {
-	// 		width: 16px;
-	// 	}
-	// }
+      @include container-up("top-banner-slider", 1200px) {
+        width: 75%;
+      }
+    }
 
-	// .swiper-pagination.--pagination-bullets-size-md {
-	// 	.swiper-pagination-bullet {
-	// 		width: 10px;
-	// 		height: 10px;
-	// 	}
-	// }
+    &.--content-align-left {
+      text-align: left;
 
-	// .swiper-pagination.--pagination-bullets-size-lg {
-	// 	.swiper-pagination-bullet {
-	// 		width: 12px;
-	// 		height: 12px;
-	// 	}
-	// }
+      .button-row {
+        margin-right: auto;
+        margin-bottom: 0;
+      }
+    }
 
-	// .swiper-pagination.--pagination-bullets-rectangle {
-	// 	&.--pagination-bullets-size-md {
-	// 		.swiper-pagination-bullet {
-	// 			width: 20px;
-	// 			height: 10px;
-	// 		}
-	// 	}
+    &.--content-align-center {
+      text-align: center;
 
-	// 	&.--pagination-bullets-size-lg {
-	// 		.swiper-pagination-bullet {
-	// 			width: 24px;
-	// 			height: 12px;
-	// 		}
-	// 	}
-	// }
+      .button-row {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        justify-content: center;
+      }
+    }
 
-	.swiper-slide {
-		height: auto;
-	}
+    &.--content-align-right {
+      text-align: right;
+
+      .button-row {
+        margin-left: auto;
+        margin-bottom: 0;
+        justify-content: flex-end;
+      }
+    }
+
+    &.--blured-content {
+      backdrop-filter: blur(20px);
+    }
+
+    &.--bordered-content {
+      border: 2px solid var(--primary-color);
+    }
+
+    &.--rounded-content {
+      border-radius: var(--current-border-radius);
+    }
+
+    &.--content-position-left {
+      margin-left: 0;
+    }
+
+    // модификаторы для контентной области конец
+  }
+
+  &__picture {
+    display: flex;
+    overflow: hidden;
+
+    &:not(.--fullheight-picture) {
+      max-height: 640px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include container-down("top-banner-slider", 1201px) {
+      display: none;
+    }
+
+    // модификаторы для области с контентным изображением начало
+    &.--rounded-picture {
+      overflow: hidden;
+      border-radius: var(--current-border-radius);
+    }
+
+    &.--fullheight-picture {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: 1;
+
+      img {
+        width: auto;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+
+    // модификаторы для области с контентным изображением конец
+  }
+
+  // модификаторы для фоновой картинки конец
+  &:has(.top-banner__picture):not(:has(.--fullheight-picture)) {
+    .top-banner__picture,
+    .top-banner__content {
+      @include container-up("top-banner-slider", 1200px) {
+        flex-basis: 50%;
+      }
+    }
+  }
 }
 
-.top-banner {
-	@extend %flex-align;
-	padding: $top-banner-offset-vertical $top-banner-offset-horizontal;
-	gap: clamp(24px, 4vw, 64px);
-	height: 100%;
-	background-size: cover;
+.top-banner-slider {
+  @extend %flex-column;
 
-	// модификаторы для направления расположения контента баннера начало
-	&.--dir-rtl {
-		flex-direction: row-reverse;
-	}
-	// модификаторы для направления расположения контента баннера конец
+  height: 100%;
+  container: top-banner-slider / inline-size;
 
-	// модификаторы для подложки начало
-	&.--overlayed-dark {
-		@include block-overlay("dark");
-	}
+  // глобальные модификаторы для всех слайдов начало
+  &.--fullheight {
+    .top-banner {
+      min-height: 90svh;
+    }
+  }
 
-	&.--overlayed-light {
-		@include block-overlay("light");
-	}
+  &.--height-30 {
+    .top-banner {
+      min-height: 30svh;
+    }
+  }
 
-	&.--overlayed-blured {
-		@include block-overlay("blured");
-	}
-	// модификаторы для подложки конец
+  &.--height-50 {
+    .top-banner {
+      min-height: 50svh;
+    }
+  }
 
-	// модификаторы для фоновой картинки начало
-	&.--bg-top-left {
-		background-position: top left;
-	}
-	&.--bg-top-center {
-		background-position: top center;
-	}
-	&.--bg-top-right {
-		background-position: top right;
-	}
-	&.--bg-bottom-left {
-		background-position: bottom left;
-	}
-	&.--bg-bottom-center {
-		background-position: bottom center;
-	}
-	&.--bg-bottom-right {
-		background-position: bottom right;
-	}
-	&.--bg-center-left {
-		background-position: center left;
-	}
-	&.--bg-center-right {
-		background-position: center right;
-	}
-	&.--bg-center-center {
-		background-position: center;
-	}
-	// модификаторы для фоновой картинки конец
+  &.--height-70 {
+    .top-banner {
+      min-height: 70svh;
+    }
+  }
 
-	&:has(.top-banner__picture):not(:has(.--fullheight-picture)) {
-		.top-banner__picture,
-		.top-banner__content {
-			@include container-up("top-banner-slider", 1200px) {
-				flex-basis: 50%;
-			}
-		}
-	}
+  // глобальные модификаторы для всех слайдов конец
 
-	&__content {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		height: fit-content;
-		margin: auto;
-		padding: clamp(24px, 5vw, 80px);
-		text-wrap: balance;
-		overflow: hidden;
-		z-index: 3;
+  // навигация
 
-		// модификаторы для контентной области начало
-		&:not(.--fullwidth-content) {
-			max-width: 1140px;
-			@include container-up("top-banner-slider", 1200px) {
-				width: 75%;
-			}
-		}
+  .swiper-button-next,
+  .swiper-button-prev {
+    @extend %flex-center;
 
-		&.--content-align-left {
-			text-align: left;
+    position: absolute;
+    top: 50%;
+  }
 
-			.button-row {
-				margin-right: auto;
-				margin-bottom: 0;
-			}
-		}
+  .swiper-button-prev {
+    left: clamp(16px, 4vw, 64px);
+    transform: translateY(-50%) translateX(-50%) rotate(180deg);
+  }
 
-		&.--content-align-center {
-			text-align: center;
+  .swiper-button-next {
+    right: clamp(16px, 4vw, 64px);
+    transform: translateY(-50%) translateX(50%);
+  }
 
-			.button-row {
-				margin-left: auto;
-				margin-right: auto;
-				margin-bottom: 0;
-				justify-content: center;
-			}
-		}
+  // пагинация слайдера
+  .swiper-pagination {
+    padding: 20px 0;
+  }
 
-		&.--content-align-right {
-			text-align: right;
+  .swiper-pagination:not(
+      .swiper-pagination-bullets-dynamic
+    ).--pagination-bullets-rectangle-wide {
+    padding: 5px $top-banner-offset-horizontal;
+  }
 
-			.button-row {
-				margin-left: auto;
-				margin-bottom: 0;
-				justify-content: flex-end;
-			}
-		}
-
-		&.--blured-content {
-			backdrop-filter: blur(20px);
-		}
-
-		&.--bordered-content {
-			border: 2px solid var(--primary-color);
-		}
-
-		&.--rounded-content {
-			border-radius: var(--current-border-radius);
-		}
-
-		&.--content-position-left {
-			margin-left: 0;
-		}
-		// модификаторы для контентной области конец
-	}
-
-	&__picture {
-		display: flex;
-		overflow: hidden;
-
-		&:not(.--fullheight-picture) {
-			max-height: 640px;
-		}
-
-		img {
-			width: 100%;
-			height: auto;
-			object-fit: cover;
-			object-position: center;
-		}
-
-		@include container-down("top-banner-slider", 1201px) {
-			display: none;
-		}
-
-		// модификаторы для области с контентным изображением начало
-		&.--rounded-picture {
-			overflow: hidden;
-			border-radius: var(--current-border-radius);
-		}
-
-		&.--fullheight-picture {
-			position: absolute;
-			width: 50%;
-			height: 100%;
-			top: 0;
-			right: 0;
-			z-index: 1;
-
-			img {
-				width: auto;
-				object-fit: cover;
-				object-position: top;
-			}
-		}
-		// модификаторы для области с контентным изображением конец
-	}
+  .swiper-slide {
+    height: auto;
+  }
 }
