@@ -1,12 +1,13 @@
-@forward "@styles/_extends/flexbox.scss";
-@forward "@styles/_extends/effects.scss";
-@forward "@styles/_extends/resets.scss";
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
 @use "@styles/_mixins/media-queries" as *;
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
 .staff-preview-card {
   @extend %flex-column;
+
   gap: clamp(16px, 3vw, 24px);
 
   &-container {
@@ -42,6 +43,7 @@
 
   &__content {
     @extend %flex-column;
+
     padding: 12px 0;
 
     &-title,
@@ -81,6 +83,7 @@
   &.--bordered {
     border: 1px solid var(--primary-color);
   }
+
   &.--rounded {
     border-radius: var(--current-border-radius);
   }
@@ -92,5 +95,6 @@
       }
     }
   }
+
   // card modifiers end
 }
