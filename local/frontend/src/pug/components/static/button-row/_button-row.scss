@@ -1,11 +1,12 @@
-@forward "@styles/_extends/flexbox.scss";
-@forward "@styles/_extends/effects.scss";
-@forward "@styles/_extends/resets.scss";
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
 .button-row {
 	@extend %flex-align;
+
 	flex-wrap: wrap;
 	gap: clamp(16px, 3vw, 24px);
 	margin-top: 36px;

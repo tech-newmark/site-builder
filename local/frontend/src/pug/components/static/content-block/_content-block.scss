@@ -1,8 +1,8 @@
 @use "@styles/_vars/scoped" as *;
-@use "@styles/_base/typography.scss";
+@use "@styles/_base/typography";
 
 .content-block {
-  @include typography.styles();
+  @include typography.styles;
 
   & > *:first-child {
     margin-top: 0;
@@ -51,27 +51,41 @@
   table {
     border-collapse: collapse;
     margin: 0.75em 0;
+
     thead {
       tr {
         background-color: var(--secondary-color);
+
         th {
           border: 1px solid var(--primary-color);
           padding: 0.75em;
         }
       }
     }
+
     tbody {
       td {
         border: 1px solid var(--primary-color);
         padding: 0.75em;
       }
     }
+
     caption {
       padding: 0.75em;
       font-style: italic;
       text-align: left;
       caption-side: bottom;
     }
+  }
+
+  q {
+    font-style: italic;
+    quotes: "«" "»" "„" "“";
+  }
+
+  cite {
+    font-weight: 700;
+    font-style: normal;
   }
 
   blockquote {
@@ -95,15 +109,5 @@
     cite {
       display: block;
     }
-  }
-
-  q {
-    font-style: italic;
-    quotes: "«" "»" "„" "“";
-  }
-
-  cite {
-    font-weight: 700;
-    font-style: normal;
   }
 }

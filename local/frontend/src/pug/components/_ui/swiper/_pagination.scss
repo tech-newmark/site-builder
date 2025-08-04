@@ -1,68 +1,64 @@
 // пагинация слайдера
 .swiper,
 .swiper-container {
-	.swiper-pagination {
-		&-bullet {
-			width: 8px;
-			height: 8px;
-			background-color: var(--primary-color);
-		}
+  .swiper-pagination {
+    &-bullet {
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary-color);
+    }
 
-		&.--pagination-bullets-square,
-		&.--pagination-bullets-rectangle,
-		&.--pagination-bullets-rectangle-wide:not(
-				.swiper-pagination-bullets-dynamic
-			) {
-			.swiper-pagination-bullet {
-				border-radius: 0;
-			}
-		}
-	}
+    &.--pagination-bullets-size-md {
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+      }
+    }
 
-	.swiper-pagination:not(
-			.swiper-pagination-bullets-dynamic
-		).--pagination-bullets-rectangle-wide {
-		display: flex;
-		width: 100%;
+    &.--pagination-bullets-size-lg {
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+      }
+    }
 
-		.swiper-pagination-bullet {
-			flex-grow: 1;
-		}
-	}
+    &.--pagination-bullets-square {
+      .swiper-pagination-bullet {
+        border-radius: 0;
+      }
+    }
 
-	.swiper-pagination.--pagination-bullets-rectangle {
-		.swiper-pagination-bullet {
-			width: 16px;
-		}
-	}
+    &.--pagination-bullets-rectangle {
+      .swiper-pagination-bullet {
+        width: 16px;
+        border-radius: 0;
+      }
 
-	.swiper-pagination.--pagination-bullets-size-md {
-		.swiper-pagination-bullet {
-			width: 10px;
-			height: 10px;
-		}
-	}
+      &.--pagination-bullets-size-md {
+        .swiper-pagination-bullet {
+          width: 20px;
+          height: 10px;
+        }
+      }
 
-	.swiper-pagination.--pagination-bullets-size-lg {
-		.swiper-pagination-bullet {
-			width: 12px;
-			height: 12px;
-		}
-	}
+      &.--pagination-bullets-size-lg {
+        .swiper-pagination-bullet {
+          width: 24px;
+          height: 12px;
+        }
+      }
+    }
 
-	.swiper-pagination.--pagination-bullets-rectangle {
-		&.--pagination-bullets-size-md {
-			.swiper-pagination-bullet {
-				width: 20px;
-				height: 10px;
-			}
-		}
+    &:not(
+        .swiper-pagination-bullets-dynamic
+      ).--pagination-bullets-rectangle-wide {
+      display: flex;
+      width: 100%;
 
-		&.--pagination-bullets-size-lg {
-			.swiper-pagination-bullet {
-				width: 24px;
-				height: 12px;
-			}
-		}
-	}
+      .swiper-pagination-bullet {
+        flex-grow: 1;
+        border-radius: 0;
+      }
+    }
+  }
 }

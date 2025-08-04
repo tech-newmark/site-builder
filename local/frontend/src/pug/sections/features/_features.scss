@@ -1,12 +1,14 @@
-@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/flexbox";
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 @use "@pug/components/_ui/cards/feature-card/feature-card";
 
 $grid-gap: var(--gap-sm);
+
 .features__grid {
 	&-container {
 		container: features-grid-container / inline-size;
+
 		&:not(:last-child) {
 			margin-bottom: 120px; // Для показа всех блоков на одной странице
 		}
@@ -17,6 +19,7 @@ $grid-gap: var(--gap-sm);
 
 		.feature-card.--content-bottom {
 			margin-top: revert;
+
 			@include container-up("features-grid-container", $mobile-width) {
 				margin-top: auto;
 			}
@@ -60,6 +63,7 @@ $grid-gap: var(--gap-sm);
 				grid-column: 1/2;
 				grid-row: 3/4;
 			}
+
 			.features__grid-item:nth-child(5) {
 				grid-column: -1/1;
 			}

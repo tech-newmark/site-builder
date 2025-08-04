@@ -2,7 +2,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  // overscroll-behavior: contain;
 }
 
 // * {
@@ -15,7 +14,9 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+
   min-width: 320px;
+
   min-height: 100vh;
   min-height: 100dvh;
   text-size-adjust: none;
@@ -25,18 +26,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-body {
-  &::-webkit-scrollbar {
-    background-color: var(--scrollbar-color);
-    width: var(--scrollbar-width);
-    border-radius: var(--scrollbar-border-radius);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb-color);
-    border-radius: var(--scrollbar-thumb-border-radius);
-  }
-}
 
 body {
   position: relative;
@@ -55,6 +44,18 @@ body {
 
   &.body-locked {
     overflow: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    background-color: var(--scrollbar-color);
+    width: var(--scrollbar-width);
+    border-radius: var(--scrollbar-border-radius);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: var(--scrollbar-thumb-border-radius);
+
   }
 }
 

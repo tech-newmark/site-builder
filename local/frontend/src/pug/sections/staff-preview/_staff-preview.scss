@@ -1,206 +1,214 @@
-@forward "@styles/_extends/flexbox.scss";
-@forward "@styles/_extends/effects.scss";
-@forward "@styles/_extends/resets.scss";
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
 @use "@styles/_mixins/media-queries" as *;
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
-.staff-preview {
-	container: staff-preview / inline-size;
+.staff-preview-card {
+  @extend %flex-column;
 
-	// view modifiers start
-	&.--grid-type-1 {
-		.staff-preview__grid {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: var(--gap-lg);
+  gap: clamp(16px, 3vw, 24px);
 
-			@include container-up("staff-preview", $tablet-lg-width) {
-				grid-template-columns: repeat(2, 1fr);
-			}
-		}
-	}
-	&.--grid-type-2 {
-		.staff-preview__grid {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: var(--gap-lg);
+  &-container {
+    container: staff-preview-card / inline-size;
+  }
 
-			@include container-up("staff-preview", $tablet-lg-width) {
-				grid-template-columns: repeat(3, 1fr);
-			}
-		}
-	}
+  @include container-up("staff-preview-card", $mobile-width) {
+    flex-direction: row;
+  }
 
-	&.--grid-type-3 {
-		.swiper-container {
-			position: relative;
+  @include container-down("staff-preview-card", $mobile-width) {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
-			&:has(.swiper-pagination) {
-				padding-bottom: 30px;
-			}
+  &__picture {
+    width: 100%;
+    max-width: 272px;
+    overflow: hidden;
 
-			.swiper-pagination {
-				bottom: 0;
-				padding: 0 60px;
-			}
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      aspect-ratio: 1/1;
 
-			.swiper-button-prev,
-			.swiper-button-next {
-				display: none;
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-			}
+      @include container-down("staff-preview-card", $mobile-width) {
+        max-width: 272px;
+      }
+    }
+  }
 
-			.swiper-button-prev {
-				left: 0px;
-				transform: translateY(-50%) rotate(180deg);
-			}
+  &__content {
+    @extend %flex-column;
 
-			.swiper-button-next {
-				right: 0;
-			}
+    padding: 12px 0;
 
-			@include media-up($mobile-width) {
-				&:has(.swiper-button-prev),
-				&:has(.swiper-button-next) {
-					padding-left: 60px;
-					padding-right: 60px;
+    &-title,
+    &-description {
+      display: inline-block;
+      margin: 0;
+    }
 
-					.swiper-button-next,
-					.swiper-button-prev {
-						display: flex;
-					}
-				}
-			}
-		}
-		&:has(.main-slider:not(.--js--auto-fill)) .swiper-container {
-			max-width: 320px;
-			margin: 0 auto;
+    &-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
 
-			@include media-up($mobile-width) {
-				max-width: 440px;
-			}
+    &-description {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+  }
 
-			@include media-up(680px) {
-				max-width: 780px;
-			}
+  // card modifiers start
+  &.--rounded-picture {
+    .staff-preview-card__picture img {
+      border-radius: var(--current-border-radius);
+    }
+  }
 
-			@include media-up(1024px) {
-				max-width: 1120px;
-			}
-		}
+  &.--circle-view-picture {
+    .staff-preview-card__picture img {
+      border-radius: 50%;
+    }
+  }
 
-		.main-slider {
-			.swiper-wrapper {
-				padding-bottom: 5px;
-			}
-			.swiper-slide {
-				width: 100%;
-				max-width: 320px;
-				height: auto;
-			}
-		}
+  &.--align-center {
+    align-items: center;
+  }
 
-		.staff-preview-card {
-			max-width: 320px;
-			height: 100%;
-			align-items: center;
-			text-align: center;
-			padding: 24px;
-			margin: 2px;
-		}
-	}
-	// view modifiers end
+  &.--bordered {
+    border: 1px solid var(--primary-color);
+  }
+
+  &.--rounded {
+    border-radius: var(--current-border-radius);
+  }
+
+  &.--content-align-center {
+    @include container-up("staff-preview-card", $mobile-width) {
+      .staff-preview-card__content {
+        text-align: center;
+      }
+    }
+  }
+
+  // card modifiers end
 }
 
-.staff-preview-card {
-	@extend %flex-column;
-	gap: clamp(16px, 3vw, 24px);
+.staff-preview {
+  container: staff-preview / inline-size;
 
-	&-container {
-		container: staff-preview-card / inline-size;
-	}
+  // view modifiers start
+  &.--grid-type-1 {
+    .staff-preview__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap-lg);
 
-	@include container-up("staff-preview-card", $mobile-width) {
-		flex-direction: row;
-	}
+      @include container-up("staff-preview", $tablet-lg-width) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
 
-	@include container-down("staff-preview-card", $mobile-width) {
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-	}
+  &.--grid-type-2 {
+    .staff-preview__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap-lg);
 
-	&__picture {
-		width: 100%;
-		max-width: 272px;
-		overflow: hidden;
+      @include container-up("staff-preview", $tablet-lg-width) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
 
-		img {
-			width: 100%;
-			height: auto;
-			object-fit: cover;
-			aspect-ratio: 1/1;
+  &.--grid-type-3 {
+    .swiper-container {
+      position: relative;
 
-			@include container-down("staff-preview-card", $mobile-width) {
-				max-width: 272px;
-			}
-		}
-	}
+      &:has(.swiper-pagination) {
+        padding-bottom: 30px;
+      }
 
-	&__content {
-		@extend %flex-column;
-		padding: 12px 0;
+      .swiper-pagination {
+        bottom: 0;
+        padding: 0 60px;
+      }
 
-		&-title,
-		&-description {
-			display: inline-block;
-			margin: 0;
-		}
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
 
-		&-title {
-			font-weight: 600;
-			margin-bottom: 2px;
-		}
+      .swiper-button-prev {
+        left: 0;
+        transform: translateY(-50%) rotate(180deg);
+      }
 
-		&-description {
-			font-size: 14px;
-			margin-bottom: 16px;
-		}
-	}
+      .swiper-button-next {
+        right: 0;
+      }
 
-	// card modifiers start
-	&.--rounded-picture {
-		.staff-preview-card__picture img {
-			border-radius: var(--current-border-radius);
-		}
-	}
+      @include media-up($mobile-width) {
+        &:has(.swiper-button-prev),
+        &:has(.swiper-button-next) {
+          padding-left: 60px;
+          padding-right: 60px;
 
-	&.--circle-view-picture {
-		.staff-preview-card__picture img {
-			border-radius: 50%;
-		}
-	}
+          .swiper-button-next,
+          .swiper-button-prev {
+            display: flex;
+          }
+        }
+      }
+    }
 
-	&.--align-center {
-		align-items: center;
-	}
+    &:has(.main-slider:not(.--js--auto-fill)) .swiper-container {
+      max-width: 320px;
+      margin: 0 auto;
 
-	&.--bordered {
-		border: 1px solid var(--primary-color);
-	}
-	&.--rounded {
-		border-radius: var(--current-border-radius);
-	}
+      @include media-up($mobile-width) {
+        max-width: 440px;
+      }
 
-	&.--content-align-center {
-		@include container-up("staff-preview-card", $mobile-width) {
-			.staff-preview-card__content {
-				text-align: center;
-			}
-		}
-	}
-	// card modifiers end
+      @include media-up(680px) {
+        max-width: 780px;
+      }
+
+      @include media-up(1024px) {
+        max-width: 1120px;
+      }
+    }
+
+    .main-slider {
+      .swiper-wrapper {
+        padding-bottom: 5px;
+      }
+
+      .swiper-slide {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+      }
+    }
+
+    .staff-preview-card {
+      max-width: 320px;
+      height: 100%;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+      margin: 2px;
+    }
+  }
+
+  // view modifiers end
 }
