@@ -1,6 +1,5 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-debug($arResut["ITEMS"]);
 if ($arResult["ITEMS"]): ?>
   <section
     class="top-section">

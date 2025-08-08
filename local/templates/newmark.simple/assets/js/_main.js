@@ -3227,7 +3227,6 @@ function onTouchMove(event) {
 		}
 		swiper.emit("sliderFirstMove", e);
 	}
-	let loopFixed;
 	/* @__PURE__ */ new Date().getTime();
 	if (
 		data.isMoved &&
@@ -3260,7 +3259,7 @@ function onTouchMove(event) {
 		if (
 			isLoop &&
 			allowLoopFix &&
-			!loopFixed &&
+			true &&
 			data.allowThresholdMove &&
 			data.currentTranslate >
 				(params.centeredSlides
@@ -3294,7 +3293,7 @@ function onTouchMove(event) {
 		if (
 			isLoop &&
 			allowLoopFix &&
-			!loopFixed &&
+			true &&
 			data.allowThresholdMove &&
 			data.currentTranslate <
 				(params.centeredSlides
@@ -5804,7 +5803,7 @@ function Autoplay(_ref) {
 		}
 		const delay = autoplayTimeLeft || swiper.params.autoplay.delay;
 		autoplayTimeLeft =
-			delay - (/* @__PURE__ */ new Date().getTime() - autoplayStartTime);
+			delay - /* @__PURE__ */ (new Date().getTime() - autoplayStartTime);
 		if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop) return;
 		if (autoplayTimeLeft < 0) autoplayTimeLeft = 0;
 		proceed();
@@ -5964,9 +5963,10 @@ if (slider) {
 		},
 	});
 }
-const sliders$1 = document.querySelectorAll(".infinity-row-slider");
-if (sliders$1.length) {
-	sliders$1.forEach((slider2) => {
+const sliders = document.querySelectorAll(".infinity-row-slider");
+console.log("testts", sliders);
+if (sliders.length) {
+	sliders.forEach((slider2) => {
 		new Swiper(slider2, {
 			modules: [Autoplay],
 			autoplay: {
@@ -5985,166 +5985,3 @@ if (sliders$1.length) {
 		});
 	});
 }
-const accordeons = document.querySelectorAll(
-	".accordeon:not(.--expanded-default)",
-);
-if (accordeons.length) {
-	const expandItem = (target) => {
-		const item = target.closest(".accordeon__item");
-		const parent = target.closest(".accordeon");
-		const isToggleMode = parent.classList.contains("--js--toggle-mode");
-		if (isToggleMode) {
-			const prevItem = parent.querySelector(".accordeon__item.expanded");
-			prevItem && prevItem !== item
-				? prevItem.classList.remove("expanded")
-				: null;
-		}
-		item.classList.toggle("expanded");
-	};
-	const onClickHandler = (evt) => {
-		expandItem(evt.currentTarget);
-	};
-	const onEnterClickHandler = (evt) => {
-		if (evt.keyCode === 13 || evt.key === "Enter") {
-			expandItem(evt.currentTarget);
-		}
-	};
-	accordeons.forEach((accordeon) => {
-		const openers = accordeon.querySelectorAll(".accordeon__item-header");
-		accordeon.classList.contains("--js--expanded-first-default")
-			? accordeon
-					.querySelector(".accordeon__item:first-child")
-					.classList.add("expanded")
-			: null;
-		openers.forEach((opener) => {
-			opener.addEventListener("click", onClickHandler);
-			opener.addEventListener("keydown", onEnterClickHandler);
-		});
-	});
-}
-const sliders = document.querySelectorAll(".main-slider");
-if (sliders.length) {
-	const breakpoints2 = (slider2) => {
-		if (slider2.classList.contains("staff-preview-slider")) {
-			return {
-				680: {
-					slidesPerView: 2,
-				},
-				1024: {
-					slidesPerView: 3,
-				},
-			};
-		} else if (slider2.classList.contains("reviews-slider")) {
-			return {
-				680: {
-					slidesPerView: slider2.classList.contains("--max-slides-2")
-						? 1
-						: slider2.classList.contains("--max-slides-3")
-						? 2
-						: 1,
-					spaceBetween: slider2.classList.contains("--max-slides-3") ? 32 : 20,
-				},
-				1024: {
-					slidesPerView: slider2.classList.contains("--max-slides-2")
-						? 2
-						: slider2.classList.contains("--max-slides-3")
-						? 3
-						: 1,
-					spaceBetween: slider2.classList.contains("--max-slides-2")
-						? 64
-						: slider2.classList.contains("--max-slides-3")
-						? 32
-						: 20,
-				},
-			};
-		}
-	};
-	sliders.forEach((slider2) => {
-		const btnNext = slider2.parentNode.querySelector(".swiper-button-next");
-		const btnPrev = slider2.parentNode.querySelector(".swiper-button-prev");
-		const pagination = slider2.parentNode.querySelector(".swiper-pagination");
-		new Swiper(slider2, {
-			modules: [Navigation, Pagination],
-			slidesPerView: slider2.classList.contains("--js--auto-fill") ? "auto" : 1,
-			// start from mobile
-			spaceBetween: 20,
-			centeredSlidesBounds: true,
-			breakpoints: !slider2.classList.contains("--js--auto-fill")
-				? breakpoints2(slider2)
-				: null,
-			navigation: {
-				nextEl: btnNext ? btnNext : null,
-				prevEl: btnPrev ? btnPrev : null,
-			},
-			pagination: {
-				el: pagination ? pagination : null,
-				dynamicBullets: pagination && pagination.dataset.dynamic ? true : false,
-				clickable: true,
-			},
-		});
-	});
-}
-let tables = document.getElementsByTagName("table");
-if (tables.length) {
-	let length = tables.length,
-		i,
-		wrapper;
-	for (i = 0; i < length; i++) {
-		wrapper = document.createElement("div");
-		wrapper.setAttribute("class", "table-wrapper");
-		tables[i].parentNode.insertBefore(wrapper, tables[i]);
-		wrapper.appendChild(tables[i]);
-	}
-}
-const MAX_VALUE = 5;
-const MAX_WIDTH = 100;
-const texts = document.querySelectorAll(".review-card__text");
-const ratings = document.querySelectorAll(".rating");
-texts.forEach((text) => {
-	var _a;
-	text.style.position = "relative";
-	const clone = text.cloneNode(true);
-	clone.style.display = "block";
-	clone.style.position = "absolute";
-	clone.style.visibility = "hidden";
-	clone.style.height = "auto";
-	clone.style.maxHeight = "none";
-	clone.style.overflow = "visible";
-	clone.style.WebkitLineClamp = "unset";
-	clone.style.WebkitBoxOrient = "initial";
-	clone.style.width = text.offsetWidth + "px";
-	document.body.appendChild(clone);
-	const isOverflowing = clone.clientHeight > text.clientHeight;
-	clone.remove();
-	const button =
-		(_a = text.closest(".review-card__content")) == null
-			? void 0
-			: _a.querySelector(".review-card__button");
-	if (button && !isOverflowing) {
-		button.style.display = "none";
-	}
-});
-ratings.forEach((rating) => {
-	const value =
-		parseFloat(rating.dataset.value) >= 0
-			? parseFloat(rating.dataset.value)
-			: MAX_VALUE;
-	const stars = rating.querySelectorAll("svg");
-	const fullStarsCount = Math.floor(value);
-	const partialStarRatio = value - fullStarsCount;
-	if (stars.length) {
-		const setClipRect = (item, value2) => {
-			item.setAttribute("width", value2);
-		};
-		stars.forEach((star, index) => {
-			const clipRect = star.querySelector("clipPath rect");
-			if (index < fullStarsCount) {
-				setClipRect(clipRect, MAX_WIDTH);
-			} else if (index === fullStarsCount && partialStarRatio > 0) {
-				setClipRect(clipRect, partialStarRatio * MAX_WIDTH);
-			} else {
-				setClipRect(clipRect, 0);
-			}
-		});
-	}
-});

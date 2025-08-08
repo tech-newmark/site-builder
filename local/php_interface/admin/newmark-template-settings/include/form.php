@@ -7,10 +7,11 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-tem
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderSettingsBlock.php");
 
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderSettingsSection.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderTopBannerSection.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderFeaturesPreviewSection.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderAboutPreviewSection.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderClientsPreviewSection.php");
-require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderTopBannerSection.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-template-settings/functions/renderFaqSection.php");
 ?>
 
 <div class="nm-adm">
@@ -23,6 +24,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/admin/newmark-tem
       <? renderFeaturesPreviewSection($values); ?>
       <? renderAboutPreviewSection($values); ?>
       <? renderClientsPreviewSection($values); ?>
+      <? renderFaqSection($values); ?>
 
       <div class="settings-form-footer">
         <input type="submit" value="Сохранить">

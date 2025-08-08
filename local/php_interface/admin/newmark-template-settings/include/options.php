@@ -75,6 +75,15 @@ class SiteSettingsManager
       'CLIENTS_PREVIEW_GRID_ITEM_BORDERED' => Option::get("main", "CLIENTS_PREVIEW_GRID_ITEM_BORDERED", "--bordered-none"),
       'CLIENTS_PREVIEW_ICON_SIZE' => Option::get("main", "CLIENTS_PREVIEW_ICON_SIZE", "--icon-size-xs"),
       'CLIENTS_PREVIEW_FULLWIDTH_SLIDER' => Option::get("main", "CLIENTS_PREVIEW_FULLWIDTH_SLIDER", "--containerwidth"),
+
+      'FAQ_SECTION_ENABLED' => Option::get("main", "FAQ_SECTION_ENABLED", "N"),
+      'FAQ_SECTION_SORT' => Option::get("main", "FAQ_SECTION_SORT", "100"),
+      'FAQ_SECTION_VIEW' => Option::get("main", "FAQ_SECTION_VIEW", "--vertical-view"),
+      'FAQ_SECTION_ACCORDEON_MAXWIDTH' => Option::get("main", "FAQ_SECTION_ACCORDEON_MAXWIDTH", "--fullwidth"),
+      'FAQ_SECTION_ACCORDEON_VIEW' => Option::get("main", "FAQ_SECTION_ACCORDEON_VIEW", "--collapsed-default"),
+      'FAQ_SECTION_ACCORDEON_TOGGLEMODE' => Option::get("main", "FAQ_SECTION_ACCORDEON_TOGGLEMODE", "N"),
+      'FAQ_SECTION_ACCORDEON_BORDERED' => Option::get("main", "FAQ_SECTION_ACCORDEON_BORDERED", "N"),
+      'FAQ_SECTION_ACCORDEON_ROUNDED' => Option::get("main", "FAQ_SECTION_ACCORDEON_ROUNDED", "N"),
     ];
   }
 
@@ -144,6 +153,16 @@ class SiteSettingsManager
       'CLIENTS_PREVIEW_GRID_ITEM_BORDERED' => $postData["CLIENTS_PREVIEW_GRID_ITEM_BORDERED"] ?? "--bordered-none",
       'CLIENTS_PREVIEW_ICON_SIZE' => $postData["CLIENTS_PREVIEW_ICON_SIZE"] ?? "--icon-size-xs",
       'CLIENTS_PREVIEW_FULLWIDTH_SLIDER' => $postData["CLIENTS_PREVIEW_FULLWIDTH_SLIDER"] ?? "--containerwidth",
+
+      'FAQ_SECTION_ENABLED' => $postData["FAQ_SECTION_ENABLED"] ?? "N",
+      'FAQ_SECTION_SORT' => $postData["FAQ_SECTION_SORT"] ?? "100",
+      'FAQ_SECTION_VIEW' => $postData["FAQ_SECTION_VIEW"] ?? "--vertical-view",
+
+      'FAQ_SECTION_ACCORDEON_MAXWIDTH' => $postData["FAQ_SECTION_ACCORDEON_MAXWIDTH"] ?? "--fullwidth",
+      'FAQ_SECTION_ACCORDEON_VIEW' => $postData["FAQ_SECTION_ACCORDEON_VIEW"] ?? "--collapsed-default",
+      'FAQ_SECTION_ACCORDEON_TOGGLEMODE' => $postData["FAQ_SECTION_ACCORDEON_TOGGLEMODE"] ?? "N",
+      'FAQ_SECTION_ACCORDEON_BORDERED' => $postData["FAQ_SECTION_ACCORDEON_BORDERED"] ?? "N",
+      'FAQ_SECTION_ACCORDEON_ROUNDED' => $postData["FAQ_SECTION_ACCORDEON_ROUNDED"] ?? "N",
 
       'SITE_LOGO' => $newLogoPath,
     ];

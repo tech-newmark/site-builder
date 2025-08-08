@@ -20,10 +20,11 @@ if (isset($GLOBALS['SECTION_TITLE_UNDERLINE_ENABLED']) && $GLOBALS['SECTION_TITL
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <? $APPLICATION->ShowHead(); ?>
-  <link href="<?= SITE_TEMPLATE_PATH ?>/assets/styles.css" type="text/css" rel="stylesheet" />
+  <title><? $APPLICATION->ShowTitle() ?></title>
+  <!-- <link href="<?= SITE_TEMPLATE_PATH ?>/assets/styles.css" type="text/css" rel="stylesheet" /> -->
   <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/assets/js/theme.js'); ?>
   <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/assets/js/main.js'); ?>
-  <title><? $APPLICATION->ShowTitle() ?></title>
+
 </head>
 
 <body>
